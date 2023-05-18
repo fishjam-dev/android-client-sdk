@@ -31,7 +31,7 @@ class RoomViewModel(application: Application) : AndroidViewModel(application),
     fun connect(roomToken: String) {
         client.connect(
             Config(
-                websocketUrl = "ws://192.168.83.90:4000/socket/peer/websocket",
+                websocketUrl = BuildConfig.JELLYFISH_SOCKET_URL,
                 token = roomToken
             )
         )

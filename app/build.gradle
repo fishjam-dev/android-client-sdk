@@ -19,6 +19,12 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
+
+        if(project.hasProperty("JELLYFISH_SOCKET_URL")) {
+            buildConfigField "String", "JELLYFISH_SOCKET_URL", "\"$JELLYFISH_SOCKET_URL\""
+        } else {
+            buildConfigField "String" , "JELLYFISH_SOCKET_URL" ,  "\"ws://localhost:4000/socket/peer/websocket\""
+        }
     }
 
     buildTypes {
@@ -36,6 +42,7 @@ android {
     }
     buildFeatures {
         compose true
+        buildConfig true
     }
     composeOptions {
         kotlinCompilerExtensionVersion '1.4.0'
