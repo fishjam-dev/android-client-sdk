@@ -1,0 +1,1 @@
+sourceset_dependencies='{":JellyfishClient:dokkaHtml/androidTestRelease":[],":JellyfishClient:dokkaHtml/debug":[],":JellyfishClient:dokkaHtml/main":[],":JellyfishClient:dokkaHtml/release":[],":JellyfishClient:dokkaHtml/testFixtures":[],":JellyfishClient:dokkaHtml/testFixturesDebug":[],":JellyfishClient:dokkaHtml/testFixturesRelease":[]}'
