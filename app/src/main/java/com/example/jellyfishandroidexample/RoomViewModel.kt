@@ -39,6 +39,9 @@ class RoomViewModel(application: Application) : AndroidViewModel(application),
     }
 
     fun disconnect() {
+        localVideoTrack?.stop()
+        localVideoTrack = null
+        globalToLocalTrackId.clear()
         client.cleanUp()
     }
 
@@ -53,7 +56,6 @@ class RoomViewModel(application: Application) : AndroidViewModel(application),
     }
 
     override fun onAuthSuccess() {
-        setupTracks()
         client.join()
     }
 
