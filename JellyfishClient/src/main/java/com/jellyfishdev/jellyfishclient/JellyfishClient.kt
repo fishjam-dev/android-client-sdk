@@ -2,45 +2,23 @@ package com.jellyfishdev.jellyfishclient
 
 import android.content.Context
 import android.content.Intent
-import com.google.gson.Gson
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Response
-import okhttp3.WebSocket
-import okhttp3.WebSocketListener
-import org.membraneframework.rtc.BuildConfig
-import org.membraneframework.rtc.MembraneRTC
-import org.membraneframework.rtc.MembraneRTCListener
 import org.membraneframework.rtc.TrackEncoding
 import org.membraneframework.rtc.media.LocalAudioTrack
 import org.membraneframework.rtc.media.LocalScreencastTrack
 import org.membraneframework.rtc.media.LocalVideoTrack
 import org.membraneframework.rtc.media.TrackBandwidthLimit
 import org.membraneframework.rtc.media.VideoParameters
-import org.membraneframework.rtc.models.Peer
 import org.membraneframework.rtc.models.RTCStats
-import org.membraneframework.rtc.models.TrackContext
 import org.membraneframework.rtc.utils.Metadata
-import org.membraneframework.rtc.utils.SerializedMediaEvent
-import org.membraneframework.rtc.utils.TimberDebugTree
 import org.webrtc.Logging
-import timber.log.Timber
 
-data class Config (
+data class Config(
     val websocketUrl: String,
     val token: String,
 )
 
-class JellyfishClient(appContext: Context, val listener: JellyfishClientListener) : MembraneRTCListener {
-    private var webSocket: WebSocket? = null
-    private val webrtcClient = MembraneRTC.create(appContext, this)
-    private val gson = Gson()
-
-    init {
-        if (BuildConfig.DEBUG) {
-            Timber.plant(TimberDebugTree())
-        }
-    }
+class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
+    private val client = JellyfishClientInternal(appContext, listener)
 
     /**
      * Connects to the server using the WebSocket connection
@@ -48,38 +26,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
      * @param config - Configuration object for the client
      */
     fun connect(config: Config) {
-        val request = Request.Builder().url(config.websocketUrl).build()
-        val webSocket = OkHttpClient().newWebSocket(request, object : WebSocketListener() {
-            override fun onClosed(webSocket: WebSocket, code: Int, reason: String) {
-                listener.onSocketClose(code, reason)
-            }
-
-            override fun onMessage(webSocket: WebSocket, text: String) {
-                when(val event = ReceivableEvent.decode(text)) {
-                    is AuthenticatedEvent -> {
-                        listener.onAuthSuccess()
-                    }
-                    is UnauthenticatedEvent -> {
-                        listener.onAuthError()
-                    }
-                    is ReceivableMediaEvent -> {
-                        receiveEvent(event)
-                    }
-                    else -> {}
-                }
-            }
-
-            override fun onOpen(webSocket: WebSocket, response: Response) {
-                listener.onSocketOpen()
-                sendEvent(AuthRequest(config.token))
-            }
-
-            override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
-                listener.onSocketError(t, response)
-            }
-        })
-
-        this.webSocket = webSocket
+        client.connect(config)
     }
 
     /**
@@ -88,7 +35,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
      * to the RTC Engine. Thanks to it each other peer will be notified that peer left in {@link MessageEvents.onPeerLeft},
      */
     fun leave() {
-        webrtcClient.disconnect()
+        client.leave()
     }
 
     /**
@@ -96,18 +43,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
      * it will close the websocket anyway.
      */
     fun cleanUp() {
-        webrtcClient.disconnect()
-        webSocket?.close(1000, null)
-        webSocket = null
-        listener.onDisconnected()
-    }
-
-    private fun sendEvent(event: SendableEvent) {
-        webSocket?.send(gson.toJson(event))
-    }
-
-    private fun receiveEvent(event: ReceivableMediaEvent) {
-        webrtcClient.receiveMediaEvent(event.data)
+        client.cleanUp()
     }
 
     /**
@@ -118,55 +54,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
      * after accepting this peer
      */
     fun join(peerMetadata: Metadata = emptyMap()) {
-        webrtcClient.join(peerMetadata)
-    }
-
-    override fun onJoinError(metadata: Any) {
-        listener.onJoinError(metadata)
-    }
-
-    override fun onJoinSuccess(peerID: String, peersInRoom: List<Peer>) {
-        listener.onJoinSuccess(peerID, peersInRoom)
-    }
-
-    override fun onPeerJoined(peer: Peer) {
-        listener.onPeerJoined(peer)
-    }
-
-    override fun onPeerLeft(peer: Peer) {
-        listener.onPeerLeft(peer)
-    }
-
-    override fun onPeerUpdated(peer: Peer) {
-        listener.onPeerUpdated(peer)
-    }
-
-    override fun onSendMediaEvent(event: SerializedMediaEvent) {
-        sendEvent(SendableMediaEvent(event))
-    }
-
-    override fun onTrackAdded(ctx: TrackContext) {
-        listener.onTrackAdded(ctx)
-    }
-
-    override fun onTrackReady(ctx: TrackContext) {
-        listener.onTrackReady(ctx)
-    }
-
-    override fun onTrackRemoved(ctx: TrackContext) {
-        listener.onTrackRemoved(ctx)
-    }
-
-    override fun onTrackUpdated(ctx: TrackContext) {
-        listener.onTrackUpdated(ctx)
-    }
-
-    override fun onRemoved(reason: String) {
-        listener.onRemoved(reason)
-    }
-
-    override fun onBandwidthEstimationChanged(estimation: Long) {
-        listener.onBandwidthEstimationChanged(estimation)
+        client.webrtcClient.join(peerMetadata)
     }
 
     /**
@@ -185,7 +73,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
         metadata: Metadata,
         captureDeviceName: String? = null
     ): LocalVideoTrack {
-        return webrtcClient.createVideoTrack(videoParameters, metadata, captureDeviceName)
+        return client.webrtcClient.createVideoTrack(videoParameters, metadata, captureDeviceName)
     }
 
     /**
@@ -197,7 +85,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
      * @return an instance of the audio track
      */
     fun createAudioTrack(metadata: Metadata): LocalAudioTrack {
-        return webrtcClient.createAudioTrack(metadata)
+        return client.webrtcClient.createAudioTrack(metadata)
     }
 
     /**
@@ -217,7 +105,12 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
         metadata: Metadata,
         onEnd: (() -> Unit)? = null
     ): LocalScreencastTrack? {
-        return webrtcClient.createScreencastTrack(mediaProjectionPermission, videoParameters, metadata, onEnd)
+        return client.webrtcClient.createScreencastTrack(
+            mediaProjectionPermission,
+            videoParameters,
+            metadata,
+            onEnd
+        )
     }
 
     /**
@@ -227,7 +120,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
      * @return a boolean whether the track has been successfully removed or not
      */
     fun removeTrack(trackId: String): Boolean {
-        return webrtcClient.removeTrack(trackId)
+        return client.webrtcClient.removeTrack(trackId)
     }
 
     /**
@@ -241,7 +134,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
      * @param encoding an encoding to receive
      */
     fun setTargetTrackEncoding(trackId: String, encoding: TrackEncoding) {
-        webrtcClient.setTargetTrackEncoding(trackId, encoding)
+        client.webrtcClient.setTargetTrackEncoding(trackId, encoding)
     }
 
     /**
@@ -251,7 +144,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
      * @param encoding an encoding that will be enabled
      */
     fun enableTrackEncoding(trackId: String, encoding: TrackEncoding) {
-        webrtcClient.enableTrackEncoding(trackId, encoding)
+        client.webrtcClient.enableTrackEncoding(trackId, encoding)
     }
 
     /**
@@ -261,7 +154,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
      * @param encoding an encoding that will be disabled
      */
     fun disableTrackEncoding(trackId: String, encoding: TrackEncoding) {
-        webrtcClient.disableTrackEncoding(trackId, encoding)
+        client.webrtcClient.disableTrackEncoding(trackId, encoding)
     }
 
     /**
@@ -272,7 +165,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
      * callback `onPeerUpdated` will be triggered for other peers in the room.
      */
     fun updatePeerMetadata(peerMetadata: Metadata) {
-        webrtcClient.updatePeerMetadata(peerMetadata)
+        client.webrtcClient.updatePeerMetadata(peerMetadata)
     }
 
     /**
@@ -284,7 +177,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
      * callback `onTrackUpdated` will be triggered for other peers in the room.
      */
     fun updateTrackMetadata(trackId: String, trackMetadata: Metadata) {
-        webrtcClient.updateTrackMetadata(trackId, trackMetadata)
+        client.webrtcClient.updateTrackMetadata(trackId, trackMetadata)
     }
 
     /**
@@ -295,7 +188,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
      * @param bandwidthLimit bandwidth in kbps
      */
     fun setTrackBandwidth(trackId: String, bandwidthLimit: TrackBandwidthLimit.BandwidthLimit) {
-        webrtcClient.setTrackBandwidth(trackId, bandwidthLimit)
+        client.webrtcClient.setTrackBandwidth(trackId, bandwidthLimit)
     }
 
     /**
@@ -309,7 +202,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
         encoding: String,
         bandwidthLimit: TrackBandwidthLimit.BandwidthLimit
     ) {
-        webrtcClient.setEncodingBandwidth(trackId, encoding, bandwidthLimit)
+        client.webrtcClient.setEncodingBandwidth(trackId, encoding, bandwidthLimit)
     }
 
     /**
@@ -317,7 +210,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
      * @param severity enum value representing the logging severity
      */
     fun changeWebRTCLoggingSeverity(severity: Logging.Severity) {
-        webrtcClient.changeWebRTCLoggingSeverity(severity)
+        client.webrtcClient.changeWebRTCLoggingSeverity(severity)
     }
 
     /**
@@ -325,7 +218,7 @@ class JellyfishClient(appContext: Context, val listener: JellyfishClientListener
      * @return a map containing statistics
      */
     fun getStats(): Map<String, RTCStats> {
-        return webrtcClient.getStats()
+        return client.webrtcClient.getStats()
     }
 }
 

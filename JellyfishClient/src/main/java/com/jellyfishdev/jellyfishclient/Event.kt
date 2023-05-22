@@ -24,18 +24,18 @@ internal inline fun <I, reified O> I.convert(): O {
 }
 
 
-sealed class SendableEvent
+internal sealed class SendableEvent
 
-data class AuthRequest(val type: String, val data: Data): SendableEvent() {
+internal data class AuthRequest(val type: String, val data: Data): SendableEvent() {
     data class Data(val type: String, val token: String)
     constructor(token: String) : this("controlMessage", Data("authRequest", token))
 }
 
-data class SendableMediaEvent(val type: String, val data: String): SendableEvent() {
+internal data class SendableMediaEvent(val type: String, val data: String): SendableEvent() {
     constructor(data: String) : this("mediaEvent", data)
 }
 
-enum class ReceivableEventType {
+internal enum class ReceivableEventType {
     @SerializedName("controlMessage")
     ControlMessage,
 
@@ -51,17 +51,17 @@ enum class ReceivableEventType {
 
 internal data class BaseReceivableEvent(val type: ReceivableEventType)
 
-data class BaseControlEvent(val type: ReceivableEventType, val data: Data) : ReceivableEvent() {
+internal data class BaseControlEvent(val type: ReceivableEventType, val data: Data) : ReceivableEvent() {
     data class Data(val type: ReceivableEventType)
 }
 
-class CustomEvent<Event : ReceivableEvent>(val type: ReceivableEventType, val data: Event)
+internal class CustomEvent<Event : ReceivableEvent>(val type: ReceivableEventType, val data: Event)
 
-data class AuthenticatedEvent(val type: ReceivableEventType) : ReceivableEvent()
-data class UnauthenticatedEvent(val type: ReceivableEventType) : ReceivableEvent()
-data class ReceivableMediaEvent(val type: ReceivableEventType, val data: String) : ReceivableEvent()
+internal data class AuthenticatedEvent(val type: ReceivableEventType) : ReceivableEvent()
+internal data class UnauthenticatedEvent(val type: ReceivableEventType) : ReceivableEvent()
+internal data class ReceivableMediaEvent(val type: ReceivableEventType, val data: String) : ReceivableEvent()
 
-sealed class ReceivableEvent {
+internal sealed class ReceivableEvent {
     companion object {
         fun decode(event: String): ReceivableEvent? {
             try {

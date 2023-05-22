@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id "org.jetbrains.dokka"
 }
 
 android {
@@ -27,6 +28,29 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+}
+
+ext {
+    customFooterMessage = "Copyright 2023, Software Mansion."
+}
+
+afterEvaluate {
+    tasks.named("dokkaHtml") {
+        pluginsMapConfiguration.set([
+                "org.jetbrains.dokka.base.DokkaBase": """{
+                "footerMessage": "$customFooterMessage"
+            }"""
+        ])
+    }
+}
+
+tasks.named("dokkaHtml") {
+    moduleName.set("JellyfishClient")
+    dokkaSourceSets {
+        named("main") {
+            includes.from("module.md")
+        }
     }
 }
 
