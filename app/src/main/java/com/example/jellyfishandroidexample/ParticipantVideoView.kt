@@ -15,7 +15,8 @@ import org.webrtc.RendererCommon
 
 enum class VideoViewLayout {
     FIT,
-    FILL;
+    FILL,
+    ;
 
     internal fun toScalingType(): RendererCommon.ScalingType {
         return when (this) {
@@ -68,6 +69,6 @@ fun ParticipantVideoView(participant: Participant, videoViewLayout: VideoViewLay
         update = { updatedView ->
             setupTrack(participant.videoTrack!!, updatedView)
         },
-        modifier = modifier
+        modifier = modifier,
     )
 }

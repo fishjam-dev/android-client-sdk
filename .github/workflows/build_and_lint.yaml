@@ -1,0 +1,16 @@
+
+name: Build & lint
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Lint
+        run: ./gradlew lintKotlin
+      
+      - name: Build
+        run: ./gradlew assembleRelease

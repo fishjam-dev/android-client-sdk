@@ -23,15 +23,14 @@ internal inline fun <I, reified O> I.convert(): O {
     return gson.fromJson(json, object : TypeToken<O>() {}.type)
 }
 
-
 internal sealed class SendableEvent
 
-internal data class AuthRequest(val type: String, val data: Data): SendableEvent() {
+internal data class AuthRequest(val type: String, val data: Data) : SendableEvent() {
     data class Data(val type: String, val token: String)
     constructor(token: String) : this("controlMessage", Data("authRequest", token))
 }
 
-internal data class SendableMediaEvent(val type: String, val data: String): SendableEvent() {
+internal data class SendableMediaEvent(val type: String, val data: String) : SendableEvent() {
     constructor(data: String) : this("mediaEvent", data)
 }
 
@@ -93,8 +92,3 @@ internal sealed class ReceivableEvent {
         }
     }
 }
-
-
-
-
-

@@ -18,7 +18,7 @@ import timber.log.Timber
 
 internal class JellyfishClientInternal(
     appContext: Context,
-    private val listener: JellyfishClientListener
+    private val listener: JellyfishClientListener,
 ) :
     MembraneRTCListener {
     private var webSocket: WebSocket? = null
@@ -33,38 +33,41 @@ internal class JellyfishClientInternal(
 
     fun connect(config: Config) {
         val request = Request.Builder().url(config.websocketUrl).build()
-        val webSocket = OkHttpClient().newWebSocket(request, object : WebSocketListener() {
-            override fun onClosed(webSocket: WebSocket, code: Int, reason: String) {
-                listener.onSocketClose(code, reason)
-            }
-
-            override fun onMessage(webSocket: WebSocket, text: String) {
-                when (val event = ReceivableEvent.decode(text)) {
-                    is AuthenticatedEvent -> {
-                        listener.onAuthSuccess()
-                    }
-
-                    is UnauthenticatedEvent -> {
-                        listener.onAuthError()
-                    }
-
-                    is ReceivableMediaEvent -> {
-                        receiveEvent(event)
-                    }
-
-                    else -> {}
+        val webSocket = OkHttpClient().newWebSocket(
+            request,
+            object : WebSocketListener() {
+                override fun onClosed(webSocket: WebSocket, code: Int, reason: String) {
+                    listener.onSocketClose(code, reason)
                 }
-            }
 
-            override fun onOpen(webSocket: WebSocket, response: Response) {
-                listener.onSocketOpen()
-                sendEvent(AuthRequest(config.token))
-            }
+                override fun onMessage(webSocket: WebSocket, text: String) {
+                    when (val event = ReceivableEvent.decode(text)) {
+                        is AuthenticatedEvent -> {
+                            listener.onAuthSuccess()
+                        }
 
-            override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
-                listener.onSocketError(t, response)
-            }
-        })
+                        is UnauthenticatedEvent -> {
+                            listener.onAuthError()
+                        }
+
+                        is ReceivableMediaEvent -> {
+                            receiveEvent(event)
+                        }
+
+                        else -> {}
+                    }
+                }
+
+                override fun onOpen(webSocket: WebSocket, response: Response) {
+                    listener.onSocketOpen()
+                    sendEvent(AuthRequest(config.token))
+                }
+
+                override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
+                    listener.onSocketError(t, response)
+                }
+            },
+        )
 
         this.webSocket = webSocket
     }

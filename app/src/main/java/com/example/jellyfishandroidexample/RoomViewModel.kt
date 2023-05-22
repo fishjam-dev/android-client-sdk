@@ -15,7 +15,8 @@ import org.membraneframework.rtc.media.VideoParameters
 import org.membraneframework.rtc.models.Peer
 import org.membraneframework.rtc.models.TrackContext
 
-class RoomViewModel(application: Application) : AndroidViewModel(application),
+class RoomViewModel(application: Application) :
+    AndroidViewModel(application),
     JellyfishClientListener {
     private val client = JellyfishClient(getApplication(), this)
 
@@ -32,8 +33,8 @@ class RoomViewModel(application: Application) : AndroidViewModel(application),
         client.connect(
             Config(
                 websocketUrl = BuildConfig.JELLYFISH_SOCKET_URL,
-                token = roomToken
-            )
+                token = roomToken,
+            ),
         )
         setupTracks()
     }
@@ -118,8 +119,11 @@ class RoomViewModel(application: Application) : AndroidViewModel(application),
             val localTrackId = globalToLocalTrackId[ctx.trackId]
             val videoTrackId = participant.videoTrack?.id()
 
-            val newParticipant = if (localTrackId == videoTrackId) participant.copy(videoTrack = null)
-            else throw IllegalArgumentException("track has not been found for given peer")
+            val newParticipant = if (localTrackId == videoTrackId) {
+                participant.copy(videoTrack = null)
+            } else {
+                throw IllegalArgumentException("track has not been found for given peer")
+            }
 
             globalToLocalTrackId.remove(ctx.trackId)
 

@@ -71,7 +71,7 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
     fun createVideoTrack(
         videoParameters: VideoParameters,
         metadata: Metadata,
-        captureDeviceName: String? = null
+        captureDeviceName: String? = null,
     ): LocalVideoTrack {
         return client.webrtcClient.createVideoTrack(videoParameters, metadata, captureDeviceName)
     }
@@ -103,13 +103,13 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
         mediaProjectionPermission: Intent,
         videoParameters: VideoParameters,
         metadata: Metadata,
-        onEnd: (() -> Unit)? = null
+        onEnd: (() -> Unit)? = null,
     ): LocalScreencastTrack? {
         return client.webrtcClient.createScreencastTrack(
             mediaProjectionPermission,
             videoParameters,
             metadata,
-            onEnd
+            onEnd,
         )
     }
 
@@ -200,7 +200,7 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
     fun setEncodingBandwidth(
         trackId: String,
         encoding: String,
-        bandwidthLimit: TrackBandwidthLimit.BandwidthLimit
+        bandwidthLimit: TrackBandwidthLimit.BandwidthLimit,
     ) {
         client.webrtcClient.setEncodingBandwidth(trackId, encoding, bandwidthLimit)
     }
@@ -221,4 +221,3 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
         return client.webrtcClient.getStats()
     }
 }
-

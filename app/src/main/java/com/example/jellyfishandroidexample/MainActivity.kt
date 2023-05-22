@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
         Intent(this@MainActivity, RoomActivity::class.java).apply {
             putExtra(
                 RoomActivity.ARGS,
-                RoomActivity.BundleArgs(token)
+                RoomActivity.BundleArgs(token),
             )
         }.let {
             startActivity(it)
@@ -62,13 +62,13 @@ class MainActivity : ComponentActivity() {
 
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colorScheme.background
+            color = MaterialTheme.colorScheme.background,
         ) {
             Column(
                 modifier = Modifier
                     .fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
+                verticalArrangement = Arrangement.Center,
             ) {
                 OutlinedTextField(
                     value = roomToken.value,
@@ -84,7 +84,7 @@ class MainActivity : ComponentActivity() {
                         },
                         enabled = !(roomToken.value.text.isEmpty()),
                         modifier = Modifier
-                            .width(200.dp)
+                            .width(200.dp),
                     ) {
                         Text("Join room")
                     }
@@ -93,15 +93,14 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-
     @OptIn(ExperimentalPermissionsApi::class)
     @Composable
     fun ConnectWithPermissions(content: @Composable () -> Unit) {
         val multiplePermissionsState = rememberMultiplePermissionsState(
             listOf(
                 Manifest.permission.RECORD_AUDIO,
-                Manifest.permission.CAMERA
-            )
+                Manifest.permission.CAMERA,
+            ),
         )
 
         val alreadyRequested = remember { mutableStateOf(false) }
@@ -113,7 +112,7 @@ class MainActivity : ComponentActivity() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(10.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 val textToShow = when {
                     multiplePermissionsState.shouldShowRationale ->
@@ -143,7 +142,7 @@ class MainActivity : ComponentActivity() {
                         }
 
                         alreadyRequested.value = true
-                    }
+                    },
                 ) {
                     Text("Request permissions")
                 }

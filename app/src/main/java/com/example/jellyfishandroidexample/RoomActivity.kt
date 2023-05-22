@@ -57,7 +57,7 @@ class RoomActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = MaterialTheme.colorScheme.background,
                 ) {
                     Content()
                 }
@@ -86,7 +86,7 @@ class RoomActivity : ComponentActivity() {
                         .fillMaxHeight()
                         .padding(10.dp),
                     verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
+                    horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     participants.value.forEach {
                         ParticipantCard(
@@ -101,35 +101,33 @@ class RoomActivity : ComponentActivity() {
                             finish()
                         },
                         modifier = Modifier
-                            .width(200.dp)
+                            .width(200.dp),
                     ) {
                         Text("Disconnect")
                     }
                 }
-
             }
         }
     }
-
 
     @Composable
     fun ParticipantCard(
         participant: Participant,
         videoViewLayout: VideoViewLayout,
         size: Size,
-        onClick: (() -> Unit)? = null
+        onClick: (() -> Unit)? = null,
     ) {
         Box(
             modifier = Modifier
                 .clickable(
                     indication = null,
-                    interactionSource = remember { MutableInteractionSource() }
+                    interactionSource = remember { MutableInteractionSource() },
                 ) {
                     onClick?.invoke()
                 }
                 .clip(RoundedCornerShape(10.dp))
                 .height(size.height.dp)
-                .width(size.width.dp)
+                .width(size.width.dp),
         ) {
             ParticipantVideoView(
                 participant = participant,
@@ -137,7 +135,7 @@ class RoomActivity : ComponentActivity() {
                 modifier = Modifier
                     .align(Alignment.Center)
                     .fillMaxWidth()
-                    .fillMaxHeight()
+                    .fillMaxHeight(),
             )
         }
     }
