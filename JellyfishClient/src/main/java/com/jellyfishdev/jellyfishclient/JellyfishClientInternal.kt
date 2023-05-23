@@ -52,7 +52,7 @@ internal class JellyfishClientInternal(
                         } else {
                             Timber.w("Received unexpected websocket message: $peerMessage")
                         }
-                    } catch(e: Exception) {
+                    } catch (e: Exception) {
                         Timber.e("Received invalid websocket message", e)
                     }
                 }
