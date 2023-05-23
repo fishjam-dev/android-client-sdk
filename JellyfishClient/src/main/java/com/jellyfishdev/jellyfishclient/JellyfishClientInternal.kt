@@ -54,7 +54,9 @@ internal class JellyfishClientInternal(
                             receiveEvent(event)
                         }
 
-                        else -> {}
+                        else -> {
+                            Timber.w("Received invalid websocket event: $text")
+                        }
                     }
                 }
 

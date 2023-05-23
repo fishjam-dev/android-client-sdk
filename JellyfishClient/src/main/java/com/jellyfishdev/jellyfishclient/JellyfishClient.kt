@@ -49,7 +49,7 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
     /**
      * Tries to join the room. If user is accepted then {@link JellyfishClient.onJoinSuccess} will be called.
      * In other case {@link JellyfishClient.onJoinError} is invoked.
-     * <p>
+     *
      * @param peerMetadata - Any information that other peers will receive in onPeerJoined
      * after accepting this peer
      */
@@ -59,7 +59,7 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
 
     /**
      * Creates a video track utilizing device's camera.
-     * <p>
+     *
      * The client assumes that the user has already granted camera permissions.
      *
      * @param videoParameters a set of target parameters such as camera resolution, frame rate or simulcast configuration
@@ -78,7 +78,7 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
 
     /**
      * Creates an audio track utilizing device's microphone.
-     * <p>
+     *
      * The client assumes that the user has already granted microphone recording permissions.
      *
      * @param metadata the metadata that will be sent to the <strong>Membrane RTC Engine</strong> for media negotiation
@@ -90,7 +90,7 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
 
     /**
      * Creates a screen track recording the entire device's screen.
-     * <p>
+     *
      * The method requires a media projection permission to be able to start the recording. The client assumes that the intent is valid.
      *
      * @param mediaProjectionPermission a valid media projection permission intent that can be used to starting a screen capture
