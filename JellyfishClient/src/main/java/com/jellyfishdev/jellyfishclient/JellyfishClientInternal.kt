@@ -1,12 +1,15 @@
 package com.jellyfishdev.jellyfishclient
 
 import android.content.Context
-import com.google.gson.Gson
+import jellyfish.PeerNotifications.PeerMessage
+import jellyfish.PeerNotifications.PeerMessage.MediaEvent
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
 import okhttp3.WebSocket
 import okhttp3.WebSocketListener
+import okio.ByteString
+import okio.ByteString.Companion.toByteString
 import org.membraneframework.rtc.BuildConfig
 import org.membraneframework.rtc.MembraneRTC
 import org.membraneframework.rtc.MembraneRTCListener
@@ -23,7 +26,6 @@ internal class JellyfishClientInternal(
     MembraneRTCListener {
     private var webSocket: WebSocket? = null
     val webrtcClient = MembraneRTC.create(appContext, this)
-    private val gson = Gson()
 
     init {
         if (BuildConfig.DEBUG) {
@@ -40,29 +42,28 @@ internal class JellyfishClientInternal(
                     listener.onSocketClose(code, reason)
                 }
 
-                override fun onMessage(webSocket: WebSocket, text: String) {
-                    when (val event = ReceivableEvent.decode(text)) {
-                        is AuthenticatedEvent -> {
+                override fun onMessage(webSocket: WebSocket, bytes: ByteString) {
+                    try {
+                        val peerMessage = PeerMessage.parseFrom(bytes.toByteArray())
+                        if (peerMessage.hasAuthenticated()) {
                             listener.onAuthSuccess()
+                        } else if (peerMessage.hasMediaEvent()) {
+                            receiveEvent(peerMessage.mediaEvent.data)
+                        } else {
+                            Timber.w("Received unexpected websocket message: $peerMessage")
                         }
-
-                        is UnauthenticatedEvent -> {
-                            listener.onAuthError()
-                        }
-
-                        is ReceivableMediaEvent -> {
-                            receiveEvent(event)
-                        }
-
-                        else -> {
-                            Timber.w("Received invalid websocket event: $text")
-                        }
+                    } catch(e: Exception) {
+                        Timber.e("Received invalid websocket message", e)
                     }
                 }
 
                 override fun onOpen(webSocket: WebSocket, response: Response) {
                     listener.onSocketOpen()
-                    sendEvent(AuthRequest(config.token))
+                    val authRequest = PeerMessage
+                        .newBuilder()
+                        .setAuthRequest(PeerMessage.AuthRequest.newBuilder().setToken(config.token))
+                        .build()
+                    sendEvent(authRequest)
                 }
 
                 override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
@@ -85,12 +86,12 @@ internal class JellyfishClientInternal(
         listener.onDisconnected()
     }
 
-    private fun sendEvent(event: SendableEvent) {
-        webSocket?.send(gson.toJson(event))
+    private fun sendEvent(peerMessage: PeerMessage) {
+        webSocket?.send(peerMessage.toByteArray().toByteString())
     }
 
-    private fun receiveEvent(event: ReceivableMediaEvent) {
-        webrtcClient.receiveMediaEvent(event.data)
+    private fun receiveEvent(event: SerializedMediaEvent) {
+        webrtcClient.receiveMediaEvent(event)
     }
 
     override fun onJoinError(metadata: Any) {
@@ -114,7 +115,11 @@ internal class JellyfishClientInternal(
     }
 
     override fun onSendMediaEvent(event: SerializedMediaEvent) {
-        sendEvent(SendableMediaEvent(event))
+        val mediaEvent = PeerMessage
+            .newBuilder()
+            .setMediaEvent(MediaEvent.newBuilder().setData(event))
+            .build()
+        sendEvent(mediaEvent)
     }
 
     override fun onTrackAdded(ctx: TrackContext) {
