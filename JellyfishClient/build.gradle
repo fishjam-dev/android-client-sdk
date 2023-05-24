@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id "org.jetbrains.dokka"
     id 'org.jmailen.kotlinter'
+    id "com.google.protobuf" version "0.9.3"
 }
 
 android {
@@ -63,6 +64,6 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     api 'com.github.jellyfish-dev:membrane-webrtc-android:jellyfish-SNAPSHOT'
     implementation 'com.squareup.okhttp3:okhttp:4.10.0'
-    implementation 'com.google.code.gson:gson:2.9.0'
     implementation 'com.jakewharton.timber:timber:5.0.1'
+    implementation 'com.google.protobuf:protobuf-kotlin:3.23.1'
 }
