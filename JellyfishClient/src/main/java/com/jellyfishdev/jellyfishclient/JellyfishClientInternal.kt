@@ -1,6 +1,7 @@
 package com.jellyfishdev.jellyfishclient
 
 import android.content.Context
+import android.util.Log
 import jellyfish.PeerNotifications.PeerMessage
 import jellyfish.PeerNotifications.PeerMessage.MediaEvent
 import okhttp3.OkHttpClient
@@ -13,7 +14,7 @@ import okio.ByteString.Companion.toByteString
 import org.membraneframework.rtc.BuildConfig
 import org.membraneframework.rtc.MembraneRTC
 import org.membraneframework.rtc.MembraneRTCListener
-import org.membraneframework.rtc.models.Peer
+import org.membraneframework.rtc.models.Endpoint
 import org.membraneframework.rtc.models.TrackContext
 import org.membraneframework.rtc.utils.SerializedMediaEvent
 import org.membraneframework.rtc.utils.TimberDebugTree
@@ -94,24 +95,16 @@ internal class JellyfishClientInternal(
         webrtcClient.receiveMediaEvent(event)
     }
 
-    override fun onJoinError(metadata: Any) {
-        listener.onJoinError(metadata)
+    override fun onEndpointAdded(endpoint: Endpoint) {
+        listener.onEndpointAdded(endpoint)
     }
 
-    override fun onJoinSuccess(peerID: String, peersInRoom: List<Peer>) {
-        listener.onJoinSuccess(peerID, peersInRoom)
+    override fun onEndpointRemoved(endpoint: Endpoint) {
+        listener.onEndpointRemoved(endpoint)
     }
 
-    override fun onPeerJoined(peer: Peer) {
-        listener.onPeerJoined(peer)
-    }
-
-    override fun onPeerLeft(peer: Peer) {
-        listener.onPeerLeft(peer)
-    }
-
-    override fun onPeerUpdated(peer: Peer) {
-        listener.onPeerUpdated(peer)
+    override fun onEndpointUpdated(endpoint: Endpoint) {
+        listener.onEndpointUpdated(endpoint)
     }
 
     override fun onSendMediaEvent(event: SerializedMediaEvent) {
@@ -138,11 +131,19 @@ internal class JellyfishClientInternal(
         listener.onTrackUpdated(ctx)
     }
 
-    override fun onRemoved(reason: String) {
-        listener.onRemoved(reason)
-    }
-
     override fun onBandwidthEstimationChanged(estimation: Long) {
         listener.onBandwidthEstimationChanged(estimation)
+    }
+
+    override fun onConnectError(metadata: Any) {
+    }
+
+    override fun onConnected(endpointID: String, otherEndpoints: List<Endpoint>) {
+        Log.e("KAROL", "onConnected")
+        listener.onConnected(endpointID, otherEndpoints)
+    }
+
+    override fun onDisconnected() {
+        Log.e("KAROL", "disconnected")
     }
 }

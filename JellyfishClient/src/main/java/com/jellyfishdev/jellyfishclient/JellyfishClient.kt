@@ -30,6 +30,17 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
     }
 
     /**
+     * Tries to join the room. If user is accepted then {@link JellyfishClient.onJoinSuccess} will be called.
+     * In other case {@link JellyfishClient.onJoinError} is invoked.
+     *
+     * @param peerMetadata - Any information that other peers will receive in onPeerJoined
+     * after accepting this peer
+     */
+    fun join(peerMetadata: Metadata = emptyMap()) {
+        client.webrtcClient.connect(peerMetadata)
+    }
+
+    /**
      * Leaves the room. This function should be called when user leaves the room in a clean way e.g. by clicking a
      * dedicated, custom button `disconnect`. As a result there will be generated one more media event that should be sent
      * to the RTC Engine. Thanks to it each other peer will be notified that peer left in {@link MessageEvents.onPeerLeft},
@@ -44,17 +55,6 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
      */
     fun cleanUp() {
         client.cleanUp()
-    }
-
-    /**
-     * Tries to join the room. If user is accepted then {@link JellyfishClient.onJoinSuccess} will be called.
-     * In other case {@link JellyfishClient.onJoinError} is invoked.
-     *
-     * @param peerMetadata - Any information that other peers will receive in onPeerJoined
-     * after accepting this peer
-     */
-    fun join(peerMetadata: Metadata = emptyMap()) {
-        client.webrtcClient.join(peerMetadata)
     }
 
     /**
@@ -155,17 +155,6 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
      */
     fun disableTrackEncoding(trackId: String, encoding: TrackEncoding) {
         client.webrtcClient.disableTrackEncoding(trackId, encoding)
-    }
-
-    /**
-     * Updates the metadata for the current peer.
-     * @param peerMetadata Data about this peer that other peers will receive upon joining.
-     *
-     * If the metadata is different from what is already tracked in the room, the optional
-     * callback `onPeerUpdated` will be triggered for other peers in the room.
-     */
-    fun updatePeerMetadata(peerMetadata: Metadata) {
-        client.webrtcClient.updatePeerMetadata(peerMetadata)
     }
 
     /**

@@ -24,7 +24,7 @@ android {
         if(project.hasProperty("JELLYFISH_SOCKET_URL")) {
             buildConfigField "String", "JELLYFISH_SOCKET_URL", "\"$JELLYFISH_SOCKET_URL\""
         } else {
-            buildConfigField "String" , "JELLYFISH_SOCKET_URL" ,  "\"ws://localhost:4000/socket/peer/websocket\""
+            buildConfigField "String" , "JELLYFISH_SOCKET_URL" ,  "\"ws://192.168.81.230:4000/socket/peer/websocket\""
         }
     }
 

@@ -1,7 +1,7 @@
 package com.jellyfishdev.jellyfishclient
 
 import okhttp3.Response
-import org.membraneframework.rtc.models.Peer
+import org.membraneframework.rtc.models.Endpoint
 import org.membraneframework.rtc.models.TrackContext
 import timber.log.Timber
 
@@ -37,23 +37,14 @@ interface JellyfishClientListener {
      */
     fun onAuthError()
 
+    fun onConnected(endpointID: String, otherEndpoints: List<Endpoint>)
+
     /**
      * Emitted when the connection is closed
      */
     fun onDisconnected() {
         Timber.i("Client disconnected")
     }
-
-    /**
-     * Called when peer was accepted.
-     */
-    fun onJoinSuccess(peerID: String, peersInRoom: List<Peer>)
-
-    /**
-     * Called when peer was not accepted
-     * @param metadata - Pass thru for client application to communicate further actions to frontend
-     */
-    fun onJoinError(metadata: Any)
 
     /**
      * Called every time a local peer is removed by the server.
@@ -63,19 +54,17 @@ interface JellyfishClientListener {
     /**
      * Called each time new peer joins the room.
      */
-    fun onPeerJoined(peer: Peer)
+    fun onEndpointAdded(endpoint: Endpoint)
 
     /**
      * Called each time peer leaves the room.
      */
-    fun onPeerLeft(peer: Peer)
+    fun onEndpointRemoved(endpoint: Endpoint)
 
     /**
      * Called each time peer has its metadata updated.
      */
-    fun onPeerUpdated(peer: Peer) {
-        Timber.i("Peer ${peer.id} updated")
-    }
+    fun onEndpointUpdated(endpoint: Endpoint)
 
     /**
      * Called when data in a new track arrives.
