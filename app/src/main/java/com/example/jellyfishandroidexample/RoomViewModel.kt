@@ -62,7 +62,7 @@ class RoomViewModel(application: Application) :
 
     override fun onAuthError() {}
 
-    override fun onConnected(peerID: String, peersInRoom: List<Endpoint>) {
+    override fun onJoined(peerID: String, peersInRoom: List<Endpoint>) {
         peersInRoom.forEach {
             mutableParticipants[it.id] = Participant(
                 it.id,
@@ -71,7 +71,7 @@ class RoomViewModel(application: Application) :
         emitParticipants()
     }
 
-    override fun onConnectError(metadata: Any) {
+    override fun onJoinError(metadata: Any) {
     }
 
     override fun onPeerJoined(peer: Endpoint) {

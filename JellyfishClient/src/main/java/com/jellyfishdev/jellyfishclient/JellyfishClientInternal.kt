@@ -19,6 +19,8 @@ import org.membraneframework.rtc.utils.SerializedMediaEvent
 import org.membraneframework.rtc.utils.TimberDebugTree
 import timber.log.Timber
 
+typealias Peer = Endpoint
+
 internal class JellyfishClientInternal(
     appContext: Context,
     private val listener: JellyfishClientListener,
@@ -94,16 +96,16 @@ internal class JellyfishClientInternal(
         webrtcClient.receiveMediaEvent(event)
     }
 
-    override fun onEndpointAdded(endpoint: Endpoint) {
-        listener.onPeerJoined(endpoint)
+    override fun onEndpointAdded(peer: Peer) {
+        listener.onPeerJoined(peer)
     }
 
-    override fun onEndpointRemoved(endpoint: Endpoint) {
-        listener.onPeerLeft(endpoint)
+    override fun onEndpointRemoved(peer: Peer) {
+        listener.onPeerLeft(peer)
     }
 
-    override fun onEndpointUpdated(endpoint: Endpoint) {
-        listener.onPeerUpdated(endpoint)
+    override fun onEndpointUpdated(peer: Peer) {
+        listener.onPeerUpdated(peer)
     }
 
     override fun onSendMediaEvent(event: SerializedMediaEvent) {
@@ -135,11 +137,11 @@ internal class JellyfishClientInternal(
     }
 
     override fun onConnectError(metadata: Any) {
-        listener.onConnectError(metadata)
+        listener.onJoinError(metadata)
     }
 
-    override fun onConnected(endpointID: String, otherEndpoints: List<Endpoint>) {
-        listener.onConnected(endpointID, otherEndpoints)
+    override fun onConnected(peerID: String, peersInRoom: List<Peer>) {
+        listener.onJoined(peerID, peersInRoom)
     }
 
     override fun onDisconnected() {

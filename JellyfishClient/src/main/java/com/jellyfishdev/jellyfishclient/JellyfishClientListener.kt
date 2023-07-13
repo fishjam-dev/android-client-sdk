@@ -1,7 +1,6 @@
 package com.jellyfishdev.jellyfishclient
 
 import okhttp3.Response
-import org.membraneframework.rtc.models.Endpoint
 import org.membraneframework.rtc.models.TrackContext
 import timber.log.Timber
 
@@ -40,12 +39,12 @@ interface JellyfishClientListener {
     /**
      * Emitted when local user is connected to jellyfish.
      */
-    fun onConnected(peerID: String, peersInRoom: List<Endpoint>)
+    fun onJoined(peerID: String, peersInRoom: List<Peer>)
 
     /**
      * Emitted when there was an error while connecting to the jellyfish.
      */
-    fun onConnectError(metadata: Any)
+    fun onJoinError(metadata: Any)
 
     /**
      * Emitted when the connection is closed
@@ -57,17 +56,17 @@ interface JellyfishClientListener {
     /**
      * Called each time new peer joins the room.
      */
-    fun onPeerJoined(peer: Endpoint)
+    fun onPeerJoined(peer: Peer)
 
     /**
      * Called each time peer leaves the room.
      */
-    fun onPeerLeft(peer: Endpoint)
+    fun onPeerLeft(peer: Peer)
 
     /**
      * Called each time peer has its metadata updated.
      */
-    fun onPeerUpdated(peer: Endpoint)
+    fun onPeerUpdated(peer: Peer)
 
     /**
      * Called when data in a new track arrives.
