@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.jellyfishdev.jellyfishclient.Config
+import com.jellyfishdev.jellyfishclient.Peer
 import com.jellyfishdev.jellyfishclient.JellyfishClient
 import com.jellyfishdev.jellyfishclient.JellyfishClientListener
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -12,7 +13,6 @@ import org.membraneframework.rtc.SimulcastConfig
 import org.membraneframework.rtc.media.LocalVideoTrack
 import org.membraneframework.rtc.media.RemoteVideoTrack
 import org.membraneframework.rtc.media.VideoParameters
-import org.membraneframework.rtc.models.Endpoint
 import org.membraneframework.rtc.models.TrackContext
 
 class RoomViewModel(application: Application) :
@@ -62,7 +62,7 @@ class RoomViewModel(application: Application) :
 
     override fun onAuthError() {}
 
-    override fun onJoined(peerID: String, peersInRoom: List<Endpoint>) {
+    override fun onJoined(peerID: String, peersInRoom: List<Peer>) {
         peersInRoom.forEach {
             mutableParticipants[it.id] = Participant(
                 it.id,
@@ -74,19 +74,19 @@ class RoomViewModel(application: Application) :
     override fun onJoinError(metadata: Any) {
     }
 
-    override fun onPeerJoined(peer: Endpoint) {
+    override fun onPeerJoined(peer: Peer) {
         mutableParticipants[peer.id] = Participant(
             id = peer.id,
         )
         emitParticipants()
     }
 
-    override fun onPeerLeft(peer: Endpoint) {
+    override fun onPeerLeft(peer: Peer) {
         mutableParticipants.remove(peer.id)
         emitParticipants()
     }
 
-    override fun onPeerUpdated(peer: Endpoint) {}
+    override fun onPeerUpdated(peer: Peer) {}
 
     override fun onTrackReady(ctx: TrackContext) {
         viewModelScope.launch {
