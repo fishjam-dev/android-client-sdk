@@ -1,7 +1,6 @@
 package com.example.jellyfishandroidexample
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.jellyfishdev.jellyfishclient.Config
@@ -34,7 +33,7 @@ class RoomViewModel(application: Application) :
         client.connect(
             Config(
                 websocketUrl = BuildConfig.JELLYFISH_SOCKET_URL,
-                token = "SFMyNTY.g2gDdAAAAAJkAAdwZWVyX2lkbQAAACRjODU4NzkwMS1jNzg0LTRmZWMtYjg4MC03ZjU3YjEwZjM4MjVkAAdyb29tX2lkbQAAACRmM2U2ZDI1OS03NWIyLTRkODEtOTQ1MS1iNTUyNjkyYTYyMDBuBgCdakpKiQFiAAFRgA.C4mIsGZ41oUOxq1UXFVXjRqvGIrVk42Ij2khN3XZ8NQ",
+                token = roomToken
             ),
         )
         setupTracks()
@@ -58,17 +57,13 @@ class RoomViewModel(application: Application) :
     }
 
     override fun onAuthSuccess() {
-        Log.e("KAROL", "xXXXD")
         client.join()
     }
 
-    override fun onAuthError() {
-        Log.e("KAROL", "xD")
-    }
+    override fun onAuthError() {}
 
-    override fun onConnected(peerID: String, peersInRoom: List<Endpoint>) {
-        Log.e("KAROL", "connected")
-        peersInRoom.forEach {
+    override fun onConnected(endpointID: String, endpointsInRoom: List<Endpoint>) {
+        endpointsInRoom.forEach {
             mutableParticipants[it.id] = Participant(
                 it.id,
             )
@@ -76,11 +71,14 @@ class RoomViewModel(application: Application) :
         emitParticipants()
     }
 
+    override fun onConnectError(metadata: Any) {
+
+    }
+
     override fun onRemoved(reason: String) {
     }
 
     override fun onEndpointAdded(endpoint: Endpoint) {
-        Log.e("KAROL", "added")
         mutableParticipants[endpoint.id] = Participant(
             id = endpoint.id,
         )
@@ -88,20 +86,13 @@ class RoomViewModel(application: Application) :
     }
 
     override fun onEndpointRemoved(endpoint: Endpoint) {
-        Log.e("KAROL", "removed")
-
         mutableParticipants.remove(endpoint.id)
         emitParticipants()
     }
 
-    override fun onEndpointUpdated(endpoint: Endpoint) {
-        Log.e("KAROL", "updated")
-
-    }
+    override fun onEndpointUpdated(endpoint: Endpoint) {}
 
     override fun onTrackReady(ctx: TrackContext) {
-        Log.e("KAROL", "track ready")
-
         viewModelScope.launch {
             val participant = mutableParticipants[ctx.endpoint.id] ?: return@launch
 
@@ -124,8 +115,6 @@ class RoomViewModel(application: Application) :
     }
 
     override fun onTrackRemoved(ctx: TrackContext) {
-        Log.e("KAROL", "track removed")
-
         viewModelScope.launch {
             val participant = mutableParticipants[ctx.endpoint.id] ?: return@launch
 
@@ -135,7 +124,7 @@ class RoomViewModel(application: Application) :
             val newParticipant = if (localTrackId == videoTrackId) {
                 participant.copy(videoTrack = null)
             } else {
-                throw IllegalArgumentException("track has not been found for given peer")
+                throw IllegalArgumentException("track has not been found for given endpoint")
             }
 
             globalToLocalTrackId.remove(ctx.trackId)
@@ -147,8 +136,6 @@ class RoomViewModel(application: Application) :
     }
 
     private fun emitParticipants() {
-        Log.e("KAROL", "emit")
-
         participants.value =
             mutableParticipants.values.filter { p -> p.videoTrack != null }.toList()
     }

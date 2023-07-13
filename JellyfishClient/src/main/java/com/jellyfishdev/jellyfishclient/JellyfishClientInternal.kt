@@ -136,6 +136,7 @@ internal class JellyfishClientInternal(
     }
 
     override fun onConnectError(metadata: Any) {
+        listener.onConnectError(metadata)
     }
 
     override fun onConnected(endpointID: String, otherEndpoints: List<Endpoint>) {

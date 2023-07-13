@@ -37,7 +37,15 @@ interface JellyfishClientListener {
      */
     fun onAuthError()
 
+    /**
+     * Emitted when local user is connected to jellyfish.
+     */
     fun onConnected(endpointID: String, otherEndpoints: List<Endpoint>)
+
+    /**
+     * Emitted when there was an error while connecting to the jellyfish=.
+     */
+    fun onConnectError(metadata: Any)
 
     /**
      * Emitted when the connection is closed
@@ -47,22 +55,22 @@ interface JellyfishClientListener {
     }
 
     /**
-     * Called every time a local peer is removed by the server.
+     * Called every time a local endpoint is removed by the server.
      */
     fun onRemoved(reason: String)
 
     /**
-     * Called each time new peer joins the room.
+     * Called each time new endpoint joins the room.
      */
     fun onEndpointAdded(endpoint: Endpoint)
 
     /**
-     * Called each time peer leaves the room.
+     * Called each time endpoint leaves the room.
      */
     fun onEndpointRemoved(endpoint: Endpoint)
 
     /**
-     * Called each time peer has its metadata updated.
+     * Called each time endpoint has its metadata updated.
      */
     fun onEndpointUpdated(endpoint: Endpoint)
 
@@ -75,7 +83,7 @@ interface JellyfishClientListener {
     fun onTrackReady(ctx: TrackContext)
 
     /**
-     * Called each time the peer which was already in the room, adds new track. Fields track and stream will be set to null.
+     * Called each time the endpoint which was already in the room, adds new track. Fields track and stream will be set to null.
      * These fields will be set to non-null value in {@link JellyfishClientListener.onTrackReady}
      */
     fun onTrackAdded(ctx: TrackContext) {
@@ -85,12 +93,12 @@ interface JellyfishClientListener {
     /**
      * Called when some track will no longer be sent.
      *
-     * It will also be called before {@link JellyfishClientListener.onPeerLeft} for each track of this peer.
+     * It will also be called before {@link JellyfishClientListener.onEndpointRemoved} for each track of this endpoint.
      */
     fun onTrackRemoved(ctx: TrackContext)
 
     /**
-     * Called each time peer has its track metadata updated.
+     * Called each time endpoint has its track metadata updated.
      */
     fun onTrackUpdated(ctx: TrackContext) {
         Timber.i("Track ${ctx.trackId} updated")
