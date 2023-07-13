@@ -87,7 +87,7 @@ interface JellyfishClientListener {
     /**
      * Called when some track will no longer be sent.
      *
-     * It will also be called before {@link JellyfishClientListener.onPeerLeft for each track of this peer.
+     * It will also be called before {@link JellyfishClientListener.onPeerLeft} for each track of this peer.
      */
     fun onTrackRemoved(ctx: TrackContext)
 
