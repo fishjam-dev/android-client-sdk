@@ -33,7 +33,7 @@ class RoomViewModel(application: Application) :
         client.connect(
             Config(
                 websocketUrl = BuildConfig.JELLYFISH_SOCKET_URL,
-                token = roomToken
+                token = roomToken,
             ),
         )
         setupTracks()
@@ -72,7 +72,6 @@ class RoomViewModel(application: Application) :
     }
 
     override fun onConnectError(metadata: Any) {
-
     }
 
     override fun onRemoved(reason: String) {
