@@ -33,7 +33,7 @@ class RoomViewModel(application: Application) :
         client.connect(
             Config(
                 websocketUrl = BuildConfig.JELLYFISH_SOCKET_URL,
-                token = "SFMyNTY.g2gDdAAAAAJkAAdwZWVyX2lkbQAAACQ3M2NjNDMyYy0zZTc0LTQ1OTktODMyOS01MDA1YTkwYTlhMjJkAAdyb29tX2lkbQAAACRmZjhjMjM4Mi03NGQ3LTQyZTktODc0Yy1kMWI0ZmQ5ZTJjYWNuBgDFBgNOiQFiAAFRgA.s8touysetbkGPxpnVliAQl_qNcCjWHs0Hqb_L_P8yD8",
+                token = roomToken,
             ),
         )
         setupTracks()

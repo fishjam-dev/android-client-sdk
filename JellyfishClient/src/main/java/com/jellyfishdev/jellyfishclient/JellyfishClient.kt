@@ -32,7 +32,7 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
     /**
      * Leaves the room. This function should be called when user leaves the room in a clean way e.g. by clicking a
      * dedicated, custom button `disconnect`. As a result there will be generated one more media event that should be sent
-     * to the RTC Engine. Thanks to it each other peer will be notified that peer is removed in {@link MessageEvents.onPeerLeft},
+     * to the RTC Engine. Thanks to it each other peer will be notified that peer left in {@link MessageEvents.onPeerLeft},
      */
     fun leave() {
         client.leave()
