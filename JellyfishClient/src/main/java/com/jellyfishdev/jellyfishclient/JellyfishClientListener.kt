@@ -55,11 +55,6 @@ interface JellyfishClientListener {
     }
 
     /**
-     * Called every time a local endpoint is removed by the server.
-     */
-    fun onRemoved(reason: String)
-
-    /**
      * Called each time new endpoint joins the room.
      */
     fun onEndpointAdded(endpoint: Endpoint)

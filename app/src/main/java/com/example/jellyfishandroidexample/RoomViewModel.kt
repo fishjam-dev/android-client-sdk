@@ -74,9 +74,6 @@ class RoomViewModel(application: Application) :
     override fun onConnectError(metadata: Any) {
     }
 
-    override fun onRemoved(reason: String) {
-    }
-
     override fun onEndpointAdded(endpoint: Endpoint) {
         mutableParticipants[endpoint.id] = Participant(
             id = endpoint.id,
