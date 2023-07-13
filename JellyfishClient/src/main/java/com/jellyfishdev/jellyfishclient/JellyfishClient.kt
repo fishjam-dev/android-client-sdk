@@ -39,22 +39,22 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
     }
 
     /**
-     * Disconnect from the room, and close the websocket connection. Tries to leave the room gracefully, but if it fails,
-     * it will close the websocket anyway.
-     */
-    fun cleanUp() {
-        client.cleanUp()
-    }
-
-    /**
-     * Tries to join the room. If user is accepted then {@link JellyfishClient.onJoinSuccess} will be called.
-     * In other case {@link JellyfishClient.onJoinError} is invoked.
+     * Tries to join the room. If user is accepted then {@link JellyfishClient.onConnected} will be called.
+     * In other case {@link JellyfishClient.onConnectError} is invoked.
      *
      * @param peerMetadata - Any information that other peers will receive in onPeerJoined
      * after accepting this peer
      */
     fun join(peerMetadata: Metadata = emptyMap()) {
-        client.webrtcClient.join(peerMetadata)
+        client.webrtcClient.connect(peerMetadata)
+    }
+
+    /**
+     * Disconnect from the room, and close the websocket connection. Tries to leave the room gracefully, but if it fails,
+     * it will close the websocket anyway.
+     */
+    fun cleanUp() {
+        client.cleanUp()
     }
 
     /**
@@ -158,14 +158,14 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
     }
 
     /**
-     * Updates the metadata for the current peer.
+     * Updates the metadata for the local peer.
      * @param peerMetadata Data about this peer that other peers will receive upon joining.
      *
      * If the metadata is different from what is already tracked in the room, the optional
      * callback `onPeerUpdated` will be triggered for other peers in the room.
      */
     fun updatePeerMetadata(peerMetadata: Metadata) {
-        client.webrtcClient.updatePeerMetadata(peerMetadata)
+        client.webrtcClient.updateEndpointMetadata(peerMetadata)
     }
 
     /**

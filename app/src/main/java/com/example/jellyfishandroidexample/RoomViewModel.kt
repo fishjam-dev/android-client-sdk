@@ -6,13 +6,13 @@ import androidx.lifecycle.viewModelScope
 import com.jellyfishdev.jellyfishclient.Config
 import com.jellyfishdev.jellyfishclient.JellyfishClient
 import com.jellyfishdev.jellyfishclient.JellyfishClientListener
+import com.jellyfishdev.jellyfishclient.Peer
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import org.membraneframework.rtc.SimulcastConfig
 import org.membraneframework.rtc.media.LocalVideoTrack
 import org.membraneframework.rtc.media.RemoteVideoTrack
 import org.membraneframework.rtc.media.VideoParameters
-import org.membraneframework.rtc.models.Peer
 import org.membraneframework.rtc.models.TrackContext
 
 class RoomViewModel(application: Application) :
@@ -60,10 +60,9 @@ class RoomViewModel(application: Application) :
         client.join()
     }
 
-    override fun onAuthError() {
-    }
+    override fun onAuthError() {}
 
-    override fun onJoinSuccess(peerID: String, peersInRoom: List<Peer>) {
+    override fun onJoined(peerID: String, peersInRoom: List<Peer>) {
         peersInRoom.forEach {
             mutableParticipants[it.id] = Participant(
                 it.id,
@@ -73,9 +72,6 @@ class RoomViewModel(application: Application) :
     }
 
     override fun onJoinError(metadata: Any) {
-    }
-
-    override fun onRemoved(reason: String) {
     }
 
     override fun onPeerJoined(peer: Peer) {
@@ -90,16 +86,18 @@ class RoomViewModel(application: Application) :
         emitParticipants()
     }
 
+    override fun onPeerUpdated(peer: Peer) {}
+
     override fun onTrackReady(ctx: TrackContext) {
         viewModelScope.launch {
-            val participant = mutableParticipants[ctx.peer.id] ?: return@launch
+            val participant = mutableParticipants[ctx.endpoint.id] ?: return@launch
 
             val (id, newParticipant) = when (ctx.track) {
                 is RemoteVideoTrack -> {
                     globalToLocalTrackId[ctx.trackId] = (ctx.track as RemoteVideoTrack).id()
 
                     val p = participant.copy(videoTrack = ctx.track as RemoteVideoTrack)
-                    Pair(ctx.peer.id, p)
+                    Pair(ctx.endpoint.id, p)
                 }
 
                 else ->
@@ -114,7 +112,7 @@ class RoomViewModel(application: Application) :
 
     override fun onTrackRemoved(ctx: TrackContext) {
         viewModelScope.launch {
-            val participant = mutableParticipants[ctx.peer.id] ?: return@launch
+            val participant = mutableParticipants[ctx.endpoint.id] ?: return@launch
 
             val localTrackId = globalToLocalTrackId[ctx.trackId]
             val videoTrackId = participant.videoTrack?.id()
@@ -122,12 +120,12 @@ class RoomViewModel(application: Application) :
             val newParticipant = if (localTrackId == videoTrackId) {
                 participant.copy(videoTrack = null)
             } else {
-                throw IllegalArgumentException("track has not been found for given peer")
+                throw IllegalArgumentException("track has not been found for given endpoint")
             }
 
             globalToLocalTrackId.remove(ctx.trackId)
 
-            mutableParticipants[ctx.peer.id] = newParticipant
+            mutableParticipants[ctx.endpoint.id] = newParticipant
 
             emitParticipants()
         }

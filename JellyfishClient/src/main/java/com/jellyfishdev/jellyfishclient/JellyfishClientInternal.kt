@@ -13,11 +13,13 @@ import okio.ByteString.Companion.toByteString
 import org.membraneframework.rtc.BuildConfig
 import org.membraneframework.rtc.MembraneRTC
 import org.membraneframework.rtc.MembraneRTCListener
-import org.membraneframework.rtc.models.Peer
+import org.membraneframework.rtc.models.Endpoint
 import org.membraneframework.rtc.models.TrackContext
 import org.membraneframework.rtc.utils.SerializedMediaEvent
 import org.membraneframework.rtc.utils.TimberDebugTree
 import timber.log.Timber
+
+typealias Peer = Endpoint
 
 internal class JellyfishClientInternal(
     appContext: Context,
@@ -94,23 +96,15 @@ internal class JellyfishClientInternal(
         webrtcClient.receiveMediaEvent(event)
     }
 
-    override fun onJoinError(metadata: Any) {
-        listener.onJoinError(metadata)
-    }
-
-    override fun onJoinSuccess(peerID: String, peersInRoom: List<Peer>) {
-        listener.onJoinSuccess(peerID, peersInRoom)
-    }
-
-    override fun onPeerJoined(peer: Peer) {
+    override fun onEndpointAdded(peer: Peer) {
         listener.onPeerJoined(peer)
     }
 
-    override fun onPeerLeft(peer: Peer) {
+    override fun onEndpointRemoved(peer: Peer) {
         listener.onPeerLeft(peer)
     }
 
-    override fun onPeerUpdated(peer: Peer) {
+    override fun onEndpointUpdated(peer: Peer) {
         listener.onPeerUpdated(peer)
     }
 
@@ -138,11 +132,19 @@ internal class JellyfishClientInternal(
         listener.onTrackUpdated(ctx)
     }
 
-    override fun onRemoved(reason: String) {
-        listener.onRemoved(reason)
-    }
-
     override fun onBandwidthEstimationChanged(estimation: Long) {
         listener.onBandwidthEstimationChanged(estimation)
+    }
+
+    override fun onConnectError(metadata: Any) {
+        listener.onJoinError(metadata)
+    }
+
+    override fun onConnected(peerID: String, peersInRoom: List<Peer>) {
+        listener.onJoined(peerID, peersInRoom)
+    }
+
+    override fun onDisconnected() {
+        listener.onDisconnected()
     }
 }
