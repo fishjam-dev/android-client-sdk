@@ -40,10 +40,10 @@ interface JellyfishClientListener {
     /**
      * Emitted when local user is connected to jellyfish.
      */
-    fun onConnected(endpointID: String, otherEndpoints: List<Endpoint>)
+    fun onConnected(peerID: String, peersInRoom: List<Endpoint>)
 
     /**
-     * Emitted when there was an error while connecting to the jellyfish=.
+     * Emitted when there was an error while connecting to the jellyfish.
      */
     fun onConnectError(metadata: Any)
 
@@ -55,19 +55,19 @@ interface JellyfishClientListener {
     }
 
     /**
-     * Called each time new endpoint joins the room.
+     * Called each time new peer joins the room.
      */
-    fun onEndpointAdded(endpoint: Endpoint)
+    fun onPeerJoined(peer: Endpoint)
 
     /**
-     * Called each time endpoint leaves the room.
+     * Called each time peer leaves the room.
      */
-    fun onEndpointRemoved(endpoint: Endpoint)
+    fun onPeerLeft(peer: Endpoint)
 
     /**
-     * Called each time endpoint has its metadata updated.
+     * Called each time peer has its metadata updated.
      */
-    fun onEndpointUpdated(endpoint: Endpoint)
+    fun onPeerUpdated(peer: Endpoint)
 
     /**
      * Called when data in a new track arrives.
@@ -78,7 +78,7 @@ interface JellyfishClientListener {
     fun onTrackReady(ctx: TrackContext)
 
     /**
-     * Called each time the endpoint which was already in the room, adds new track. Fields track and stream will be set to null.
+     * Called each time the peer which was already in the room, adds new track. Fields track and stream will be set to null.
      * These fields will be set to non-null value in {@link JellyfishClientListener.onTrackReady}
      */
     fun onTrackAdded(ctx: TrackContext) {
@@ -88,12 +88,12 @@ interface JellyfishClientListener {
     /**
      * Called when some track will no longer be sent.
      *
-     * It will also be called before {@link JellyfishClientListener.onEndpointRemoved} for each track of this endpoint.
+     * It will also be called before {@link JellyfishClientListener.onPeerLeft for each track of this peer.
      */
     fun onTrackRemoved(ctx: TrackContext)
 
     /**
-     * Called each time endpoint has its track metadata updated.
+     * Called each time peer has its track metadata updated.
      */
     fun onTrackUpdated(ctx: TrackContext) {
         Timber.i("Track ${ctx.trackId} updated")

@@ -33,7 +33,7 @@ class RoomViewModel(application: Application) :
         client.connect(
             Config(
                 websocketUrl = BuildConfig.JELLYFISH_SOCKET_URL,
-                token = roomToken,
+                token = "SFMyNTY.g2gDdAAAAAJkAAdwZWVyX2lkbQAAACQ3M2NjNDMyYy0zZTc0LTQ1OTktODMyOS01MDA1YTkwYTlhMjJkAAdyb29tX2lkbQAAACRmZjhjMjM4Mi03NGQ3LTQyZTktODc0Yy1kMWI0ZmQ5ZTJjYWNuBgDFBgNOiQFiAAFRgA.s8touysetbkGPxpnVliAQl_qNcCjWHs0Hqb_L_P8yD8",
             ),
         )
         setupTracks()
@@ -62,8 +62,8 @@ class RoomViewModel(application: Application) :
 
     override fun onAuthError() {}
 
-    override fun onConnected(endpointID: String, endpointsInRoom: List<Endpoint>) {
-        endpointsInRoom.forEach {
+    override fun onConnected(peerID: String, peersInRoom: List<Endpoint>) {
+        peersInRoom.forEach {
             mutableParticipants[it.id] = Participant(
                 it.id,
             )
@@ -74,19 +74,19 @@ class RoomViewModel(application: Application) :
     override fun onConnectError(metadata: Any) {
     }
 
-    override fun onEndpointAdded(endpoint: Endpoint) {
-        mutableParticipants[endpoint.id] = Participant(
-            id = endpoint.id,
+    override fun onPeerJoined(peer: Endpoint) {
+        mutableParticipants[peer.id] = Participant(
+            id = peer.id,
         )
         emitParticipants()
     }
 
-    override fun onEndpointRemoved(endpoint: Endpoint) {
-        mutableParticipants.remove(endpoint.id)
+    override fun onPeerLeft(peer: Endpoint) {
+        mutableParticipants.remove(peer.id)
         emitParticipants()
     }
 
-    override fun onEndpointUpdated(endpoint: Endpoint) {}
+    override fun onPeerUpdated(peer: Endpoint) {}
 
     override fun onTrackReady(ctx: TrackContext) {
         viewModelScope.launch {

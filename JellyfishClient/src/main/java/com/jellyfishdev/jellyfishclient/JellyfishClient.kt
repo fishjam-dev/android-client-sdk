@@ -32,7 +32,7 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
     /**
      * Leaves the room. This function should be called when user leaves the room in a clean way e.g. by clicking a
      * dedicated, custom button `disconnect`. As a result there will be generated one more media event that should be sent
-     * to the RTC Engine. Thanks to it each other endpoint will be notified that endpoint is removed in {@link MessageEvents.onEndpointRemoved},
+     * to the RTC Engine. Thanks to it each other peer will be notified that peer is removed in {@link MessageEvents.onPeerLeft},
      */
     fun leave() {
         client.leave()
@@ -42,11 +42,11 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
      * Tries to join the room. If user is accepted then {@link JellyfishClient.onConnected} will be called.
      * In other case {@link JellyfishClient.onConnectError} is invoked.
      *
-     * @param endpointMetadata - Any information that other endpoints will receive in onEndpointAdded
-     * after accepting this endpoint
+     * @param peerMetadata - Any information that other peers will receive in onPeerJoined
+     * after accepting this peer
      */
-    fun join(endpointMetadata: Metadata = emptyMap()) {
-        client.webrtcClient.connect(endpointMetadata)
+    fun join(peerMetadata: Metadata = emptyMap()) {
+        client.webrtcClient.connect(peerMetadata)
     }
 
     /**
@@ -158,23 +158,23 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
     }
 
     /**
-     * Updates the metadata for the local endpoint.
-     * @param endpointMetadata Data about this peer that other peers will receive upon joining.
+     * Updates the metadata for the local peer.
+     * @param peerMetadata Data about this peer that other peers will receive upon joining.
      *
      * If the metadata is different from what is already tracked in the room, the optional
      * callback `onPeerUpdated` will be triggered for other peers in the room.
      */
-    fun updateEndpointMetadata(endpointMetadata: Metadata) {
-        client.webrtcClient.updateEndpointMetadata(endpointMetadata)
+    fun updatePeerMetadata(peerMetadata: Metadata) {
+        client.webrtcClient.updateEndpointMetadata(peerMetadata)
     }
 
     /**
      * Updates the metadata for a specific track.
      * @param trackId local track id of audio or video track.
-     * @param trackMetadata Data about this track that other endpoints will receive upon joining.
+     * @param trackMetadata Data about this track that other peers will receive upon joining.
      *
      * If the metadata is different from what is already tracked in the room, the optional
-     * callback `onTrackUpdated` will be triggered for other endpoints in the room.
+     * callback `onTrackUpdated` will be triggered for other peers in the room.
      */
     fun updateTrackMetadata(trackId: String, trackMetadata: Metadata) {
         client.webrtcClient.updateTrackMetadata(trackId, trackMetadata)

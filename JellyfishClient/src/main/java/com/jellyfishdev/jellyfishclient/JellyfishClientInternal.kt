@@ -95,15 +95,15 @@ internal class JellyfishClientInternal(
     }
 
     override fun onEndpointAdded(endpoint: Endpoint) {
-        listener.onEndpointAdded(endpoint)
+        listener.onPeerJoined(endpoint)
     }
 
     override fun onEndpointRemoved(endpoint: Endpoint) {
-        listener.onEndpointRemoved(endpoint)
+        listener.onPeerLeft(endpoint)
     }
 
     override fun onEndpointUpdated(endpoint: Endpoint) {
-        listener.onEndpointUpdated(endpoint)
+        listener.onPeerUpdated(endpoint)
     }
 
     override fun onSendMediaEvent(event: SerializedMediaEvent) {
