@@ -30,6 +30,15 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
     }
 
     /**
+     * Leaves the room. This function should be called when user leaves the room in a clean way e.g. by clicking a
+     * dedicated, custom button `disconnect`. As a result there will be generated one more media event that should be sent
+     * to the RTC Engine. Thanks to it each other endpoint will be notified that endpoint is removed in {@link MessageEvents.onEndpointRemoved},
+     */
+    fun leave() {
+        client.leave()
+    }
+
+    /**
      * Tries to join the room. If user is accepted then {@link JellyfishClient.onConnected} will be called.
      * In other case {@link JellyfishClient.onConnectError} is invoked.
      *
@@ -38,15 +47,6 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
      */
     fun join(endpointMetadata: Metadata = emptyMap()) {
         client.webrtcClient.connect(endpointMetadata)
-    }
-
-    /**
-     * Leaves the room. This function should be called when user leaves the room in a clean way e.g. by clicking a
-     * dedicated, custom button `disconnect`. As a result there will be generated one more media event that should be sent
-     * to the RTC Engine. Thanks to it each other endpoint will be notified that endpoint is removed in {@link MessageEvents.onEndpointRemoved},
-     */
-    fun leave() {
-        client.leave()
     }
 
     /**
@@ -155,6 +155,17 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
      */
     fun disableTrackEncoding(trackId: String, encoding: TrackEncoding) {
         client.webrtcClient.disableTrackEncoding(trackId, encoding)
+    }
+
+    /**
+     * Updates the metadata for the local endpoint.
+     * @param endpointMetadata Data about this peer that other peers will receive upon joining.
+     *
+     * If the metadata is different from what is already tracked in the room, the optional
+     * callback `onPeerUpdated` will be triggered for other peers in the room.
+     */
+    fun updateEndpointMetadata(endpointMetadata: Metadata) {
+        client.webrtcClient.updateEndpointMetadata(endpointMetadata)
     }
 
     /**

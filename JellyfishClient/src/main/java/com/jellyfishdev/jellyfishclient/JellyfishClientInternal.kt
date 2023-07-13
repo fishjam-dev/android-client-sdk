@@ -1,7 +1,6 @@
 package com.jellyfishdev.jellyfishclient
 
 import android.content.Context
-import android.util.Log
 import jellyfish.PeerNotifications.PeerMessage
 import jellyfish.PeerNotifications.PeerMessage.MediaEvent
 import okhttp3.OkHttpClient
@@ -140,11 +139,10 @@ internal class JellyfishClientInternal(
     }
 
     override fun onConnected(endpointID: String, otherEndpoints: List<Endpoint>) {
-        Log.e("KAROL", "onConnected")
         listener.onConnected(endpointID, otherEndpoints)
     }
 
     override fun onDisconnected() {
-        Log.e("KAROL", "disconnected")
+        listener.onDisconnected()
     }
 }
