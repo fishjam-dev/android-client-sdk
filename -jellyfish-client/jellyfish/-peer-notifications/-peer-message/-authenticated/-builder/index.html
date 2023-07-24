@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Builder</title>
+    <link href="../../../../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../../../../styles/style.css" rel="Stylesheet">
+<link href="../../../../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../../../../styles/main.css" rel="Stylesheet">
+<link href="../../../../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../../../../index.html">
+                    <span>JellyfishClient</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":JellyfishClient:dokkaHtml/release">androidJvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="JellyfishClient::jellyfish/PeerNotifications.PeerMessage.Authenticated.Builder///PointingToDeclaration//-931945247">
+  <div class="breadcrumbs"><a href="../../../../../../index.html">JellyfishClient</a><span class="delimiter">/</span><a href="../../../../index.html">jellyfish</a><span class="delimiter">/</span><a href="../../../index.html">PeerNotifications</a><span class="delimiter">/</span><a href="../../index.html">PeerMessage</a><span class="delimiter">/</span><a href="../index.html">Authenticated</a><span class="delimiter">/</span><span class="current">Builder</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Builder</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">Builder</a> : <span data-unresolved-link="com.google.protobuf/GeneratedMessageV3.Builder///PointingToDeclaration/">GeneratedMessageV3.Builder</span><span class="token operator">&lt;</span><span data-unresolved-link="com.google.protobuf/GeneratedMessageV3.Builder///PointingToGenericParameters(0)/">BuilderT</span><span class="token operator">&gt; </span>, <a href="../../-authenticated-or-builder/index.html">PeerNotifications.PeerMessage.AuthenticatedOrBuilder</a></div><p class="paragraph">Protobuf type <code class="lang-kotlin">jellyfish.PeerMessage.Authenticated</code></p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-176049818%2FFunctions%2F-931945247" anchor-label="addRepeatedField" id="-176049818%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#1548492405%2FFunctions%2F-931945247"><span>add</span><wbr></wbr><span>Repeated</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-176049818%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#1548492405%2FFunctions%2F-931945247"><span class="token function">addRepeatedField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-repeated-field.html"><span class="token function">addRepeatedField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Authenticated.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1182047672%2FFunctions%2F-931945247" anchor-label="build" id="1182047672%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#1948772184%2FFunctions%2F-931945247"><span><span>build</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1182047672%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#1948772184%2FFunctions%2F-931945247"><span class="token function">build</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/MessageLite///PointingToDeclaration/">MessageLite</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="build.html"><span class="token function">build</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">PeerNotifications.PeerMessage.Authenticated</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="371221144%2FFunctions%2F-931945247" anchor-label="buildPartial" id="371221144%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-1356961407%2FFunctions%2F-931945247"><span>build</span><wbr></wbr><span><span>Partial</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="371221144%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-1356961407%2FFunctions%2F-931945247"><span class="token function">buildPartial</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/MessageLite///PointingToDeclaration/">MessageLite</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="build-partial.html"><span class="token function">buildPartial</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">PeerNotifications.PeerMessage.Authenticated</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1651979803%2FFunctions%2F-931945247" anchor-label="clear" id="-1651979803%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#1086158889%2FFunctions%2F-931945247"><span><span>clear</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1651979803%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#1086158889%2FFunctions%2F-931945247"><span class="token function">clear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/AbstractMessage.Builder///PointingToGenericParameters(0)/">BuilderType</span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-1915853977%2FFunctions%2F-931945247"><span class="token function">clear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clear.html"><span class="token function">clear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Authenticated.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2066628740%2FFunctions%2F-931945247" anchor-label="clearField" id="2066628740%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-544290459%2FFunctions%2F-931945247"><span>clear</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2066628740%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-544290459%2FFunctions%2F-931945247"><span class="token function">clearField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clear-field.html"><span class="token function">clearField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Authenticated.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="630532735%2FFunctions%2F-931945247" anchor-label="clearOneof" id="630532735%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-1854940537%2FFunctions%2F-931945247"><span>clear</span><wbr></wbr><span><span>Oneof</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="630532735%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-1854940537%2FFunctions%2F-931945247"><span class="token function">clearOneof</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oneof<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.OneofDescriptor///PointingToDeclaration/">Descriptors.OneofDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/AbstractMessage.Builder///PointingToGenericParameters(0)/">BuilderType</span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-1951907131%2FFunctions%2F-931945247"><span class="token function">clearOneof</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oneof<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.OneofDescriptor///PointingToDeclaration/">Descriptors.OneofDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clear-oneof.html"><span class="token function">clearOneof</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oneof<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.OneofDescriptor///PointingToDeclaration/">Descriptors.OneofDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Authenticated.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="511085237%2FFunctions%2F-931945247" anchor-label="clone" id="511085237%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#2046583577%2FFunctions%2F-931945247"><span><span>clone</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="511085237%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#2046583577%2FFunctions%2F-931945247"><span class="token function">clone</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/AbstractMessage.Builder///PointingToGenericParameters(0)/">BuilderType</span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-955429289%2FFunctions%2F-931945247"><span class="token function">clone</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clone.html"><span class="token function">clone</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Authenticated.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-261007872%2FFunctions%2F-931945247" anchor-label="findInitializationErrors" id="-261007872%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-261007872%2FFunctions%2F-931945247"><span>find</span><wbr></wbr><span>Initialization</span><wbr></wbr><span><span>Errors</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-261007872%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-261007872%2FFunctions%2F-931945247"><span class="token function">findInitializationErrors</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="81107720%2FFunctions%2F-931945247" anchor-label="getAllFields" id="81107720%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#81107720%2FFunctions%2F-931945247"><span>get</span><wbr></wbr><span>All</span><wbr></wbr><span><span>Fields</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="81107720%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#81107720%2FFunctions%2F-931945247"><span class="token function">getAllFields</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="340628277%2FFunctions%2F-931945247" anchor-label="getDefaultInstanceForType" id="340628277%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-889905270%2FFunctions%2F-931945247"><span>get</span><wbr></wbr><span>Default</span><wbr></wbr><span>Instance</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="340628277%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-889905270%2FFunctions%2F-931945247"><span class="token function">getDefaultInstanceForType</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/MessageLite///PointingToDeclaration/">MessageLite</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-default-instance-for-type.html"><span class="token function">getDefaultInstanceForType</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">PeerNotifications.PeerMessage.Authenticated</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-987024683%2FFunctions%2F-931945247" anchor-label="getDescriptor" id="-987024683%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-descriptor.html"><span>get</span><wbr></wbr><span><span>Descriptor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-987024683%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-descriptor.html"><span class="token function">getDescriptor</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.Descriptor///PointingToDeclaration/">Descriptors.Descriptor</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2056173442%2FFunctions%2F-931945247" anchor-label="getDescriptorForType" id="2056173442%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-descriptor-for-type.html"><span>get</span><wbr></wbr><span>Descriptor</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2056173442%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-descriptor-for-type.html"><span class="token function">getDescriptorForType</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.Descriptor///PointingToDeclaration/">Descriptors.Descriptor</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-447162378%2FFunctions%2F-931945247" anchor-label="getField" id="-447162378%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-447162378%2FFunctions%2F-931945247"><span>get</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-447162378%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-447162378%2FFunctions%2F-931945247"><span class="token function">getField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2129042777%2FFunctions%2F-931945247" anchor-label="getFieldBuilder" id="-2129042777%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-2129042777%2FFunctions%2F-931945247"><span>get</span><wbr></wbr><span>Field</span><wbr></wbr><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2129042777%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-2129042777%2FFunctions%2F-931945247"><span class="token function">getFieldBuilder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-633913823%2FFunctions%2F-931945247" anchor-label="getInitializationErrorString" id="-633913823%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-633913823%2FFunctions%2F-931945247"><span>get</span><wbr></wbr><span>Initialization</span><wbr></wbr><span>Error</span><wbr></wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-633913823%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-633913823%2FFunctions%2F-931945247"><span class="token function">getInitializationErrorString</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="714659727%2FFunctions%2F-931945247" anchor-label="getOneofFieldDescriptor" id="714659727%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#714659727%2FFunctions%2F-931945247"><span>get</span><wbr></wbr><span>Oneof</span><wbr></wbr><span>Field</span><wbr></wbr><span><span>Descriptor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="714659727%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#714659727%2FFunctions%2F-931945247"><span class="token function">getOneofFieldDescriptor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oneof<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.OneofDescriptor///PointingToDeclaration/">Descriptors.OneofDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="757808048%2FFunctions%2F-931945247" anchor-label="getRepeatedField" id="757808048%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#757808048%2FFunctions%2F-931945247"><span>get</span><wbr></wbr><span>Repeated</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="757808048%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#757808048%2FFunctions%2F-931945247"><span class="token function">getRepeatedField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1739181525%2FFunctions%2F-931945247" anchor-label="getRepeatedFieldBuilder" id="1739181525%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#1739181525%2FFunctions%2F-931945247"><span>get</span><wbr></wbr><span>Repeated</span><wbr></wbr><span>Field</span><wbr></wbr><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1739181525%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#1739181525%2FFunctions%2F-931945247"><span class="token function">getRepeatedFieldBuilder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-173970699%2FFunctions%2F-931945247" anchor-label="getRepeatedFieldCount" id="-173970699%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-173970699%2FFunctions%2F-931945247"><span>get</span><wbr></wbr><span>Repeated</span><wbr></wbr><span>Field</span><wbr></wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-173970699%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-173970699%2FFunctions%2F-931945247"><span class="token function">getRepeatedFieldCount</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="902359231%2FFunctions%2F-931945247" anchor-label="getUnknownFields" id="902359231%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#902359231%2FFunctions%2F-931945247"><span>get</span><wbr></wbr><span>Unknown</span><wbr></wbr><span><span>Fields</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="902359231%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#902359231%2FFunctions%2F-931945247"><span class="token function">getUnknownFields</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/UnknownFieldSet///PointingToDeclaration/">UnknownFieldSet</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1918409934%2FFunctions%2F-931945247" anchor-label="hasField" id="-1918409934%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-1918409934%2FFunctions%2F-931945247"><span>has</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1918409934%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-1918409934%2FFunctions%2F-931945247"><span class="token function">hasField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="968940690%2FFunctions%2F-931945247" anchor-label="hasOneof" id="968940690%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#968940690%2FFunctions%2F-931945247"><span>has</span><wbr></wbr><span><span>Oneof</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="968940690%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#968940690%2FFunctions%2F-931945247"><span class="token function">hasOneof</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oneof<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.OneofDescriptor///PointingToDeclaration/">Descriptors.OneofDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1654765200%2FFunctions%2F-931945247" anchor-label="isInitialized" id="1654765200%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-initialized.html"><span>is</span><wbr></wbr><span><span>Initialized</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1654765200%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-initialized.html"><span class="token function">isInitialized</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1860253503%2FFunctions%2F-931945247" anchor-label="mergeDelimitedFrom" id="-1860253503%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-1860253503%2FFunctions%2F-931945247"><span>merge</span><wbr></wbr><span>Delimited</span><wbr></wbr><span><span>From</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1860253503%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-1860253503%2FFunctions%2F-931945247"><span class="token function">mergeDelimitedFrom</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">input<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/io/InputStream.html">InputStream</a><span class="token punctuation">, </span></span><span class="parameter ">extensionRegistry<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/ExtensionRegistryLite///PointingToDeclaration/">ExtensionRegistryLite</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="464754300%2FFunctions%2F-931945247" anchor-label="mergeFrom" id="464754300%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-2053524476%2FFunctions%2F-931945247"><span>merge</span><wbr></wbr><span><span>From</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="464754300%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-2053524476%2FFunctions%2F-931945247"><span class="token function">mergeFrom</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message///PointingToDeclaration/">Message</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="merge-from.html"><span class="token function">mergeFrom</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message///PointingToDeclaration/">Message</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Authenticated.Builder</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="merge-from.html"><span class="token function">mergeFrom</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="../index.html">PeerNotifications.PeerMessage.Authenticated</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Authenticated.Builder</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="merge-from.html"><span class="token function">mergeFrom</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">input<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/CodedInputStream///PointingToDeclaration/">CodedInputStream</span><span class="token punctuation">, </span></span><span class="parameter ">extensionRegistry<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/ExtensionRegistryLite///PointingToDeclaration/">ExtensionRegistryLite</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Authenticated.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-829890464%2FFunctions%2F-931945247" anchor-label="mergeUnknownFields" id="-829890464%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-1252082094%2FFunctions%2F-931945247"><span>merge</span><wbr></wbr><span>Unknown</span><wbr></wbr><span><span>Fields</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-829890464%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-1252082094%2FFunctions%2F-931945247"><span class="token function">mergeUnknownFields</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">unknownFields<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/UnknownFieldSet///PointingToDeclaration/">UnknownFieldSet</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/AbstractMessage.Builder///PointingToGenericParameters(0)/">BuilderType</span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-702483056%2FFunctions%2F-931945247"><span class="token function">mergeUnknownFields</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">unknownFields<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/UnknownFieldSet///PointingToDeclaration/">UnknownFieldSet</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="merge-unknown-fields.html"><span class="token function">mergeUnknownFields</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">unknownFields<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/UnknownFieldSet///PointingToDeclaration/">UnknownFieldSet</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Authenticated.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="375534622%2FFunctions%2F-931945247" anchor-label="newBuilderForField" id="375534622%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#375534622%2FFunctions%2F-931945247"><span>new</span><wbr></wbr><span>Builder</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="375534622%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#375534622%2FFunctions%2F-931945247"><span class="token function">newBuilderForField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="386661190%2FFunctions%2F-931945247" anchor-label="setField" id="386661190%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-747875748%2FFunctions%2F-931945247"><span>set</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="386661190%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-747875748%2FFunctions%2F-931945247"><span class="token function">setField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-field.html"><span class="token function">setField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Authenticated.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2119511558%2FFunctions%2F-931945247" anchor-label="setRepeatedField" id="2119511558%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#1861140706%2FFunctions%2F-931945247"><span>set</span><wbr></wbr><span>Repeated</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2119511558%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#1861140706%2FFunctions%2F-931945247"><span class="token function">setRepeatedField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-repeated-field.html"><span class="token function">setRepeatedField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Authenticated.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="883029062%2FFunctions%2F-931945247" anchor-label="setUnknownFields" id="883029062%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-878991770%2FFunctions%2F-931945247"><span>set</span><wbr></wbr><span>Unknown</span><wbr></wbr><span><span>Fields</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="883029062%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-878991770%2FFunctions%2F-931945247"><span class="token function">setUnknownFields</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">unknownFields<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/UnknownFieldSet///PointingToDeclaration/">UnknownFieldSet</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-unknown-fields.html"><span class="token function">setUnknownFields</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">unknownFields<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/UnknownFieldSet///PointingToDeclaration/">UnknownFieldSet</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Authenticated.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-356846056%2FFunctions%2F-931945247" anchor-label="toString" id="-356846056%2FFunctions%2F-931945247" data-filterable-set=":JellyfishClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":JellyfishClient:dokkaHtml/release" data-filterable-set=":JellyfishClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-builder/index.html#-356846056%2FFunctions%2F-931945247"><span>to</span><wbr></wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-356846056%2FFunctions%2F-931945247"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":JellyfishClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-builder/index.html#-356846056%2FFunctions%2F-931945247"><span class="token function">toString</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>Copyright 2023, Software Mansion.</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
