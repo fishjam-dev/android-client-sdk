@@ -4,6 +4,7 @@ plugins {
     id "org.jetbrains.dokka"
     id 'org.jmailen.kotlinter'
     id "com.google.protobuf" version "0.9.3"
+    id 'maven-publish'
 }
 
 android {
@@ -38,6 +39,17 @@ ext {
 }
 
 afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.jellyfishdev.jellyfishclient'
+                artifactId = 'jellyfish-android-client'
+                version = '0.1.0'
+            }
+        }
+    }
     tasks.named("dokkaHtml") {
         pluginsMapConfiguration.set([
                 "org.jetbrains.dokka.base.DokkaBase": """{
