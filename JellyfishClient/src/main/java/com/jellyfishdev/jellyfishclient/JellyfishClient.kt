@@ -12,6 +12,8 @@ import org.membraneframework.rtc.models.RTCStats
 import org.membraneframework.rtc.utils.Metadata
 import org.webrtc.Logging
 
+typealias TrackContext = JellyfishTrackContext
+
 data class Config(
     val websocketUrl: String,
     val token: String,

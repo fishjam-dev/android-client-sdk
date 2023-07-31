@@ -1,7 +1,6 @@
 package com.jellyfishdev.jellyfishclient
 
 import okhttp3.Response
-import org.membraneframework.rtc.models.TrackContext
 import timber.log.Timber
 
 interface JellyfishClientListener {

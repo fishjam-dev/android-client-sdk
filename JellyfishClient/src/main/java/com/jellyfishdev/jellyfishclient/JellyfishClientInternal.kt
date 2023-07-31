@@ -117,19 +117,23 @@ internal class JellyfishClientInternal(
     }
 
     override fun onTrackAdded(ctx: TrackContext) {
-        listener.onTrackAdded(ctx)
+        var trackContext = TrackContext(ctx)
+        listener.onTrackAdded(trackContext)
     }
 
     override fun onTrackReady(ctx: TrackContext) {
-        listener.onTrackReady(ctx)
+        var trackContext = TrackContext(ctx)
+        listener.onTrackReady(trackContext)
     }
 
     override fun onTrackRemoved(ctx: TrackContext) {
-        listener.onTrackRemoved(ctx)
+        var trackContext = TrackContext(ctx)
+        listener.onTrackRemoved(trackContext)
     }
 
     override fun onTrackUpdated(ctx: TrackContext) {
-        listener.onTrackUpdated(ctx)
+        var trackContext = TrackContext(ctx)
+        listener.onTrackUpdated(trackContext)
     }
 
     override fun onBandwidthEstimationChanged(estimation: Long) {
