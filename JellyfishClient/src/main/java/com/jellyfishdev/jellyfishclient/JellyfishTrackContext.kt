@@ -9,6 +9,14 @@ import org.membraneframework.rtc.models.TrackContext
 import org.membraneframework.rtc.models.VadStatus
 import org.membraneframework.rtc.utils.Metadata
 
+fun interface JellyfishOnVoiceActivityChangedListener {
+    fun onVoiceActivityChanged(trackContext: JellyfishTrackContext)
+}
+
+fun interface JellyfishOnEncodingChangedListener {
+    fun onEncodingChangedListener(trackContext: JellyfishTrackContext)
+}
+
 class JellyfishTrackContext(private val trackContext: TrackContext) {
     val track: RemoteTrack?
         get() {
@@ -45,11 +53,13 @@ class JellyfishTrackContext(private val trackContext: TrackContext) {
             return trackContext.encodingReason
         }
 
-    fun setOnEncodingChangedListener(listener: OnEncodingChangedListener) {
-        trackContext.setOnEncodingChangedListener(listener)
+    fun setOnEncodingChangedListener(listener: JellyfishOnEncodingChangedListener) {
+        val rtcListener = OnEncodingChangedListener { trackContext -> listener.onEncodingChangedListener(JellyfishTrackContext(trackContext)) }
+        trackContext.setOnEncodingChangedListener(rtcListener)
     }
 
-    fun setOnVoiceActivityChangedListener(listener: OnVoiceActivityChangedListener) {
-        trackContext.setOnVoiceActivityChangedListener(listener)
+    fun setOnVoiceActivityChangedListener(listener: JellyfishOnVoiceActivityChangedListener) {
+        val rtcListener = OnVoiceActivityChangedListener { trackContext -> listener.onVoiceActivityChanged(JellyfishTrackContext(trackContext)) }
+        trackContext.setOnVoiceActivityChangedListener(rtcListener)
     }
 }
