@@ -1,5 +1,6 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
+$dokka.location:com.jellyfishdev.jellyfishclient.webrtc////PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient.webrtc.html
 $dokka.location:com.jellyfishdev.jellyfishclient////PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/index.html
 $dokka.location:com.jellyfishdev.jellyfishclient/Config///PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-config/index.html
 $dokka.location:com.jellyfishdev.jellyfishclient/Config/Config/#kotlin.String#kotlin.String/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-config/-config.html
@@ -37,10 +38,25 @@ $dokka.location:com.jellyfishdev.jellyfishclient/JellyfishClientListener/onPeerU
 $dokka.location:com.jellyfishdev.jellyfishclient/JellyfishClientListener/onSocketClose/#kotlin.Int#kotlin.String/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-client-listener/on-socket-close.html
 $dokka.location:com.jellyfishdev.jellyfishclient/JellyfishClientListener/onSocketError/#kotlin.Throwable#okhttp3.Response?/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-client-listener/on-socket-error.html
 $dokka.location:com.jellyfishdev.jellyfishclient/JellyfishClientListener/onSocketOpen/#/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-client-listener/on-socket-open.html
-$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishClientListener/onTrackAdded/#org.membraneframework.rtc.models.TrackContext/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-client-listener/on-track-added.html
-$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishClientListener/onTrackReady/#org.membraneframework.rtc.models.TrackContext/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-client-listener/on-track-ready.html
-$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishClientListener/onTrackRemoved/#org.membraneframework.rtc.models.TrackContext/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-client-listener/on-track-removed.html
-$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishClientListener/onTrackUpdated/#org.membraneframework.rtc.models.TrackContext/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-client-listener/on-track-updated.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishClientListener/onTrackAdded/#com.jellyfishdev.jellyfishclient.JellyfishTrackContext/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-client-listener/on-track-added.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishClientListener/onTrackReady/#com.jellyfishdev.jellyfishclient.JellyfishTrackContext/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-client-listener/on-track-ready.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishClientListener/onTrackRemoved/#com.jellyfishdev.jellyfishclient.JellyfishTrackContext/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-client-listener/on-track-removed.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishClientListener/onTrackUpdated/#com.jellyfishdev.jellyfishclient.JellyfishTrackContext/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-client-listener/on-track-updated.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishOnEncodingChangedListener///PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-on-encoding-changed-listener/index.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishOnEncodingChangedListener/onEncodingChangedListener/#com.jellyfishdev.jellyfishclient.JellyfishTrackContext/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-on-encoding-changed-listener/on-encoding-changed-listener.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishOnVoiceActivityChangedListener///PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-on-voice-activity-changed-listener/index.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishOnVoiceActivityChangedListener/onVoiceActivityChanged/#com.jellyfishdev.jellyfishclient.JellyfishTrackContext/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-on-voice-activity-changed-listener/on-voice-activity-changed.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishTrackContext///PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-track-context/index.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishTrackContext/JellyfishTrackContext/#org.membraneframework.rtc.models.TrackContext/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-track-context/-jellyfish-track-context.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishTrackContext/encoding/#/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-track-context/encoding.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishTrackContext/encodingReason/#/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-track-context/encoding-reason.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishTrackContext/metadata/#/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-track-context/metadata.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishTrackContext/peer/#/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-track-context/peer.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishTrackContext/setOnEncodingChangedListener/#com.jellyfishdev.jellyfishclient.JellyfishOnEncodingChangedListener/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-track-context/set-on-encoding-changed-listener.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishTrackContext/setOnVoiceActivityChangedListener/#com.jellyfishdev.jellyfishclient.JellyfishOnVoiceActivityChangedListener/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-track-context/set-on-voice-activity-changed-listener.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishTrackContext/track/#/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-track-context/track.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishTrackContext/trackId/#/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-track-context/track-id.html
+$dokka.location:com.jellyfishdev.jellyfishclient/JellyfishTrackContext/vadStatus/#/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-jellyfish-track-context/vad-status.html
 $dokka.location:jellyfish////PointingToDeclaration/-jellyfish-client/jellyfish/index.html
 $dokka.location:jellyfish//authRequestOrNull/jellyfish.PeerNotifications.PeerMessageOrBuilder#/PointingToDeclaration/-jellyfish-client/jellyfish/auth-request-or-null.html
 $dokka.location:jellyfish//authenticatedOrNull/jellyfish.PeerNotifications.PeerMessageOrBuilder#/PointingToDeclaration/-jellyfish-client/jellyfish/authenticated-or-null.html
@@ -356,5 +372,6 @@ $dokka.location:jellyfish/PeerNotifications/descriptor/#/PointingToDeclaration/
 $dokka.location:jellyfish/PeerNotifications/registerAllExtensions/#com.google.protobuf.ExtensionRegistry/PointingToDeclaration/-jellyfish-client/jellyfish/-peer-notifications/register-all-extensions.html
 $dokka.location:jellyfish/PeerNotifications/registerAllExtensions/#com.google.protobuf.ExtensionRegistryLite/PointingToDeclaration/-jellyfish-client/jellyfish/-peer-notifications/register-all-extensions.html
 com.jellyfishdev.jellyfishclient
+com.jellyfishdev.jellyfishclient.webrtc
 jellyfish
 
