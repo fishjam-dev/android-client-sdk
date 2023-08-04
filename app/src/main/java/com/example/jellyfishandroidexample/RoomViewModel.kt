@@ -10,7 +10,7 @@ import com.jellyfishdev.jellyfishclient.Peer
 import com.jellyfishdev.jellyfishclient.TrackContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
-import org.membraneframework.rtc.SimulcastConfig
+import com.jellyfishdev.jellyfishclient.SimulcastConfig
 import org.membraneframework.rtc.media.LocalVideoTrack
 import org.membraneframework.rtc.media.RemoteVideoTrack
 import org.membraneframework.rtc.media.VideoParameters
