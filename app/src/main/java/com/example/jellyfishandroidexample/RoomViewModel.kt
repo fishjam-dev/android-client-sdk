@@ -3,15 +3,15 @@ package com.example.jellyfishandroidexample
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.jellyfishdev.jellyfishclient.webrtc.SimulcastConfig
-import com.jellyfishdev.jellyfishclient.webrtc.LocalVideoTrack
-import com.jellyfishdev.jellyfishclient.webrtc.RemoteVideoTrack
-import com.jellyfishdev.jellyfishclient.webrtc.VideoParameters
 import com.jellyfishdev.jellyfishclient.Config
 import com.jellyfishdev.jellyfishclient.JellyfishClient
 import com.jellyfishdev.jellyfishclient.JellyfishClientListener
 import com.jellyfishdev.jellyfishclient.Peer
 import com.jellyfishdev.jellyfishclient.TrackContext
+import com.jellyfishdev.jellyfishclient.webrtc.LocalVideoTrack
+import com.jellyfishdev.jellyfishclient.webrtc.RemoteVideoTrack
+import com.jellyfishdev.jellyfishclient.webrtc.SimulcastConfig
+import com.jellyfishdev.jellyfishclient.webrtc.VideoParameters
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
