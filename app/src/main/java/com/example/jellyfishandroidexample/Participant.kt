@@ -1,6 +1,6 @@
 package com.example.jellyfishandroidexample
 
-import org.membraneframework.rtc.media.VideoTrack
+import com.jellyfishdev.jellyfishclient.webrtc.VideoTrack
 
 data class Participant(
     val id: String,

@@ -9,8 +9,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
-import org.membraneframework.rtc.media.VideoTrack
-import org.membraneframework.rtc.ui.VideoTextureViewRenderer
+import com.jellyfishdev.jellyfishclient.webrtc.VideoTrack
+import com.jellyfishdev.jellyfishclient.webrtc.VideoTextureViewRenderer
 import org.webrtc.RendererCommon
 
 enum class VideoViewLayout {
