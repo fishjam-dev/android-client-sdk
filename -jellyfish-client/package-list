@@ -1,6 +1,5 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
-$dokka.location:com.jellyfishdev.jellyfishclient.webrtc////PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient.webrtc.html
 $dokka.location:com.jellyfishdev.jellyfishclient////PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/index.html
 $dokka.location:com.jellyfishdev.jellyfishclient/Config///PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-config/index.html
 $dokka.location:com.jellyfishdev.jellyfishclient/Config/Config/#kotlin.String#kotlin.String/PointingToDeclaration/-jellyfish-client/com.jellyfishdev.jellyfishclient/-config/-config.html
@@ -372,6 +371,5 @@ $dokka.location:jellyfish/PeerNotifications/descriptor/#/PointingToDeclaration/
 $dokka.location:jellyfish/PeerNotifications/registerAllExtensions/#com.google.protobuf.ExtensionRegistry/PointingToDeclaration/-jellyfish-client/jellyfish/-peer-notifications/register-all-extensions.html
 $dokka.location:jellyfish/PeerNotifications/registerAllExtensions/#com.google.protobuf.ExtensionRegistryLite/PointingToDeclaration/-jellyfish-client/jellyfish/-peer-notifications/register-all-extensions.html
 com.jellyfishdev.jellyfishclient
-com.jellyfishdev.jellyfishclient.webrtc
 jellyfish
 
