@@ -43,7 +43,7 @@ public object PeerMessageKt {
 
         /**
          * <code>.jellyfish.PeerMessage.Authenticated authenticated = 1;</code>
-         * @return Whether the authenticated field is set.
+         * @return Whether the authenticated field is set.q
          */
         public fun hasAuthenticated(): kotlin.Boolean {
             return _builder.hasAuthenticated()
