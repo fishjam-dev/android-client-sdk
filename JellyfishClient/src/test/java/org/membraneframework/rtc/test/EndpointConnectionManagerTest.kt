@@ -1,5 +1,6 @@
 package org.membraneframework.rtc.test
 
+import android.util.Log
 import io.mockk.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
@@ -29,6 +30,13 @@ class EndpointConnectionManagerTest {
 
         mockkStatic("org.membraneframework.rtc.utils.SuspendableSdpObserverKt")
         mockkStatic("org.membraneframework.rtc.utils.EndpointConnectionUtilsKt")
+
+        mockkStatic(Log::class)
+        every { Log.v(any(), any()) } returns 0
+        every { Log.d(any(), any()) } returns 0
+        every { Log.i(any(), any()) } returns 0
+        every { Log.e(any(), any()) } returns 0
+        every { Log.println(any(), any(), any()) } returns 0
 
         endpointConnectionMock = mockk(relaxed = true)
 
