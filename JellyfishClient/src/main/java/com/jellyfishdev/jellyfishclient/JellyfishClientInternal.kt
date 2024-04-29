@@ -10,7 +10,6 @@ import okhttp3.WebSocket
 import okhttp3.WebSocketListener
 import okio.ByteString
 import okio.ByteString.Companion.toByteString
-import org.membraneframework.rtc.BuildConfig
 import org.membraneframework.rtc.MembraneRTC
 import org.membraneframework.rtc.MembraneRTCListener
 import org.membraneframework.rtc.models.Endpoint
