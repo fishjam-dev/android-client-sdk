@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id "org.jetbrains.dokka"
-    // id 'org.jmailen.kotlinter'
     id "com.google.protobuf" version "0.9.3"
     id 'maven-publish'
 
