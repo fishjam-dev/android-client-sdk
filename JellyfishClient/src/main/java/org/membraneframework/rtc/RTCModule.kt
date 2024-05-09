@@ -1,4 +1,4 @@
-package org.membraneframework.rtc.dagger
+package org.membraneframework.rtc
 
 import android.content.Context
 import org.webrtc.*
