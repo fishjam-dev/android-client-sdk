@@ -9,7 +9,7 @@ import org.webrtc.PeerConnectionFactory
 import org.webrtc.audio.AudioDeviceModule
 
 internal class PeerConnectionFactoryWrapper(
-    private val createOptions: CreateOptions,
+    createOptions: CreateOptions,
     audioDeviceModule: AudioDeviceModule,
     eglBase: EglBase,
     appContext: Context

@@ -27,9 +27,9 @@ import timber.log.Timber
 import java.util.*
 
 internal class InternalMembraneRTC(
-    private val createOptions: CreateOptions,
+    createOptions: CreateOptions,
     private val listener: MembraneRTCListener,
-    private val defaultDispatcher: CoroutineDispatcher,
+    defaultDispatcher: CoroutineDispatcher,
     private val eglBase: EglBase,
     private val context: Context
 ) : RTCEngineListener, PeerConnectionListener {

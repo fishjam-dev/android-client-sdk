@@ -133,22 +133,22 @@ internal class JellyfishClientInternal(
     }
 
     override fun onTrackAdded(ctx: TrackContext) {
-        var trackContext = TrackContext(ctx)
+        val trackContext = TrackContext(ctx)
         listener.onTrackAdded(trackContext)
     }
 
     override fun onTrackReady(ctx: TrackContext) {
-        var trackContext = TrackContext(ctx)
+        val trackContext = TrackContext(ctx)
         listener.onTrackReady(trackContext)
     }
 
     override fun onTrackRemoved(ctx: TrackContext) {
-        var trackContext = TrackContext(ctx)
+        val trackContext = TrackContext(ctx)
         listener.onTrackRemoved(trackContext)
     }
 
     override fun onTrackUpdated(ctx: TrackContext) {
-        var trackContext = TrackContext(ctx)
+        val trackContext = TrackContext(ctx)
         listener.onTrackUpdated(trackContext)
     }
 
