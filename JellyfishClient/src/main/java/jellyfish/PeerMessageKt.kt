@@ -6,11 +6,12 @@ package jellyfish
 @kotlin.jvm.JvmName("-initializepeerMessage")
 public inline fun peerMessage(block: jellyfish.PeerMessageKt.Dsl.() -> kotlin.Unit): jellyfish.PeerNotifications.PeerMessage =
     jellyfish.PeerMessageKt.Dsl._create(jellyfish.PeerNotifications.PeerMessage.newBuilder()).apply { block() }._build()
+
 public object PeerMessageKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     @com.google.protobuf.kotlin.ProtoDslMarker
     public class Dsl private constructor(
-        private val _builder: jellyfish.PeerNotifications.PeerMessage.Builder,
+        private val _builder: jellyfish.PeerNotifications.PeerMessage.Builder
     ) {
         public companion object {
             @kotlin.jvm.JvmSynthetic
@@ -102,6 +103,7 @@ public object PeerMessageKt {
         public fun hasMediaEvent(): kotlin.Boolean {
             return _builder.hasMediaEvent()
         }
+
         public val contentCase: jellyfish.PeerNotifications.PeerMessage.ContentCase
             @JvmName("getContentCase")
             get() = _builder.getContentCase()
@@ -112,13 +114,18 @@ public object PeerMessageKt {
     }
 
     @kotlin.jvm.JvmName("-initializeauthenticated")
-    public inline fun authenticated(block: jellyfish.PeerMessageKt.AuthenticatedKt.Dsl.() -> kotlin.Unit): jellyfish.PeerNotifications.PeerMessage.Authenticated =
-        jellyfish.PeerMessageKt.AuthenticatedKt.Dsl._create(jellyfish.PeerNotifications.PeerMessage.Authenticated.newBuilder()).apply { block() }._build()
+    public inline fun authenticated(
+        block: jellyfish.PeerMessageKt.AuthenticatedKt.Dsl.() -> kotlin.Unit
+    ): jellyfish.PeerNotifications.PeerMessage.Authenticated =
+        jellyfish.PeerMessageKt.AuthenticatedKt.Dsl._create(jellyfish.PeerNotifications.PeerMessage.Authenticated.newBuilder()).apply {
+            block()
+        }._build()
+
     public object AuthenticatedKt {
         @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
         @com.google.protobuf.kotlin.ProtoDslMarker
         public class Dsl private constructor(
-            private val _builder: jellyfish.PeerNotifications.PeerMessage.Authenticated.Builder,
+            private val _builder: jellyfish.PeerNotifications.PeerMessage.Authenticated.Builder
         ) {
             public companion object {
                 @kotlin.jvm.JvmSynthetic
@@ -133,13 +140,18 @@ public object PeerMessageKt {
     }
 
     @kotlin.jvm.JvmName("-initializeauthRequest")
-    public inline fun authRequest(block: jellyfish.PeerMessageKt.AuthRequestKt.Dsl.() -> kotlin.Unit): jellyfish.PeerNotifications.PeerMessage.AuthRequest =
-        jellyfish.PeerMessageKt.AuthRequestKt.Dsl._create(jellyfish.PeerNotifications.PeerMessage.AuthRequest.newBuilder()).apply { block() }._build()
+    public inline fun authRequest(
+        block: jellyfish.PeerMessageKt.AuthRequestKt.Dsl.() -> kotlin.Unit
+    ): jellyfish.PeerNotifications.PeerMessage.AuthRequest =
+        jellyfish.PeerMessageKt.AuthRequestKt.Dsl._create(jellyfish.PeerNotifications.PeerMessage.AuthRequest.newBuilder()).apply {
+            block()
+        }._build()
+
     public object AuthRequestKt {
         @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
         @com.google.protobuf.kotlin.ProtoDslMarker
         public class Dsl private constructor(
-            private val _builder: jellyfish.PeerNotifications.PeerMessage.AuthRequest.Builder,
+            private val _builder: jellyfish.PeerNotifications.PeerMessage.AuthRequest.Builder
         ) {
             public companion object {
                 @kotlin.jvm.JvmSynthetic
@@ -173,13 +185,18 @@ public object PeerMessageKt {
     }
 
     @kotlin.jvm.JvmName("-initializemediaEvent")
-    public inline fun mediaEvent(block: jellyfish.PeerMessageKt.MediaEventKt.Dsl.() -> kotlin.Unit): jellyfish.PeerNotifications.PeerMessage.MediaEvent =
-        jellyfish.PeerMessageKt.MediaEventKt.Dsl._create(jellyfish.PeerNotifications.PeerMessage.MediaEvent.newBuilder()).apply { block() }._build()
+    public inline fun mediaEvent(
+        block: jellyfish.PeerMessageKt.MediaEventKt.Dsl.() -> kotlin.Unit
+    ): jellyfish.PeerNotifications.PeerMessage.MediaEvent =
+        jellyfish.PeerMessageKt.MediaEventKt.Dsl._create(
+            jellyfish.PeerNotifications.PeerMessage.MediaEvent.newBuilder()
+        ).apply { block() }._build()
+
     public object MediaEventKt {
         @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
         @com.google.protobuf.kotlin.ProtoDslMarker
         public class Dsl private constructor(
-            private val _builder: jellyfish.PeerNotifications.PeerMessage.MediaEvent.Builder,
+            private val _builder: jellyfish.PeerNotifications.PeerMessage.MediaEvent.Builder
         ) {
             public companion object {
                 @kotlin.jvm.JvmSynthetic
@@ -214,19 +231,26 @@ public object PeerMessageKt {
 }
 
 @kotlin.jvm.JvmSynthetic
-public inline fun jellyfish.PeerNotifications.PeerMessage.copy(block: jellyfish.PeerMessageKt.Dsl.() -> kotlin.Unit): jellyfish.PeerNotifications.PeerMessage =
-    jellyfish.PeerMessageKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+public inline fun jellyfish.PeerNotifications.PeerMessage.copy(
+    block: jellyfish.PeerMessageKt.Dsl.() -> kotlin.Unit
+): jellyfish.PeerNotifications.PeerMessage = jellyfish.PeerMessageKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
 @kotlin.jvm.JvmSynthetic
-public inline fun jellyfish.PeerNotifications.PeerMessage.Authenticated.copy(block: jellyfish.PeerMessageKt.AuthenticatedKt.Dsl.() -> kotlin.Unit): jellyfish.PeerNotifications.PeerMessage.Authenticated =
+public inline fun jellyfish.PeerNotifications.PeerMessage.Authenticated.copy(
+    block: jellyfish.PeerMessageKt.AuthenticatedKt.Dsl.() -> kotlin.Unit
+): jellyfish.PeerNotifications.PeerMessage.Authenticated =
     jellyfish.PeerMessageKt.AuthenticatedKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
 @kotlin.jvm.JvmSynthetic
-public inline fun jellyfish.PeerNotifications.PeerMessage.AuthRequest.copy(block: jellyfish.PeerMessageKt.AuthRequestKt.Dsl.() -> kotlin.Unit): jellyfish.PeerNotifications.PeerMessage.AuthRequest =
+public inline fun jellyfish.PeerNotifications.PeerMessage.AuthRequest.copy(
+    block: jellyfish.PeerMessageKt.AuthRequestKt.Dsl.() -> kotlin.Unit
+): jellyfish.PeerNotifications.PeerMessage.AuthRequest =
     jellyfish.PeerMessageKt.AuthRequestKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
 @kotlin.jvm.JvmSynthetic
-public inline fun jellyfish.PeerNotifications.PeerMessage.MediaEvent.copy(block: jellyfish.PeerMessageKt.MediaEventKt.Dsl.() -> kotlin.Unit): jellyfish.PeerNotifications.PeerMessage.MediaEvent =
+public inline fun jellyfish.PeerNotifications.PeerMessage.MediaEvent.copy(
+    block: jellyfish.PeerMessageKt.MediaEventKt.Dsl.() -> kotlin.Unit
+): jellyfish.PeerNotifications.PeerMessage.MediaEvent =
     jellyfish.PeerMessageKt.MediaEventKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
 public val jellyfish.PeerNotifications.PeerMessageOrBuilder.authenticatedOrNull: jellyfish.PeerNotifications.PeerMessage.Authenticated?

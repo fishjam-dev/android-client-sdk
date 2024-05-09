@@ -28,15 +28,17 @@ class JellyfishClientTest {
 
     private val url = "ws://localhost:4000/socket/peer/websocket"
     private val token = "auth"
-    private val authRequest = PeerMessage
-        .newBuilder()
-        .setAuthRequest(PeerMessage.AuthRequest.newBuilder().setToken(token))
-        .build()
+    private val authRequest =
+        PeerMessage
+            .newBuilder()
+            .setAuthRequest(PeerMessage.AuthRequest.newBuilder().setToken(token))
+            .build()
 
-    private val authenticated = PeerMessage
-        .newBuilder()
-        .setAuthenticated(PeerMessage.Authenticated.newBuilder())
-        .build()
+    private val authenticated =
+        PeerMessage
+            .newBuilder()
+            .setAuthenticated(PeerMessage.Authenticated.newBuilder())
+            .build()
 
     init {
         mockkObject(MembraneRTC)
@@ -67,15 +69,17 @@ class JellyfishClientTest {
     }
 
     @Test fun receivesAndSendsMediaEvents() {
-        val sdpOfferMediaEvent = PeerMessage
-            .newBuilder()
-            .setMediaEvent(MediaEvent.newBuilder().setData("sdpOffer"))
-            .build()
+        val sdpOfferMediaEvent =
+            PeerMessage
+                .newBuilder()
+                .setMediaEvent(MediaEvent.newBuilder().setData("sdpOffer"))
+                .build()
 
-        val joinMediaEvent = PeerMessage
-            .newBuilder()
-            .setMediaEvent(MediaEvent.newBuilder().setData("join"))
-            .build()
+        val joinMediaEvent =
+            PeerMessage
+                .newBuilder()
+                .setMediaEvent(MediaEvent.newBuilder().setData("join"))
+                .build()
 
         websocketMock.sendToClient(authenticated)
 

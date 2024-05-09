@@ -15,7 +15,7 @@ import org.webrtc.RendererCommon
 
 enum class VideoViewLayout {
     FIT,
-    FILL,
+    FILL
     ;
 
     internal fun toScalingType(): RendererCommon.ScalingType {
@@ -27,11 +27,18 @@ enum class VideoViewLayout {
 }
 
 @Composable
-fun ParticipantVideoView(participant: Participant, videoViewLayout: VideoViewLayout, modifier: Modifier = Modifier) {
+fun ParticipantVideoView(
+    participant: Participant,
+    videoViewLayout: VideoViewLayout,
+    modifier: Modifier = Modifier
+) {
     var activeVideoTrack by remember { mutableStateOf<VideoTrack?>(null) }
     var view: VideoTextureViewRenderer? by remember { mutableStateOf(null) }
 
-    fun setupTrack(videoTrack: VideoTrack, view: VideoTextureViewRenderer) {
+    fun setupTrack(
+        videoTrack: VideoTrack,
+        view: VideoTextureViewRenderer
+    ) {
         if (activeVideoTrack == videoTrack) return
 
         activeVideoTrack?.removeRenderer(view)
@@ -69,6 +76,6 @@ fun ParticipantVideoView(participant: Participant, videoViewLayout: VideoViewLay
         update = { updatedView ->
             setupTrack(participant.videoTrack!!, updatedView)
         },
-        modifier = modifier,
+        modifier = modifier
     )
 }
