@@ -2,9 +2,10 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id "org.jetbrains.dokka"
-    id 'org.jmailen.kotlinter'
     id "com.google.protobuf" version "0.9.3"
     id 'maven-publish'
+
+    id "kotlin-android"
 }
 
 android {
@@ -26,11 +27,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility java_version
+        targetCompatibility java_version
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = java_version
     }
 }
 
@@ -81,10 +82,25 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
-    testImplementation 'junit:junit:4.13.2'
-    api 'com.github.jellyfish-dev:membrane-webrtc-android:5.0.0'
     implementation 'com.squareup.okhttp3:okhttp:4.10.0'
     implementation 'com.jakewharton.timber:timber:5.0.1'
     implementation 'com.google.protobuf:protobuf-kotlin:3.23.1'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
+    implementation "com.github.ajalt:timberkt:1.5.1"
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.github.dsrees:JavaPhoenixClient:1.0.0'
+    implementation 'androidx.core:core:1.8.20'
+
+
+    api 'io.github.webrtc-sdk:android:104.5112.09'
+
+    testImplementation 'junit:junit:4.13.2'
     testImplementation "io.mockk:mockk:1.13.2"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
+    testImplementation "io.mockk:mockk:1.13.2"
+    testImplementation 'org.khronos:opengl-api:gl1.1-android-2.1_r1'
+
 }
