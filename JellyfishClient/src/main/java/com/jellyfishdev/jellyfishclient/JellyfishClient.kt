@@ -106,7 +106,7 @@ class JellyfishClient(appContext: Context, listener: JellyfishClientListener) {
         videoParameters: VideoParameters,
         metadata: Metadata,
         onEnd: (() -> Unit)? = null
-    ): LocalScreencastTrack? {
+    ): LocalScreencastTrack {
         return client.webrtcClient.createScreencastTrack(
             mediaProjectionPermission,
             videoParameters,

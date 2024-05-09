@@ -39,7 +39,7 @@ interface PhoenixTransportListener {
     fun onClose()
 }
 
-class PhoenixTransport constructor(
+class PhoenixTransport(
     private val url: String,
     private val topic: String,
     private val ioDispatcher: CoroutineDispatcher,

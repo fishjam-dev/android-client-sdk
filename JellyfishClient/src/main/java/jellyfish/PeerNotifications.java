@@ -63,7 +63,7 @@ public final class PeerNotifications {
      */
     jellyfish.PeerNotifications.PeerMessage.MediaEventOrBuilder getMediaEventOrBuilder();
 
-    public jellyfish.PeerNotifications.PeerMessage.ContentCase getContentCase();
+    jellyfish.PeerNotifications.PeerMessage.ContentCase getContentCase();
   }
   /**
    * Protobuf type {@code jellyfish.PeerMessage}
@@ -88,11 +88,11 @@ public final class PeerNotifications {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
+    public com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    public static com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return jellyfish.PeerNotifications.internal_static_jellyfish_PeerMessage_descriptor;
     }
@@ -132,11 +132,11 @@ public final class PeerNotifications {
       }
 
       @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
+      public com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
+      public static com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jellyfish.PeerNotifications.internal_static_jellyfish_PeerMessage_Authenticated_descriptor;
       }
@@ -151,7 +151,7 @@ public final class PeerNotifications {
 
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
-      public final boolean isInitialized() {
+      public boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
         if (isInitialized == 0) return false;
@@ -187,8 +187,7 @@ public final class PeerNotifications {
         }
         jellyfish.PeerNotifications.PeerMessage.Authenticated other = (jellyfish.PeerNotifications.PeerMessage.Authenticated) obj;
 
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-        return true;
+          return getUnknownFields().equals(other.getUnknownFields());
       }
 
       @java.lang.Override
@@ -300,7 +299,7 @@ public final class PeerNotifications {
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:jellyfish.PeerMessage.Authenticated)
           jellyfish.PeerNotifications.PeerMessage.AuthenticatedOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
+        public static com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return jellyfish.PeerNotifications.internal_static_jellyfish_PeerMessage_Authenticated_descriptor;
         }
@@ -406,7 +405,7 @@ public final class PeerNotifications {
         }
 
         @java.lang.Override
-        public final boolean isInitialized() {
+        public boolean isInitialized() {
           return true;
         }
 
@@ -442,14 +441,14 @@ public final class PeerNotifications {
           return this;
         }
         @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
+        public Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
+        public Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
         }
 
@@ -545,11 +544,11 @@ public final class PeerNotifications {
       }
 
       @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
+      public com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
+      public static com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jellyfish.PeerNotifications.internal_static_jellyfish_PeerMessage_AuthRequest_descriptor;
       }
@@ -603,7 +602,7 @@ public final class PeerNotifications {
 
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
-      public final boolean isInitialized() {
+      public boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
         if (isInitialized == 0) return false;
@@ -646,9 +645,10 @@ public final class PeerNotifications {
         jellyfish.PeerNotifications.PeerMessage.AuthRequest other = (jellyfish.PeerNotifications.PeerMessage.AuthRequest) obj;
 
         if (!getToken()
-            .equals(other.getToken())) return false;
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-        return true;
+            .equals(other.getToken())) {
+          return false;
+        }
+        return getUnknownFields().equals(other.getUnknownFields());
       }
 
       @java.lang.Override
@@ -762,7 +762,7 @@ public final class PeerNotifications {
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:jellyfish.PeerMessage.AuthRequest)
           jellyfish.PeerNotifications.PeerMessage.AuthRequestOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
+        public static com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return jellyfish.PeerNotifications.internal_static_jellyfish_PeerMessage_AuthRequest_descriptor;
         }
@@ -883,7 +883,7 @@ public final class PeerNotifications {
         }
 
         @java.lang.Override
-        public final boolean isInitialized() {
+        public boolean isInitialized() {
           return true;
         }
 
@@ -997,14 +997,14 @@ public final class PeerNotifications {
           return this;
         }
         @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
+        public Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
+        public Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
         }
 
@@ -1100,11 +1100,11 @@ public final class PeerNotifications {
       }
 
       @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
+      public com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
+      public static com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jellyfish.PeerNotifications.internal_static_jellyfish_PeerMessage_MediaEvent_descriptor;
       }
@@ -1158,7 +1158,7 @@ public final class PeerNotifications {
 
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
-      public final boolean isInitialized() {
+      public boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
         if (isInitialized == 0) return false;
@@ -1202,8 +1202,7 @@ public final class PeerNotifications {
 
         if (!getData()
             .equals(other.getData())) return false;
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-        return true;
+        return getUnknownFields().equals(other.getUnknownFields());
       }
 
       @java.lang.Override
@@ -1317,7 +1316,7 @@ public final class PeerNotifications {
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:jellyfish.PeerMessage.MediaEvent)
           jellyfish.PeerNotifications.PeerMessage.MediaEventOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
+        public static com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return jellyfish.PeerNotifications.internal_static_jellyfish_PeerMessage_MediaEvent_descriptor;
         }
@@ -1438,7 +1437,7 @@ public final class PeerNotifications {
         }
 
         @java.lang.Override
-        public final boolean isInitialized() {
+        public boolean isInitialized() {
           return true;
         }
 
@@ -1552,14 +1551,14 @@ public final class PeerNotifications {
           return this;
         }
         @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
+        public Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
+        public Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
         }
 
@@ -1625,7 +1624,7 @@ public final class PeerNotifications {
       MEDIA_EVENT(3),
       CONTENT_NOT_SET(0);
       private final int value;
-      private ContentCase(int value) {
+      ContentCase(int value) {
         this.value = value;
       }
       /**
@@ -1650,9 +1649,9 @@ public final class PeerNotifications {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ContentCase
+      public ContentCase
     getContentCase() {
       return ContentCase.forNumber(
           contentCase_);
@@ -1753,7 +1752,7 @@ public final class PeerNotifications {
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
-    public final boolean isInitialized() {
+    public boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
@@ -1827,8 +1826,7 @@ public final class PeerNotifications {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+        return getUnknownFields().equals(other.getUnknownFields());
     }
 
     @java.lang.Override
@@ -1956,7 +1954,7 @@ public final class PeerNotifications {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:jellyfish.PeerMessage)
         jellyfish.PeerNotifications.PeerMessageOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+      public static com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jellyfish.PeerNotifications.internal_static_jellyfish_PeerMessage_descriptor;
       }
@@ -2114,7 +2112,7 @@ public final class PeerNotifications {
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+      public boolean isInitialized() {
         return true;
       }
 
@@ -2613,14 +2611,14 @@ public final class PeerNotifications {
         return mediaEventBuilder_;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -2701,7 +2699,7 @@ public final class PeerNotifications {
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private static final com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {

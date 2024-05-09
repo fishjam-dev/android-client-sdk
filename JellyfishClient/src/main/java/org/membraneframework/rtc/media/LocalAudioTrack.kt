@@ -13,7 +13,7 @@ import java.util.*
  *
  * Internally it wraps a WebRTC <strong>AudioTrack</strong>.
  */
-class LocalAudioTrack constructor(
+class LocalAudioTrack(
     var mediaTrack: org.webrtc.AudioTrack
 ) : AudioTrack(mediaTrack), LocalTrack {
     override fun start() {
