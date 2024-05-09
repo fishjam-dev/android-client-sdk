@@ -18,8 +18,10 @@ import org.membraneframework.rtc.utils.ClosableCoroutineScope
 import org.membraneframework.rtc.utils.Metadata
 import org.membraneframework.rtc.utils.SerializedMediaEvent
 import org.membraneframework.rtc.utils.TimberDebugTree
-import org.webrtc.*
 import org.webrtc.AudioTrack
+import org.webrtc.EglBase
+import org.webrtc.IceCandidate
+import org.webrtc.MediaStreamTrack
 import org.webrtc.VideoTrack
 import timber.log.Timber
 import java.util.*

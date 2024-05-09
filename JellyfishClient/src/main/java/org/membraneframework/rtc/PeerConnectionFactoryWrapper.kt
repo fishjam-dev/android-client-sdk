@@ -2,7 +2,10 @@ package org.membraneframework.rtc
 
 import android.content.Context
 import org.membraneframework.rtc.media.SimulcastVideoEncoderFactoryWrapper
-import org.webrtc.*
+import org.webrtc.DefaultVideoDecoderFactory
+import org.webrtc.EglBase
+import org.webrtc.PeerConnection
+import org.webrtc.PeerConnectionFactory
 import org.webrtc.audio.AudioDeviceModule
 
 internal class PeerConnectionFactoryWrapper
