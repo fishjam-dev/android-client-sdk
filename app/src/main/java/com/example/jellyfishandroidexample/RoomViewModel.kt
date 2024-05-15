@@ -32,7 +32,7 @@ class RoomViewModel(application: Application) :
     fun connect(roomToken: String) {
         client.connect(
             Config(
-                websocketUrl = BuildConfig.JELLYFISH_SOCKET_URL,
+                websocketUrl = BuildConfig.FISHJAM_SOCKET_URL,
                 token = roomToken,
             ),
         )
