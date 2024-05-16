@@ -1,3 +1,3 @@
-# Module JellyfishClient
+# Module FishjamClient
 
 ## Overview
