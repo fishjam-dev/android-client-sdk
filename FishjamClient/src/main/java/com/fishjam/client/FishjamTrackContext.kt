@@ -54,12 +54,20 @@ class FishjamTrackContext(private val trackContext: TrackContext) {
         }
 
     fun setOnEncodingChangedListener(listener: FishjamOnEncodingChangedListener) {
-        val rtcListener = OnEncodingChangedListener { trackContext -> listener.onEncodingChangedListener(FishjamTrackContext(trackContext)) }
+        val rtcListener =
+            OnEncodingChangedListener {
+                    trackContext ->
+                listener.onEncodingChangedListener(FishjamTrackContext(trackContext))
+            }
         trackContext.setOnEncodingChangedListener(rtcListener)
     }
 
     fun setOnVoiceActivityChangedListener(listener: FishjamOnVoiceActivityChangedListener) {
-        val rtcListener = OnVoiceActivityChangedListener { trackContext -> listener.onVoiceActivityChanged(FishjamTrackContext(trackContext)) }
+        val rtcListener =
+            OnVoiceActivityChangedListener {
+                    trackContext ->
+                listener.onVoiceActivityChanged(FishjamTrackContext(trackContext))
+            }
         trackContext.setOnVoiceActivityChangedListener(rtcListener)
     }
 }

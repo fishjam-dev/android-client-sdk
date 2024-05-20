@@ -3,7 +3,6 @@ package com.fishjam.client
 import android.content.Context
 import fishjam.PeerNotifications
 import fishjam.PeerNotifications.PeerMessage
-
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
@@ -23,7 +22,7 @@ typealias Peer = Endpoint
 
 internal class FishjamClientInternal(
     appContext: Context,
-    private val listener: FishjamClientListener,
+    private val listener: FishjamClientListener
 ) :
     MembraneRTCListener {
     private var webSocket: WebSocket? = null
@@ -37,42 +36,58 @@ internal class FishjamClientInternal(
 
     fun connect(config: Config) {
         val request = Request.Builder().url(config.websocketUrl).build()
-        val webSocket = OkHttpClient().newWebSocket(
-            request,
-            object : WebSocketListener() {
-                override fun onClosed(webSocket: WebSocket, code: Int, reason: String) {
-                    listener.onSocketClose(code, reason)
-                }
+        val webSocket =
+            OkHttpClient().newWebSocket(
+                request,
+                object : WebSocketListener() {
+                    override fun onClosed(
+                        webSocket: WebSocket,
+                        code: Int,
+                        reason: String
+                    ) {
+                        listener.onSocketClose(code, reason)
+                    }
 
-                override fun onMessage(webSocket: WebSocket, bytes: ByteString) {
-                    try {
-                        val peerMessage = PeerMessage.parseFrom(bytes.toByteArray())
-                        if (peerMessage.hasAuthenticated()) {
-                            listener.onAuthSuccess()
-                        } else if (peerMessage.hasMediaEvent()) {
-                            receiveEvent(peerMessage.mediaEvent.data)
-                        } else {
-                            Timber.w("Received unexpected websocket message: $peerMessage")
+                    override fun onMessage(
+                        webSocket: WebSocket,
+                        bytes: ByteString
+                    ) {
+                        try {
+                            val peerMessage = PeerMessage.parseFrom(bytes.toByteArray())
+                            if (peerMessage.hasAuthenticated()) {
+                                listener.onAuthSuccess()
+                            } else if (peerMessage.hasMediaEvent()) {
+                                receiveEvent(peerMessage.mediaEvent.data)
+                            } else {
+                                Timber.w("Received unexpected websocket message: $peerMessage")
+                            }
+                        } catch (e: Exception) {
+                            Timber.e("Received invalid websocket message", e)
                         }
-                    } catch (e: Exception) {
-                        Timber.e("Received invalid websocket message", e)
+                    }
+
+                    override fun onOpen(
+                        webSocket: WebSocket,
+                        response: Response
+                    ) {
+                        listener.onSocketOpen()
+                        val authRequest =
+                            PeerNotifications.PeerMessage
+                                .newBuilder()
+                                .setAuthRequest(PeerMessage.AuthRequest.newBuilder().setToken(config.token))
+                                .build()
+                        sendEvent(authRequest)
+                    }
+
+                    override fun onFailure(
+                        webSocket: WebSocket,
+                        t: Throwable,
+                        response: Response?
+                    ) {
+                        listener.onSocketError(t, response)
                     }
                 }
-
-                override fun onOpen(webSocket: WebSocket, response: Response) {
-                    listener.onSocketOpen()
-                    val authRequest = PeerNotifications.PeerMessage
-                        .newBuilder()
-                        .setAuthRequest(PeerMessage.AuthRequest.newBuilder().setToken(config.token))
-                        .build()
-                    sendEvent(authRequest)
-                }
-
-                override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
-                    listener.onSocketError(t, response)
-                }
-            },
-        )
+            )
 
         this.webSocket = webSocket
     }
@@ -109,10 +124,11 @@ internal class FishjamClientInternal(
     }
 
     override fun onSendMediaEvent(event: SerializedMediaEvent) {
-        val mediaEvent = PeerMessage
-            .newBuilder()
-            .setMediaEvent(PeerMessage.MediaEvent.newBuilder().setData(event))
-            .build()
+        val mediaEvent =
+            PeerMessage
+                .newBuilder()
+                .setMediaEvent(PeerMessage.MediaEvent.newBuilder().setData(event))
+                .build()
         sendEvent(mediaEvent)
     }
 
@@ -144,7 +160,10 @@ internal class FishjamClientInternal(
         listener.onJoinError(metadata)
     }
 
-    override fun onConnected(peerID: String, peersInRoom: List<Peer>) {
+    override fun onConnected(
+        peerID: String,
+        peersInRoom: List<Peer>
+    ) {
         listener.onJoined(peerID, peersInRoom)
     }
 

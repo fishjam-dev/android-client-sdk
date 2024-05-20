@@ -83,10 +83,10 @@ class RoomActivity : ComponentActivity() {
             Box {
                 Column(
                     modifier =
-                    Modifier
-                        .fillMaxWidth()
-                        .fillMaxHeight()
-                        .padding(10.dp),
+                        Modifier
+                            .fillMaxWidth()
+                            .fillMaxHeight()
+                            .padding(10.dp),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -103,8 +103,8 @@ class RoomActivity : ComponentActivity() {
                             finish()
                         },
                         modifier =
-                        Modifier
-                            .width(200.dp)
+                            Modifier
+                                .width(200.dp)
                     ) {
                         Text("Disconnect")
                     }
@@ -122,25 +122,25 @@ class RoomActivity : ComponentActivity() {
     ) {
         Box(
             modifier =
-            Modifier
-                .clickable(
-                    indication = null,
-                    interactionSource = remember { MutableInteractionSource() }
-                ) {
-                    onClick?.invoke()
-                }
-                .clip(RoundedCornerShape(10.dp))
-                .height(size.height.dp)
-                .width(size.width.dp)
+                Modifier
+                    .clickable(
+                        indication = null,
+                        interactionSource = remember { MutableInteractionSource() }
+                    ) {
+                        onClick?.invoke()
+                    }
+                    .clip(RoundedCornerShape(10.dp))
+                    .height(size.height.dp)
+                    .width(size.width.dp)
         ) {
             ParticipantVideoView(
                 participant = participant,
                 videoViewLayout = videoViewLayout,
                 modifier =
-                Modifier
-                    .align(Alignment.Center)
-                    .fillMaxWidth()
-                    .fillMaxHeight()
+                    Modifier
+                        .align(Alignment.Center)
+                        .fillMaxWidth()
+                        .fillMaxHeight()
             )
         }
     }

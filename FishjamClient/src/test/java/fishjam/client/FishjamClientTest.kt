@@ -2,14 +2,14 @@ import android.content.Context
 import com.fishjam.client.Config
 import com.fishjam.client.FishjamClient
 import com.fishjam.client.FishjamClientListener
+import fishjam.PeerNotifications
+import fishjamdev.fishjamclient.WebsocketMock
 import io.mockk.confirmVerified
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.mockkObject
 import io.mockk.slot
 import io.mockk.verify
-import fishjamdev.fishjamclient.WebsocketMock
-import fishjam.PeerNotifications
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -27,15 +27,17 @@ class FishjamClientTest {
 
     private val url = "ws://localhost:4000/socket/peer/websocket"
     private val token = "auth"
-    private val authRequest = PeerNotifications.PeerMessage
-        .newBuilder()
-        .setAuthRequest(PeerNotifications.PeerMessage.AuthRequest.newBuilder().setToken(token))
-        .build()
+    private val authRequest =
+        PeerNotifications.PeerMessage
+            .newBuilder()
+            .setAuthRequest(PeerNotifications.PeerMessage.AuthRequest.newBuilder().setToken(token))
+            .build()
 
-    private val authenticated = PeerNotifications.PeerMessage
-        .newBuilder()
-        .setAuthenticated(PeerNotifications.PeerMessage.Authenticated.newBuilder())
-        .build()
+    private val authenticated =
+        PeerNotifications.PeerMessage
+            .newBuilder()
+            .setAuthenticated(PeerNotifications.PeerMessage.Authenticated.newBuilder())
+            .build()
 
     init {
         mockkObject(MembraneRTC)
@@ -66,15 +68,17 @@ class FishjamClientTest {
     }
 
     @Test fun receivesAndSendsMediaEvents() {
-        val sdpOfferMediaEvent = PeerNotifications.PeerMessage
-            .newBuilder()
-            .setMediaEvent(PeerNotifications.PeerMessage.MediaEvent.newBuilder().setData("sdpOffer"))
-            .build()
+        val sdpOfferMediaEvent =
+            PeerNotifications.PeerMessage
+                .newBuilder()
+                .setMediaEvent(PeerNotifications.PeerMessage.MediaEvent.newBuilder().setData("sdpOffer"))
+                .build()
 
-        val joinMediaEvent = PeerNotifications.PeerMessage
-            .newBuilder()
-            .setMediaEvent(PeerNotifications.PeerMessage.MediaEvent.newBuilder().setData("join"))
-            .build()
+        val joinMediaEvent =
+            PeerNotifications.PeerMessage
+                .newBuilder()
+                .setMediaEvent(PeerNotifications.PeerMessage.MediaEvent.newBuilder().setData("join"))
+                .build()
 
         websocketMock.sendToClient(authenticated)
 
