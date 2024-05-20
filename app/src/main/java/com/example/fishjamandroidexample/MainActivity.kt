@@ -66,8 +66,8 @@ class MainActivity : ComponentActivity() {
         ) {
             Column(
                 modifier =
-                    Modifier
-                        .fillMaxSize(),
+                Modifier
+                    .fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
@@ -85,8 +85,8 @@ class MainActivity : ComponentActivity() {
                         },
                         enabled = !(roomToken.value.text.isEmpty()),
                         modifier =
-                            Modifier
-                                .width(200.dp)
+                        Modifier
+                            .width(200.dp)
                     ) {
                         Text("Join room")
                     }
@@ -113,9 +113,9 @@ class MainActivity : ComponentActivity() {
         } else {
             Column(
                 modifier =
-                    Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
+                Modifier
+                    .fillMaxWidth()
+                    .padding(10.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 val textToShow =
