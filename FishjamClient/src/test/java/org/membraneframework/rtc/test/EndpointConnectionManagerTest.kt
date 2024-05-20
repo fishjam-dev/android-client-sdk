@@ -16,8 +16,12 @@ import org.membraneframework.rtc.utils.addTransceiver
 import org.membraneframework.rtc.utils.createOffer
 import org.membraneframework.rtc.utils.getEncodings
 import org.membraneframework.rtc.utils.setLocalDescription
-import org.webrtc.*
+import org.webrtc.MediaConstraints
+import org.webrtc.PeerConnection
 import org.webrtc.RtpParameters.Encoding
+import org.webrtc.RtpTransceiver
+import org.webrtc.SessionDescription
+import org.webrtc.VideoTrack
 
 class EndpointConnectionManagerTest {
     private lateinit var manager: PeerConnectionManager

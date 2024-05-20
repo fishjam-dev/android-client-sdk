@@ -16,7 +16,7 @@ typealias TrackContext = FishjamTrackContext
 
 data class Config(
     val websocketUrl: String,
-    val token: String,
+    val token: String
 )
 
 class FishjamClient(appContext: Context, listener: FishjamClientListener) {
@@ -73,7 +73,7 @@ class FishjamClient(appContext: Context, listener: FishjamClientListener) {
     fun createVideoTrack(
         videoParameters: VideoParameters,
         metadata: Metadata,
-        captureDeviceName: String? = null,
+        captureDeviceName: String? = null
     ): LocalVideoTrack {
         return client.webrtcClient.createVideoTrack(videoParameters, metadata, captureDeviceName)
     }
@@ -105,13 +105,13 @@ class FishjamClient(appContext: Context, listener: FishjamClientListener) {
         mediaProjectionPermission: Intent,
         videoParameters: VideoParameters,
         metadata: Metadata,
-        onEnd: (() -> Unit)? = null,
-    ): LocalScreencastTrack? {
+        onEnd: (() -> Unit)? = null
+    ): LocalScreencastTrack {
         return client.webrtcClient.createScreencastTrack(
             mediaProjectionPermission,
             videoParameters,
             metadata,
-            onEnd,
+            onEnd
         )
     }
 
@@ -135,7 +135,10 @@ class FishjamClient(appContext: Context, listener: FishjamClientListener) {
      * @param trackId an id of a remote track
      * @param encoding an encoding to receive
      */
-    fun setTargetTrackEncoding(trackId: String, encoding: TrackEncoding) {
+    fun setTargetTrackEncoding(
+        trackId: String,
+        encoding: TrackEncoding
+    ) {
         client.webrtcClient.setTargetTrackEncoding(trackId, encoding)
     }
 
@@ -145,7 +148,10 @@ class FishjamClient(appContext: Context, listener: FishjamClientListener) {
      * @param trackId an id of a local track
      * @param encoding an encoding that will be enabled
      */
-    fun enableTrackEncoding(trackId: String, encoding: TrackEncoding) {
+    fun enableTrackEncoding(
+        trackId: String,
+        encoding: TrackEncoding
+    ) {
         client.webrtcClient.enableTrackEncoding(trackId, encoding)
     }
 
@@ -155,7 +161,10 @@ class FishjamClient(appContext: Context, listener: FishjamClientListener) {
      * @param trackId and id of a local track
      * @param encoding an encoding that will be disabled
      */
-    fun disableTrackEncoding(trackId: String, encoding: TrackEncoding) {
+    fun disableTrackEncoding(
+        trackId: String,
+        encoding: TrackEncoding
+    ) {
         client.webrtcClient.disableTrackEncoding(trackId, encoding)
     }
 
@@ -178,7 +187,10 @@ class FishjamClient(appContext: Context, listener: FishjamClientListener) {
      * If the metadata is different from what is already tracked in the room, the optional
      * callback `onTrackUpdated` will be triggered for other peers in the room.
      */
-    fun updateTrackMetadata(trackId: String, trackMetadata: Metadata) {
+    fun updateTrackMetadata(
+        trackId: String,
+        trackMetadata: Metadata
+    ) {
         client.webrtcClient.updateTrackMetadata(trackId, trackMetadata)
     }
 
@@ -189,7 +201,10 @@ class FishjamClient(appContext: Context, listener: FishjamClientListener) {
      * @param trackId track id of a video track
      * @param bandwidthLimit bandwidth in kbps
      */
-    fun setTrackBandwidth(trackId: String, bandwidthLimit: TrackBandwidthLimit.BandwidthLimit) {
+    fun setTrackBandwidth(
+        trackId: String,
+        bandwidthLimit: TrackBandwidthLimit.BandwidthLimit
+    ) {
         client.webrtcClient.setTrackBandwidth(trackId, bandwidthLimit)
     }
 
@@ -202,7 +217,7 @@ class FishjamClient(appContext: Context, listener: FishjamClientListener) {
     fun setEncodingBandwidth(
         trackId: String,
         encoding: String,
-        bandwidthLimit: TrackBandwidthLimit.BandwidthLimit,
+        bandwidthLimit: TrackBandwidthLimit.BandwidthLimit
     ) {
         client.webrtcClient.setEncodingBandwidth(trackId, encoding, bandwidthLimit)
     }

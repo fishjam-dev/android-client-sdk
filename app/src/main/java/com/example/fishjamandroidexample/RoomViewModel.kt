@@ -25,16 +25,17 @@ class RoomViewModel(application: Application) :
     val participants = MutableStateFlow<List<Participant>>(emptyList())
     private val globalToLocalTrackId = HashMap<String, String>()
 
-    private val videoSimulcastConfig = SimulcastConfig(
-        enabled = false,
-    )
+    private val videoSimulcastConfig =
+        SimulcastConfig(
+            enabled = false
+        )
 
     fun connect(roomToken: String) {
         client.connect(
             Config(
                 websocketUrl = BuildConfig.FISHJAM_SOCKET_URL,
-                token = roomToken,
-            ),
+                token = roomToken
+            )
         )
         setupTracks()
     }
@@ -48,10 +49,11 @@ class RoomViewModel(application: Application) :
 
     private fun setupTracks() {
         var videoParameters = VideoParameters.presetHD169
-        videoParameters = videoParameters.copy(
-            dimensions = videoParameters.dimensions,
-            simulcastConfig = videoSimulcastConfig,
-        )
+        videoParameters =
+            videoParameters.copy(
+                dimensions = videoParameters.dimensions,
+                simulcastConfig = videoSimulcastConfig
+            )
 
         localVideoTrack = client.createVideoTrack(videoParameters, emptyMap())
     }
@@ -62,11 +64,15 @@ class RoomViewModel(application: Application) :
 
     override fun onAuthError() {}
 
-    override fun onJoined(peerID: String, peersInRoom: List<Peer>) {
+    override fun onJoined(
+        peerID: String,
+        peersInRoom: List<Peer>
+    ) {
         peersInRoom.forEach {
-            mutableParticipants[it.id] = Participant(
-                it.id,
-            )
+            mutableParticipants[it.id] =
+                Participant(
+                    it.id
+                )
         }
         emitParticipants()
     }
@@ -75,9 +81,10 @@ class RoomViewModel(application: Application) :
     }
 
     override fun onPeerJoined(peer: Peer) {
-        mutableParticipants[peer.id] = Participant(
-            id = peer.id,
-        )
+        mutableParticipants[peer.id] =
+            Participant(
+                id = peer.id
+            )
         emitParticipants()
     }
 
@@ -92,17 +99,18 @@ class RoomViewModel(application: Application) :
         viewModelScope.launch {
             val participant = mutableParticipants[ctx.peer.id] ?: return@launch
 
-            val (id, newParticipant) = when (ctx.track) {
-                is RemoteVideoTrack -> {
-                    globalToLocalTrackId[ctx.trackId] = (ctx.track as RemoteVideoTrack).id()
+            val (id, newParticipant) =
+                when (ctx.track) {
+                    is RemoteVideoTrack -> {
+                        globalToLocalTrackId[ctx.trackId] = (ctx.track as RemoteVideoTrack).id()
 
-                    val p = participant.copy(videoTrack = ctx.track as RemoteVideoTrack)
-                    Pair(ctx.peer.id, p)
+                        val p = participant.copy(videoTrack = ctx.track as RemoteVideoTrack)
+                        Pair(ctx.peer.id, p)
+                    }
+
+                    else ->
+                        throw IllegalArgumentException("invalid type of incoming remote track")
                 }
-
-                else ->
-                    throw IllegalArgumentException("invalid type of incoming remote track")
-            }
 
             mutableParticipants[id] = newParticipant
 
@@ -117,11 +125,12 @@ class RoomViewModel(application: Application) :
             val localTrackId = globalToLocalTrackId[ctx.trackId]
             val videoTrackId = participant.videoTrack?.id()
 
-            val newParticipant = if (localTrackId == videoTrackId) {
-                participant.copy(videoTrack = null)
-            } else {
-                throw IllegalArgumentException("track has not been found for given endpoint")
-            }
+            val newParticipant =
+                if (localTrackId == videoTrackId) {
+                    participant.copy(videoTrack = null)
+                } else {
+                    throw IllegalArgumentException("track has not been found for given endpoint")
+                }
 
             globalToLocalTrackId.remove(ctx.trackId)
 

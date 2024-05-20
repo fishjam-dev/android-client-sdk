@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
         Intent(this@MainActivity, RoomActivity::class.java).apply {
             putExtra(
                 RoomActivity.ARGS,
-                RoomActivity.BundleArgs(token),
+                RoomActivity.BundleArgs(token)
             )
         }.let {
             startActivity(it)
@@ -62,19 +62,20 @@ class MainActivity : ComponentActivity() {
 
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colorScheme.background,
+            color = MaterialTheme.colorScheme.background
         ) {
             Column(
-                modifier = Modifier
-                    .fillMaxSize(),
+                modifier =
+                    Modifier
+                        .fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center,
+                verticalArrangement = Arrangement.Center
             ) {
                 OutlinedTextField(
                     value = roomToken.value,
                     onValueChange = { roomToken.value = it },
                     placeholder = { Text("Enter room token...") },
-                    label = { Text("Room token") },
+                    label = { Text("Room token") }
                 )
 
                 ConnectWithPermissions {
@@ -83,8 +84,9 @@ class MainActivity : ComponentActivity() {
                             connect(roomToken.value.text.trim())
                         },
                         enabled = !(roomToken.value.text.isEmpty()),
-                        modifier = Modifier
-                            .width(200.dp),
+                        modifier =
+                            Modifier
+                                .width(200.dp)
                     ) {
                         Text("Join room")
                     }
@@ -96,12 +98,13 @@ class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalPermissionsApi::class)
     @Composable
     fun ConnectWithPermissions(content: @Composable () -> Unit) {
-        val multiplePermissionsState = rememberMultiplePermissionsState(
-            listOf(
-                Manifest.permission.RECORD_AUDIO,
-                Manifest.permission.CAMERA,
-            ),
-        )
+        val multiplePermissionsState =
+            rememberMultiplePermissionsState(
+                listOf(
+                    Manifest.permission.RECORD_AUDIO,
+                    Manifest.permission.CAMERA
+                )
+            )
 
         val alreadyRequested = remember { mutableStateOf(false) }
 
@@ -109,21 +112,23 @@ class MainActivity : ComponentActivity() {
             content()
         } else {
             Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier =
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                val textToShow = when {
-                    multiplePermissionsState.shouldShowRationale ->
-                        "Application requires an access to a microphone and camera for it to work"
+                val textToShow =
+                    when {
+                        multiplePermissionsState.shouldShowRationale ->
+                            "Application requires an access to a microphone and camera for it to work"
 
-                    !multiplePermissionsState.shouldShowRationale && alreadyRequested.value ->
-                        "You need to explicitly grant the access to the camera and microphone in system settings..."
+                        !multiplePermissionsState.shouldShowRationale && alreadyRequested.value ->
+                            "You need to explicitly grant the access to the camera and microphone in system settings..."
 
-                    else ->
-                        null
-                }
+                        else ->
+                            null
+                    }
 
                 Button(
                     onClick = {
@@ -142,7 +147,7 @@ class MainActivity : ComponentActivity() {
                         }
 
                         alreadyRequested.value = true
-                    },
+                    }
                 ) {
                     Text("Request permissions")
                 }
