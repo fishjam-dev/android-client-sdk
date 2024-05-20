@@ -21,10 +21,10 @@ android {
             useSupportLibrary true
         }
 
-        if(project.hasProperty("JELLYFISH_SOCKET_URL")) {
-            buildConfigField "String", "JELLYFISH_SOCKET_URL", "\"$JELLYFISH_SOCKET_URL\""
+        if(project.hasProperty("FISHJAM_SOCKET_URL")) {
+            buildConfigField "String", "FISHJAM_SOCKET_URL", "\"$FISHJAM_SOCKET_URL\""
         } else {
-            buildConfigField "String" , "JELLYFISH_SOCKET_URL" ,  "\"ws://localhost:4000/socket/peer/websocket\""
+            buildConfigField "String" , "FISHJAM_SOCKET_URL" ,  "\"ws://localhost:4000/socket/peer/websocket\""
         }
     }
 
@@ -76,6 +76,6 @@ dependencies {
     androidTestImplementation platform('androidx.compose:compose-bom:2022.10.00')
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
     androidTestImplementation platform('androidx.compose:compose-bom:2022.10.00')
-    
+
     testImplementation 'junit:junit:4.13.2'
 }
