@@ -22,7 +22,7 @@ typealias Peer = Endpoint
 
 internal class JellyfishClientInternal(
     appContext: Context,
-    private val listener: JellyfishClientListener,
+    private val listener: JellyfishClientListener
 ) :
     MembraneRTCListener {
     private var webSocket: WebSocket? = null
@@ -36,42 +36,58 @@ internal class JellyfishClientInternal(
 
     fun connect(config: Config) {
         val request = Request.Builder().url(config.websocketUrl).build()
-        val webSocket = OkHttpClient().newWebSocket(
-            request,
-            object : WebSocketListener() {
-                override fun onClosed(webSocket: WebSocket, code: Int, reason: String) {
-                    listener.onSocketClose(code, reason)
-                }
+        val webSocket =
+            OkHttpClient().newWebSocket(
+                request,
+                object : WebSocketListener() {
+                    override fun onClosed(
+                        webSocket: WebSocket,
+                        code: Int,
+                        reason: String
+                    ) {
+                        listener.onSocketClose(code, reason)
+                    }
 
-                override fun onMessage(webSocket: WebSocket, bytes: ByteString) {
-                    try {
-                        val peerMessage = PeerMessage.parseFrom(bytes.toByteArray())
-                        if (peerMessage.hasAuthenticated()) {
-                            listener.onAuthSuccess()
-                        } else if (peerMessage.hasMediaEvent()) {
-                            receiveEvent(peerMessage.mediaEvent.data)
-                        } else {
-                            Timber.w("Received unexpected websocket message: $peerMessage")
+                    override fun onMessage(
+                        webSocket: WebSocket,
+                        bytes: ByteString
+                    ) {
+                        try {
+                            val peerMessage = PeerMessage.parseFrom(bytes.toByteArray())
+                            if (peerMessage.hasAuthenticated()) {
+                                listener.onAuthSuccess()
+                            } else if (peerMessage.hasMediaEvent()) {
+                                receiveEvent(peerMessage.mediaEvent.data)
+                            } else {
+                                Timber.w("Received unexpected websocket message: $peerMessage")
+                            }
+                        } catch (e: Exception) {
+                            Timber.e("Received invalid websocket message", e)
                         }
-                    } catch (e: Exception) {
-                        Timber.e("Received invalid websocket message", e)
+                    }
+
+                    override fun onOpen(
+                        webSocket: WebSocket,
+                        response: Response
+                    ) {
+                        listener.onSocketOpen()
+                        val authRequest =
+                            PeerMessage
+                                .newBuilder()
+                                .setAuthRequest(PeerMessage.AuthRequest.newBuilder().setToken(config.token))
+                                .build()
+                        sendEvent(authRequest)
+                    }
+
+                    override fun onFailure(
+                        webSocket: WebSocket,
+                        t: Throwable,
+                        response: Response?
+                    ) {
+                        listener.onSocketError(t, response)
                     }
                 }
-
-                override fun onOpen(webSocket: WebSocket, response: Response) {
-                    listener.onSocketOpen()
-                    val authRequest = PeerMessage
-                        .newBuilder()
-                        .setAuthRequest(PeerMessage.AuthRequest.newBuilder().setToken(config.token))
-                        .build()
-                    sendEvent(authRequest)
-                }
-
-                override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
-                    listener.onSocketError(t, response)
-                }
-            },
-        )
+            )
 
         this.webSocket = webSocket
     }
@@ -108,30 +124,31 @@ internal class JellyfishClientInternal(
     }
 
     override fun onSendMediaEvent(event: SerializedMediaEvent) {
-        val mediaEvent = PeerMessage
-            .newBuilder()
-            .setMediaEvent(MediaEvent.newBuilder().setData(event))
-            .build()
+        val mediaEvent =
+            PeerMessage
+                .newBuilder()
+                .setMediaEvent(MediaEvent.newBuilder().setData(event))
+                .build()
         sendEvent(mediaEvent)
     }
 
     override fun onTrackAdded(ctx: TrackContext) {
-        var trackContext = TrackContext(ctx)
+        val trackContext = TrackContext(ctx)
         listener.onTrackAdded(trackContext)
     }
 
     override fun onTrackReady(ctx: TrackContext) {
-        var trackContext = TrackContext(ctx)
+        val trackContext = TrackContext(ctx)
         listener.onTrackReady(trackContext)
     }
 
     override fun onTrackRemoved(ctx: TrackContext) {
-        var trackContext = TrackContext(ctx)
+        val trackContext = TrackContext(ctx)
         listener.onTrackRemoved(trackContext)
     }
 
     override fun onTrackUpdated(ctx: TrackContext) {
-        var trackContext = TrackContext(ctx)
+        val trackContext = TrackContext(ctx)
         listener.onTrackUpdated(trackContext)
     }
 
@@ -143,7 +160,10 @@ internal class JellyfishClientInternal(
         listener.onJoinError(metadata)
     }
 
-    override fun onConnected(peerID: String, peersInRoom: List<Peer>) {
+    override fun onConnected(
+        peerID: String,
+        peersInRoom: List<Peer>
+    ) {
         listener.onJoined(peerID, peersInRoom)
     }
 

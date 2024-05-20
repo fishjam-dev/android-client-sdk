@@ -7,14 +7,20 @@ interface JellyfishClientListener {
     /**
      * Emitted when the websocket connection is closed
      */
-    fun onSocketClose(code: Int, reason: String) {
+    fun onSocketClose(
+        code: Int,
+        reason: String
+    ) {
         Timber.i("Socket was closed with code $code reason: $reason")
     }
 
     /**
      * Emitted when occurs an error in the websocket connection
      */
-    fun onSocketError(t: Throwable, response: Response?) {
+    fun onSocketError(
+        t: Throwable,
+        response: Response?
+    ) {
         Timber.w("Socket error:", t, response)
     }
 
@@ -38,7 +44,10 @@ interface JellyfishClientListener {
     /**
      * Emitted when local user is connected to jellyfish.
      */
-    fun onJoined(peerID: String, peersInRoom: List<Peer>)
+    fun onJoined(
+        peerID: String,
+        peersInRoom: List<Peer>
+    )
 
     /**
      * Emitted when there was an error while connecting to the jellyfish.

@@ -54,12 +54,20 @@ class JellyfishTrackContext(private val trackContext: TrackContext) {
         }
 
     fun setOnEncodingChangedListener(listener: JellyfishOnEncodingChangedListener) {
-        val rtcListener = OnEncodingChangedListener { trackContext -> listener.onEncodingChangedListener(JellyfishTrackContext(trackContext)) }
+        val rtcListener =
+            OnEncodingChangedListener {
+                    trackContext ->
+                listener.onEncodingChangedListener(JellyfishTrackContext(trackContext))
+            }
         trackContext.setOnEncodingChangedListener(rtcListener)
     }
 
     fun setOnVoiceActivityChangedListener(listener: JellyfishOnVoiceActivityChangedListener) {
-        val rtcListener = OnVoiceActivityChangedListener { trackContext -> listener.onVoiceActivityChanged(JellyfishTrackContext(trackContext)) }
+        val rtcListener =
+            OnVoiceActivityChangedListener {
+                    trackContext ->
+                listener.onVoiceActivityChanged(JellyfishTrackContext(trackContext))
+            }
         trackContext.setOnVoiceActivityChangedListener(rtcListener)
     }
 }

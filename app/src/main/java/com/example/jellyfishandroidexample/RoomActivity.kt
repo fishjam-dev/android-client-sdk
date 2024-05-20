@@ -48,8 +48,9 @@ class RoomActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val (roomToken) = intent.getParcelableExtra<BundleArgs>(ARGS)
-            ?: throw NullPointerException("Failed to decode intent's parcelable")
+        val (roomToken) =
+            intent.getParcelableExtra<BundleArgs>(ARGS)
+                ?: throw NullPointerException("Failed to decode intent's parcelable")
         viewModel.connect(roomToken)
 
         setContent {
@@ -57,7 +58,7 @@ class RoomActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background,
+                    color = MaterialTheme.colorScheme.background
                 ) {
                     Content()
                 }
@@ -77,22 +78,23 @@ class RoomActivity : ComponentActivity() {
         val participants = viewModel.participants.collectAsState()
 
         Scaffold(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize()
         ) {
             Box {
                 Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .fillMaxHeight()
-                        .padding(10.dp),
+                    modifier =
+                        Modifier
+                            .fillMaxWidth()
+                            .fillMaxHeight()
+                            .padding(10.dp),
                     verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     participants.value.forEach {
                         ParticipantCard(
                             participant = it,
                             videoViewLayout = VideoViewLayout.FILL,
-                            size = Size(100f, 100f),
+                            size = Size(100f, 100f)
                         )
                     }
 
@@ -100,8 +102,9 @@ class RoomActivity : ComponentActivity() {
                         onClick = {
                             finish()
                         },
-                        modifier = Modifier
-                            .width(200.dp),
+                        modifier =
+                            Modifier
+                                .width(200.dp)
                     ) {
                         Text("Disconnect")
                     }
@@ -115,27 +118,29 @@ class RoomActivity : ComponentActivity() {
         participant: Participant,
         videoViewLayout: VideoViewLayout,
         size: Size,
-        onClick: (() -> Unit)? = null,
+        onClick: (() -> Unit)? = null
     ) {
         Box(
-            modifier = Modifier
-                .clickable(
-                    indication = null,
-                    interactionSource = remember { MutableInteractionSource() },
-                ) {
-                    onClick?.invoke()
-                }
-                .clip(RoundedCornerShape(10.dp))
-                .height(size.height.dp)
-                .width(size.width.dp),
+            modifier =
+                Modifier
+                    .clickable(
+                        indication = null,
+                        interactionSource = remember { MutableInteractionSource() }
+                    ) {
+                        onClick?.invoke()
+                    }
+                    .clip(RoundedCornerShape(10.dp))
+                    .height(size.height.dp)
+                    .width(size.width.dp)
         ) {
             ParticipantVideoView(
                 participant = participant,
                 videoViewLayout = videoViewLayout,
-                modifier = Modifier
-                    .align(Alignment.Center)
-                    .fillMaxWidth()
-                    .fillMaxHeight(),
+                modifier =
+                    Modifier
+                        .align(Alignment.Center)
+                        .fillMaxWidth()
+                        .fillMaxHeight()
             )
         }
     }

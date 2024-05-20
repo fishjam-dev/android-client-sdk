@@ -1,7 +1,7 @@
-package org.membraneframework.rtc.dagger
+package org.membraneframework.rtc
 
 import android.content.Context
-import org.webrtc.*
+import org.webrtc.EglBase
 import org.webrtc.audio.AudioDeviceModule
 import org.webrtc.audio.JavaAudioDeviceModule
 import timber.log.Timber
