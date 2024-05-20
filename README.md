@@ -24,7 +24,7 @@ Add the dependency:
 
 ```gradle
  dependencies {
-   implementation 'com.github.jellyfish-dev:android-client-sdk:<<version>>'
+   implementation 'com.github.fishjam-dev:android-client-sdk:<<version>>'
  }
 ```
 
