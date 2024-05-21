@@ -1,7 +1,6 @@
 package com.fishjamdev.client
 
 import android.content.Context
-import fishjam.PeerNotifications
 import fishjam.PeerNotifications.PeerMessage
 import okhttp3.OkHttpClient
 import okhttp3.Request
