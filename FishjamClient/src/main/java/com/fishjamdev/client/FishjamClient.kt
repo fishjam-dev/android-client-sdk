@@ -1,4 +1,4 @@
-package com.fishjam.client
+package com.fishjamdev.client
 
 import android.content.Context
 import android.content.Intent

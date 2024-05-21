@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    namespace 'com.fishjam.client'
+    namespace 'com.fishjamdev.client'
     compileSdk 33
 
     defaultConfig {
@@ -45,7 +45,7 @@ afterEvaluate {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.fishjam.client'
+                groupId = 'com.fishjamdev.client'
                 artifactId = 'fishjam-android-client'
                 version = '0.1.0'
             }

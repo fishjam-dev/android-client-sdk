@@ -1,4 +1,4 @@
-package com.fishjam.client
+package com.fishjamdev.client
 
 import org.membraneframework.rtc.TrackEncoding
 import org.membraneframework.rtc.media.RemoteTrack

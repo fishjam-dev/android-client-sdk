@@ -1,4 +1,4 @@
-package com.fishjam.client
+package com.fishjamdev.client
 
 import android.content.Context
 import fishjam.PeerNotifications
@@ -72,7 +72,7 @@ internal class FishjamClientInternal(
                     ) {
                         listener.onSocketOpen()
                         val authRequest =
-                            PeerNotifications.PeerMessage
+                            PeerMessage
                                 .newBuilder()
                                 .setAuthRequest(PeerMessage.AuthRequest.newBuilder().setToken(config.token))
                                 .build()
@@ -133,22 +133,22 @@ internal class FishjamClientInternal(
     }
 
     override fun onTrackAdded(ctx: TrackContext) {
-        var trackContext = TrackContext(ctx)
+        val trackContext = TrackContext(ctx)
         listener.onTrackAdded(trackContext)
     }
 
     override fun onTrackReady(ctx: TrackContext) {
-        var trackContext = TrackContext(ctx)
+        val trackContext = TrackContext(ctx)
         listener.onTrackReady(trackContext)
     }
 
     override fun onTrackRemoved(ctx: TrackContext) {
-        var trackContext = TrackContext(ctx)
+        val trackContext = TrackContext(ctx)
         listener.onTrackRemoved(trackContext)
     }
 
     override fun onTrackUpdated(ctx: TrackContext) {
-        var trackContext = TrackContext(ctx)
+        val trackContext = TrackContext(ctx)
         listener.onTrackUpdated(trackContext)
     }
 

@@ -1,4 +1,4 @@
-package com.fishjam.client
+package com.fishjamdev.client
 
 import okhttp3.Response
 import timber.log.Timber

@@ -1,9 +1,9 @@
 import android.content.Context
-import com.fishjam.client.Config
-import com.fishjam.client.FishjamClient
-import com.fishjam.client.FishjamClientListener
+import com.fishjamdev.client.Config
+import com.fishjamdev.client.FishjamClient
+import com.fishjamdev.client.FishjamClientListener
 import fishjam.PeerNotifications
-import fishjamdev.fishjamclient.WebsocketMock
+import fishjamdev.client.WebsocketMock
 import io.mockk.confirmVerified
 import io.mockk.every
 import io.mockk.mockk

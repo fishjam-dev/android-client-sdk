@@ -3,11 +3,11 @@ package com.example.fishjamandroidexample
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.fishjam.client.Config
-import com.fishjam.client.FishjamClient
-import com.fishjam.client.FishjamClientListener
-import com.fishjam.client.Peer
-import com.fishjam.client.TrackContext
+import com.fishjamdev.client.Config
+import com.fishjamdev.client.FishjamClient
+import com.fishjamdev.client.FishjamClientListener
+import com.fishjamdev.client.Peer
+import com.fishjamdev.client.TrackContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import org.membraneframework.rtc.SimulcastConfig

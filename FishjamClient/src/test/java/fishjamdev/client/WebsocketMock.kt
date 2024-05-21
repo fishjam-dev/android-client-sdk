@@ -1,6 +1,5 @@
-package fishjamdev.fishjamclient
+package fishjamdev.client
 
-import com.google.protobuf.ByteString
 import com.google.protobuf.GeneratedMessage
 import io.mockk.every
 import io.mockk.mockk
