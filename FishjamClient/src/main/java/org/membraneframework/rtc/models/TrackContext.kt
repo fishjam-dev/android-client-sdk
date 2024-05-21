@@ -77,6 +77,7 @@ class TrackContext(
      * Some of those reasons are indicated in TrackContext.encodingReason
      */
     fun setOnEncodingChangedListener(listener: OnEncodingChangedListener?) {
+        listener?.onEncodingChanged(this)
         onTrackEncodingChangeListener = listener
     }
 
@@ -84,6 +85,7 @@ class TrackContext(
      * Sets listener that is called every time an update about voice activity is received from the server.
      */
     fun setOnVoiceActivityChangedListener(listener: OnVoiceActivityChangedListener?) {
+        listener?.onVoiceActivityChanged(this)
         onVadNotificationListener = listener
     }
 }

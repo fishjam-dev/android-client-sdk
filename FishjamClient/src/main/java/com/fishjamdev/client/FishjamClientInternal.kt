@@ -132,23 +132,19 @@ internal class FishjamClientInternal(
     }
 
     override fun onTrackAdded(ctx: TrackContext) {
-        val trackContext = TrackContext(ctx)
-        listener.onTrackAdded(trackContext)
+        listener.onTrackAdded(ctx)
     }
 
     override fun onTrackReady(ctx: TrackContext) {
-        val trackContext = TrackContext(ctx)
-        listener.onTrackReady(trackContext)
+        listener.onTrackReady(ctx)
     }
 
     override fun onTrackRemoved(ctx: TrackContext) {
-        val trackContext = TrackContext(ctx)
-        listener.onTrackRemoved(trackContext)
+        listener.onTrackRemoved(ctx)
     }
 
     override fun onTrackUpdated(ctx: TrackContext) {
-        val trackContext = TrackContext(ctx)
-        listener.onTrackUpdated(trackContext)
+        listener.onTrackUpdated(ctx)
     }
 
     override fun onBandwidthEstimationChanged(estimation: Long) {
