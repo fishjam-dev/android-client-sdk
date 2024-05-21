@@ -13,6 +13,6 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "JellyfishAndroidExample"
+rootProject.name = "FishjamAndroidExample"
 include ':app'
-include ':JellyfishClient'
+include ':FishjamClient'

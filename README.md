@@ -23,7 +23,7 @@ Add the dependency:
 
 ```gradle
  dependencies {
-   implementation 'com.github.jellyfish-dev:android-client-sdk:<<version>>'
+   implementation 'com.github.fishjam-dev:android-client-sdk:<<version>>'
  }
 ```
 
@@ -40,7 +40,7 @@ You can refer to our minimal example on how to use this library.
 ## Development
 
 1. Set `FISHJAM_SOCKET_URL` in `~/.gradle/gradle.properties` to your dev backend.
-2. Run `./gradlew formatKotlin` to format code.
+2. Run `ktlint` to format code (if missing, install it with `brew install ktlint`)
 3. Run `release-it` to release. Follow the prompts, it should add a commit and a git tag and jitpack should pick it up
    automatically and put the new version in the jitpack repo.
 
