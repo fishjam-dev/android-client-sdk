@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>createVideoTrack</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>FishjamClient</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":FishjamClient:dokkaHtml/release">androidJvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="member" id="content" pageIds="FishjamClient::com.fishjamdev.client/FishjamClient/createVideoTrack/#org.membraneframework.rtc.media.VideoParameters#kotlin.collections.Map[kotlin.String,kotlin.Any]#kotlin.String?/PointingToDeclaration//-1482813911">
+  <div class="breadcrumbs"><a href="../../../index.html">FishjamClient</a><span class="delimiter">/</span><a href="../index.html">com.fishjamdev.client</a><span class="delimiter">/</span><a href="index.html">FishjamClient</a><span class="delimiter">/</span><span class="current">createVideoTrack</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>create</span><wbr></wbr><span>Video</span><wbr></wbr><span><span>Track</span></span></h1>
+  </div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="create-video-track.html"><span class="token function">createVideoTrack</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">videoParameters<span class="token operator">: </span><a href="../../org.membraneframework.rtc.media/-video-parameters/index.html">VideoParameters</a><span class="token punctuation">, </span></span><span class="parameter ">metadata<span class="token operator">: </span><a href="../../org.membraneframework.rtc.utils/index.html#1170992874%2FClasslikes%2F-1482813911">Metadata</a><span class="token punctuation">, </span></span><span class="parameter ">captureDeviceName<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../org.membraneframework.rtc.media/-local-video-track/index.html">LocalVideoTrack</a></div><p class="paragraph">Creates a video track utilizing device's camera.</p><p class="paragraph">The client assumes that the user has already granted camera permissions.</p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">an instance of the video track</p></span><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>video</span><wbr></wbr><span><span>Parameters</span></span></u></div></span></div><div><div class="title"><p class="paragraph">a set of target parameters such as camera resolution, frame rate or simulcast configuration</p></div></div></div></div><div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>metadata</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the metadata that will be sent to the <strong>Membrane RTC Engine</strong> for media negotiation</p></div></div></div></div><div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>capture</span><wbr></wbr><span>Device</span><wbr></wbr><span><span>Name</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the name of the device to start video capture with, you can get device name by using <code class="lang-kotlin">LocalVideoTrack.getCaptureDevices</code> method</p></div></div></div></div></div></div></div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>Copyright 2023, Software Mansion.</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

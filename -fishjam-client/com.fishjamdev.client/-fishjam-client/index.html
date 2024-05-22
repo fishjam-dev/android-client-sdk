@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>FishjamClient</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>FishjamClient</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":FishjamClient:dokkaHtml/release">androidJvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="FishjamClient::com.fishjamdev.client/FishjamClient///PointingToDeclaration//-1482813911">
+  <div class="breadcrumbs"><a href="../../../index.html">FishjamClient</a><span class="delimiter">/</span><a href="../index.html">com.fishjamdev.client</a><span class="delimiter">/</span><span class="current">FishjamClient</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Fishjam</span><wbr></wbr><span><span>Client</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">FishjamClient</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">appContext<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="../-fishjam-client-listener/index.html">FishjamClientListener</a></span></span><span class="token punctuation">)</span></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="-1139978350%2FConstructors%2F-1482813911" anchor-label="FishjamClient" id="-1139978350%2FConstructors%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-fishjam-client.html"><span>Fishjam</span><wbr></wbr><span><span>Client</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1139978350%2FConstructors%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">appContext<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="../-fishjam-client-listener/index.html">FishjamClientListener</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="701371809%2FFunctions%2F-1482813911" anchor-label="changeWebRTCLoggingSeverity" id="701371809%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="change-web-r-t-c-logging-severity.html"><span>change</span><wbr></wbr><span>Web</span><wbr></wbr><span>RTCLogging</span><wbr></wbr><span><span>Severity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="701371809%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="change-web-r-t-c-logging-severity.html"><span class="token function">changeWebRTCLoggingSeverity</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">severity<span class="token operator">: </span><span data-unresolved-link="org.webrtc/Logging.Severity///PointingToDeclaration/">Logging.Severity</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Changes severity level of debug logs</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-855290311%2FFunctions%2F-1482813911" anchor-label="cleanUp" id="-855290311%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="clean-up.html"><span>clean</span><wbr></wbr><span><span>Up</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-855290311%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="clean-up.html"><span class="token function">cleanUp</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Disconnect from the room, and close the websocket connection. Tries to leave the room gracefully, but if it fails, it will close the websocket anyway.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="72545752%2FFunctions%2F-1482813911" anchor-label="connect" id="72545752%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="connect.html"><span><span>connect</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="72545752%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="connect.html"><span class="token function">connect</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">config<span class="token operator">: </span><a href="../-config/index.html">Config</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Connects to the server using the WebSocket connection</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1788179551%2FFunctions%2F-1482813911" anchor-label="createAudioTrack" id="-1788179551%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="create-audio-track.html"><span>create</span><wbr></wbr><span>Audio</span><wbr></wbr><span><span>Track</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1788179551%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="create-audio-track.html"><span class="token function">createAudioTrack</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">metadata<span class="token operator">: </span><a href="../../org.membraneframework.rtc.utils/index.html#1170992874%2FClasslikes%2F-1482813911">Metadata</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../org.membraneframework.rtc.media/-local-audio-track/index.html">LocalAudioTrack</a></div><div class="brief "><p class="paragraph">Creates an audio track utilizing device's microphone.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="160785939%2FFunctions%2F-1482813911" anchor-label="createScreencastTrack" id="160785939%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="create-screencast-track.html"><span>create</span><wbr></wbr><span>Screencast</span><wbr></wbr><span><span>Track</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="160785939%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="create-screencast-track.html"><span class="token function">createScreencastTrack</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">mediaProjectionPermission<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Intent.html">Intent</a><span class="token punctuation">, </span></span><span class="parameter ">videoParameters<span class="token operator">: </span><a href="../../org.membraneframework.rtc.media/-video-parameters/index.html">VideoParameters</a><span class="token punctuation">, </span></span><span class="parameter ">metadata<span class="token operator">: </span><a href="../../org.membraneframework.rtc.utils/index.html#1170992874%2FClasslikes%2F-1482813911">Metadata</a><span class="token punctuation">, </span></span><span class="parameter ">onEnd<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../org.membraneframework.rtc.media/-local-screencast-track/index.html">LocalScreencastTrack</a></div><div class="brief "><p class="paragraph">Creates a screen track recording the entire device's screen.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="118110714%2FFunctions%2F-1482813911" anchor-label="createVideoTrack" id="118110714%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="create-video-track.html"><span>create</span><wbr></wbr><span>Video</span><wbr></wbr><span><span>Track</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="118110714%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="create-video-track.html"><span class="token function">createVideoTrack</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">videoParameters<span class="token operator">: </span><a href="../../org.membraneframework.rtc.media/-video-parameters/index.html">VideoParameters</a><span class="token punctuation">, </span></span><span class="parameter ">metadata<span class="token operator">: </span><a href="../../org.membraneframework.rtc.utils/index.html#1170992874%2FClasslikes%2F-1482813911">Metadata</a><span class="token punctuation">, </span></span><span class="parameter ">captureDeviceName<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../org.membraneframework.rtc.media/-local-video-track/index.html">LocalVideoTrack</a></div><div class="brief "><p class="paragraph">Creates a video track utilizing device's camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1863133028%2FFunctions%2F-1482813911" anchor-label="disableTrackEncoding" id="-1863133028%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="disable-track-encoding.html"><span>disable</span><wbr></wbr><span>Track</span><wbr></wbr><span><span>Encoding</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1863133028%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="disable-track-encoding.html"><span class="token function">disableTrackEncoding</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">trackId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">encoding<span class="token operator">: </span><a href="../../org.membraneframework.rtc/-track-encoding/index.html">TrackEncoding</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Disables track encoding so that it will be no longer sent to the server.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1856994209%2FFunctions%2F-1482813911" anchor-label="enableTrackEncoding" id="1856994209%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enable-track-encoding.html"><span>enable</span><wbr></wbr><span>Track</span><wbr></wbr><span><span>Encoding</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1856994209%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="enable-track-encoding.html"><span class="token function">enableTrackEncoding</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">trackId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">encoding<span class="token operator">: </span><a href="../../org.membraneframework.rtc/-track-encoding/index.html">TrackEncoding</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Enables track encoding so that it will be sent to the server.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-969990092%2FFunctions%2F-1482813911" anchor-label="getStats" id="-969990092%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-stats.html"><span>get</span><wbr></wbr><span><span>Stats</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-969990092%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-stats.html"><span class="token function">getStats</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../org.membraneframework.rtc.models/-r-t-c-stats/index.html">RTCStats</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns current connection stats</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="139824072%2FFunctions%2F-1482813911" anchor-label="join" id="139824072%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="join.html"><span><span>join</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="139824072%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="join.html"><span class="token function">join</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">peerMetadata<span class="token operator">: </span><a href="../../org.membraneframework.rtc.utils/index.html#1170992874%2FClasslikes%2F-1482813911">Metadata</a><span class="token operator"> = </span>emptyMap()</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Tries to join the room. If user is accepted then {@link FishjamClient.onConnected} will be called. In other case {@link FishjamClient.onConnectError} is invoked.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-938554970%2FFunctions%2F-1482813911" anchor-label="leave" id="-938554970%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="leave.html"><span><span>leave</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-938554970%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="leave.html"><span class="token function">leave</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Leaves the room. This function should be called when user leaves the room in a clean way e.g. by clicking a dedicated, custom button <code class="lang-kotlin">disconnect</code>. As a result there will be generated one more media event that should be sent to the RTC Engine. Thanks to it each other peer will be notified that peer left in {@link MessageEvents.onPeerLeft},</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1531628942%2FFunctions%2F-1482813911" anchor-label="removeTrack" id="1531628942%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="remove-track.html"><span>remove</span><wbr></wbr><span><span>Track</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1531628942%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="remove-track.html"><span class="token function">removeTrack</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">trackId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Removes an instance of local track from the client.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-64813872%2FFunctions%2F-1482813911" anchor-label="setEncodingBandwidth" id="-64813872%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-encoding-bandwidth.html"><span>set</span><wbr></wbr><span>Encoding</span><wbr></wbr><span><span>Bandwidth</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-64813872%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-encoding-bandwidth.html"><span class="token function">setEncodingBandwidth</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">trackId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">encoding<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">bandwidthLimit<span class="token operator">: </span><a href="../../org.membraneframework.rtc.media/-track-bandwidth-limit/-bandwidth-limit/index.html">TrackBandwidthLimit.BandwidthLimit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Updates maximum bandwidth for the given simulcast encoding of the given track.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="26847249%2FFunctions%2F-1482813911" anchor-label="setTargetTrackEncoding" id="26847249%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-target-track-encoding.html"><span>set</span><wbr></wbr><span>Target</span><wbr></wbr><span>Track</span><wbr></wbr><span><span>Encoding</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="26847249%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-target-track-encoding.html"><span class="token function">setTargetTrackEncoding</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">trackId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">encoding<span class="token operator">: </span><a href="../../org.membraneframework.rtc/-track-encoding/index.html">TrackEncoding</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Sets track encoding that server should send to the client library.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1275308727%2FFunctions%2F-1482813911" anchor-label="setTrackBandwidth" id="-1275308727%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-track-bandwidth.html"><span>set</span><wbr></wbr><span>Track</span><wbr></wbr><span><span>Bandwidth</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1275308727%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-track-bandwidth.html"><span class="token function">setTrackBandwidth</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">trackId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">bandwidthLimit<span class="token operator">: </span><a href="../../org.membraneframework.rtc.media/-track-bandwidth-limit/-bandwidth-limit/index.html">TrackBandwidthLimit.BandwidthLimit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Updates maximum bandwidth for the track identified by trackId. This value directly translates to quality of the stream and, in case of video, to the amount of RTP packets being sent. In case trackId points at the simulcast track bandwidth is split between all of the variant streams proportionally to their resolution.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1265553624%2FFunctions%2F-1482813911" anchor-label="updatePeerMetadata" id="1265553624%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="update-peer-metadata.html"><span>update</span><wbr></wbr><span>Peer</span><wbr></wbr><span><span>Metadata</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1265553624%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-peer-metadata.html"><span class="token function">updatePeerMetadata</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">peerMetadata<span class="token operator">: </span><a href="../../org.membraneframework.rtc.utils/index.html#1170992874%2FClasslikes%2F-1482813911">Metadata</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Updates the metadata for the local peer.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="766274044%2FFunctions%2F-1482813911" anchor-label="updateTrackMetadata" id="766274044%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="update-track-metadata.html"><span>update</span><wbr></wbr><span>Track</span><wbr></wbr><span><span>Metadata</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="766274044%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-track-metadata.html"><span class="token function">updateTrackMetadata</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">trackId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">trackMetadata<span class="token operator">: </span><a href="../../org.membraneframework.rtc.utils/index.html#1170992874%2FClasslikes%2F-1482813911">Metadata</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Updates the metadata for a specific track.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>Copyright 2023, Software Mansion.</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

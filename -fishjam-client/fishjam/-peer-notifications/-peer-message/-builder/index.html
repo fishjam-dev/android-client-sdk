@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Builder</title>
+    <link href="../../../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../../../styles/style.css" rel="Stylesheet">
+<link href="../../../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../../../styles/main.css" rel="Stylesheet">
+<link href="../../../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../../../index.html">
+                    <span>FishjamClient</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":FishjamClient:dokkaHtml/release">androidJvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="FishjamClient::fishjam/PeerNotifications.PeerMessage.Builder///PointingToDeclaration//-1482813911">
+  <div class="breadcrumbs"><a href="../../../../../index.html">FishjamClient</a><span class="delimiter">/</span><a href="../../../index.html">fishjam</a><span class="delimiter">/</span><a href="../../index.html">PeerNotifications</a><span class="delimiter">/</span><a href="../index.html">PeerMessage</a><span class="delimiter">/</span><span class="current">Builder</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Builder</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">Builder</a> : <span data-unresolved-link="com.google.protobuf/GeneratedMessage.Builder///PointingToDeclaration/">GeneratedMessage.Builder</span><span class="token operator">&lt;</span><span data-unresolved-link="com.google.protobuf/GeneratedMessage.Builder///PointingToGenericParameters(0)/">BuilderT</span><span class="token operator">&gt; </span>, <a href="../../-peer-message-or-builder/index.html">PeerNotifications.PeerMessageOrBuilder</a></div><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">Defines any type of message sent between FJ and a peer
+</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div> Protobuf type <code class="lang-kotlin">fishjam.PeerMessage</code></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-1661897309%2FFunctions%2F-1482813911" anchor-label="addRepeatedField" id="-1661897309%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1877393378%2FFunctions%2F-1482813911"><span>add</span><wbr></wbr><span>Repeated</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1661897309%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1877393378%2FFunctions%2F-1482813911"><span class="token function">addRepeatedField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/GeneratedMessage.Builder///PointingToGenericParameters(0)/">BuilderT</span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#1548492405%2FFunctions%2F-1482813911"><span class="token function">addRepeatedField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1765689359%2FFunctions%2F-1482813911" anchor-label="build" id="-1765689359%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1948772184%2FFunctions%2F-1482813911"><span><span>build</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1765689359%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#1948772184%2FFunctions%2F-1482813911"><span class="token function">build</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/MessageLite///PointingToDeclaration/">MessageLite</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="build.html"><span class="token function">build</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">PeerNotifications.PeerMessage</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1038144575%2FFunctions%2F-1482813911" anchor-label="buildPartial" id="1038144575%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1356961407%2FFunctions%2F-1482813911"><span>build</span><wbr></wbr><span><span>Partial</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1038144575%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1356961407%2FFunctions%2F-1482813911"><span class="token function">buildPartial</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/MessageLite///PointingToDeclaration/">MessageLite</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="build-partial.html"><span class="token function">buildPartial</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">PeerNotifications.PeerMessage</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1487291362%2FFunctions%2F-1482813911" anchor-label="clear" id="-1487291362%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1086158889%2FFunctions%2F-1482813911"><span><span>clear</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1487291362%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#1086158889%2FFunctions%2F-1482813911"><span class="token function">clear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/AbstractMessage.Builder///PointingToGenericParameters(0)/">BuilderType</span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1915853977%2FFunctions%2F-1482813911"><span class="token function">clear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clear.html"><span class="token function">clear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1795401925%2FFunctions%2F-1482813911" anchor-label="clearAuthenticated" id="1795401925%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="clear-authenticated.html"><span>clear</span><wbr></wbr><span><span>Authenticated</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1795401925%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clear-authenticated.html"><span class="token function">clearAuthenticated</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.Authenticated authenticated = 1;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="712065517%2FFunctions%2F-1482813911" anchor-label="clearAuthRequest" id="712065517%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="clear-auth-request.html"><span>clear</span><wbr></wbr><span>Auth</span><wbr></wbr><span><span>Request</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="712065517%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clear-auth-request.html"><span class="token function">clearAuthRequest</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.AuthRequest auth_request = 2;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-154239749%2FFunctions%2F-1482813911" anchor-label="clearContent" id="-154239749%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="clear-content.html"><span>clear</span><wbr></wbr><span><span>Content</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-154239749%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clear-content.html"><span class="token function">clearContent</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1807744437%2FFunctions%2F-1482813911" anchor-label="clearField" id="1807744437%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-565571108%2FFunctions%2F-1482813911"><span>clear</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1807744437%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-565571108%2FFunctions%2F-1482813911"><span class="token function">clearField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/GeneratedMessage.Builder///PointingToGenericParameters(0)/">BuilderT</span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-544290459%2FFunctions%2F-1482813911"><span class="token function">clearField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1112012688%2FFunctions%2F-1482813911" anchor-label="clearMediaEvent" id="-1112012688%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="clear-media-event.html"><span>clear</span><wbr></wbr><span>Media</span><wbr></wbr><span><span>Event</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1112012688%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clear-media-event.html"><span class="token function">clearMediaEvent</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.MediaEvent media_event = 3;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2003314726%2FFunctions%2F-1482813911" anchor-label="clearOneof" id="-2003314726%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1854940537%2FFunctions%2F-1482813911"><span>clear</span><wbr></wbr><span><span>Oneof</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2003314726%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1854940537%2FFunctions%2F-1482813911"><span class="token function">clearOneof</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oneof<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.OneofDescriptor///PointingToDeclaration/">Descriptors.OneofDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/AbstractMessage.Builder///PointingToGenericParameters(0)/">BuilderType</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1973187780%2FFunctions%2F-1482813911"><span class="token function">clearOneof</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oneof<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.OneofDescriptor///PointingToDeclaration/">Descriptors.OneofDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/GeneratedMessage.Builder///PointingToGenericParameters(0)/">BuilderT</span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1951907131%2FFunctions%2F-1482813911"><span class="token function">clearOneof</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oneof<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.OneofDescriptor///PointingToDeclaration/">Descriptors.OneofDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="682785324%2FFunctions%2F-1482813911" anchor-label="clone" id="682785324%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#2046583577%2FFunctions%2F-1482813911"><span><span>clone</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="682785324%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#2046583577%2FFunctions%2F-1482813911"><span class="token function">clone</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/AbstractMessage.Builder///PointingToGenericParameters(0)/">BuilderType</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-789588914%2FFunctions%2F-1482813911"><span class="token function">clone</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/GeneratedMessage.Builder///PointingToGenericParameters(0)/">BuilderT</span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-955429289%2FFunctions%2F-1482813911"><span class="token function">clone</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-261007872%2FFunctions%2F-1482813911" anchor-label="findInitializationErrors" id="-261007872%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-261007872%2FFunctions%2F-1482813911"><span>find</span><wbr></wbr><span>Initialization</span><wbr></wbr><span><span>Errors</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-261007872%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-261007872%2FFunctions%2F-1482813911"><span class="token function">findInitializationErrors</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1141356501%2FFunctions%2F-1482813911" anchor-label="getAllFields" id="-1141356501%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1141356501%2FFunctions%2F-1482813911"><span>get</span><wbr></wbr><span>All</span><wbr></wbr><span><span>Fields</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1141356501%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1141356501%2FFunctions%2F-1482813911"><span class="token function">getAllFields</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="590534030%2FFunctions%2F-1482813911" anchor-label="getAuthenticated" id="590534030%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-authenticated.html"><span>get</span><wbr></wbr><span><span>Authenticated</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="590534030%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-authenticated.html"><span class="token function">getAuthenticated</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-authenticated/index.html">PeerNotifications.PeerMessage.Authenticated</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.Authenticated authenticated = 1;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1028472241%2FFunctions%2F-1482813911" anchor-label="getAuthenticatedBuilder" id="1028472241%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-authenticated-builder.html"><span>get</span><wbr></wbr><span>Authenticated</span><wbr></wbr><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1028472241%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-authenticated-builder.html"><span class="token function">getAuthenticatedBuilder</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-authenticated/-builder/index.html">PeerNotifications.PeerMessage.Authenticated.Builder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.Authenticated authenticated = 1;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1025274868%2FFunctions%2F-1482813911" anchor-label="getAuthenticatedOrBuilder" id="1025274868%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-authenticated-or-builder.html"><span>get</span><wbr></wbr><span>Authenticated</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1025274868%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-authenticated-or-builder.html"><span class="token function">getAuthenticatedOrBuilder</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-authenticated-or-builder/index.html">PeerNotifications.PeerMessage.AuthenticatedOrBuilder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.Authenticated authenticated = 1;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1461252874%2FFunctions%2F-1482813911" anchor-label="getAuthRequest" id="-1461252874%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-auth-request.html"><span>get</span><wbr></wbr><span>Auth</span><wbr></wbr><span><span>Request</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1461252874%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-auth-request.html"><span class="token function">getAuthRequest</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-auth-request/index.html">PeerNotifications.PeerMessage.AuthRequest</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.AuthRequest auth_request = 2;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="959930697%2FFunctions%2F-1482813911" anchor-label="getAuthRequestBuilder" id="959930697%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-auth-request-builder.html"><span>get</span><wbr></wbr><span>Auth</span><wbr></wbr><span>Request</span><wbr></wbr><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="959930697%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-auth-request-builder.html"><span class="token function">getAuthRequestBuilder</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-auth-request/-builder/index.html">PeerNotifications.PeerMessage.AuthRequest.Builder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.AuthRequest auth_request = 2;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-418639476%2FFunctions%2F-1482813911" anchor-label="getAuthRequestOrBuilder" id="-418639476%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-auth-request-or-builder.html"><span>get</span><wbr></wbr><span>Auth</span><wbr></wbr><span>Request</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-418639476%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-auth-request-or-builder.html"><span class="token function">getAuthRequestOrBuilder</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-auth-request-or-builder/index.html">PeerNotifications.PeerMessage.AuthRequestOrBuilder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.AuthRequest auth_request = 2;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1998691404%2FFunctions%2F-1482813911" anchor-label="getContentCase" id="-1998691404%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-content-case.html"><span>get</span><wbr></wbr><span>Content</span><wbr></wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1998691404%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-content-case.html"><span class="token function">getContentCase</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-content-case/index.html">PeerNotifications.PeerMessage.ContentCase</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1903035666%2FFunctions%2F-1482813911" anchor-label="getDefaultInstanceForType" id="-1903035666%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-889905270%2FFunctions%2F-1482813911"><span>get</span><wbr></wbr><span>Default</span><wbr></wbr><span>Instance</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1903035666%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-889905270%2FFunctions%2F-1482813911"><span class="token function">getDefaultInstanceForType</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/MessageLite///PointingToDeclaration/">MessageLite</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-default-instance-for-type.html"><span class="token function">getDefaultInstanceForType</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">PeerNotifications.PeerMessage</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="401075214%2FFunctions%2F-1482813911" anchor-label="getDescriptor" id="401075214%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-descriptor.html"><span>get</span><wbr></wbr><span><span>Descriptor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="401075214%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-descriptor.html"><span class="token function">getDescriptor</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.Descriptor///PointingToDeclaration/">Descriptors.Descriptor</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1226646487%2FFunctions%2F-1482813911" anchor-label="getDescriptorForType" id="-1226646487%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-descriptor-for-type.html"><span>get</span><wbr></wbr><span>Descriptor</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1226646487%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-descriptor-for-type.html"><span class="token function">getDescriptorForType</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.Descriptor///PointingToDeclaration/">Descriptors.Descriptor</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="914256627%2FFunctions%2F-1482813911" anchor-label="getField" id="914256627%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#914256627%2FFunctions%2F-1482813911"><span>get</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="914256627%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#914256627%2FFunctions%2F-1482813911"><span class="token function">getField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1428430582%2FFunctions%2F-1482813911" anchor-label="getFieldBuilder" id="-1428430582%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1428430582%2FFunctions%2F-1482813911"><span>get</span><wbr></wbr><span>Field</span><wbr></wbr><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1428430582%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1428430582%2FFunctions%2F-1482813911"><span class="token function">getFieldBuilder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-633913823%2FFunctions%2F-1482813911" anchor-label="getInitializationErrorString" id="-633913823%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-633913823%2FFunctions%2F-1482813911"><span>get</span><wbr></wbr><span>Initialization</span><wbr></wbr><span>Error</span><wbr></wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-633913823%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-633913823%2FFunctions%2F-1482813911"><span class="token function">getInitializationErrorString</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1320667065%2FFunctions%2F-1482813911" anchor-label="getMediaEvent" id="-1320667065%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-media-event.html"><span>get</span><wbr></wbr><span>Media</span><wbr></wbr><span><span>Event</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1320667065%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-media-event.html"><span class="token function">getMediaEvent</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-media-event/index.html">PeerNotifications.PeerMessage.MediaEvent</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.MediaEvent media_event = 3;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-494991144%2FFunctions%2F-1482813911" anchor-label="getMediaEventBuilder" id="-494991144%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-media-event-builder.html"><span>get</span><wbr></wbr><span>Media</span><wbr></wbr><span>Event</span><wbr></wbr><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-494991144%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-media-event-builder.html"><span class="token function">getMediaEventBuilder</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-media-event/-builder/index.html">PeerNotifications.PeerMessage.MediaEvent.Builder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.MediaEvent media_event = 3;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1560809819%2FFunctions%2F-1482813911" anchor-label="getMediaEventOrBuilder" id="1560809819%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-media-event-or-builder.html"><span>get</span><wbr></wbr><span>Media</span><wbr></wbr><span>Event</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1560809819%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-media-event-or-builder.html"><span class="token function">getMediaEventOrBuilder</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-media-event-or-builder/index.html">PeerNotifications.PeerMessage.MediaEventOrBuilder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.MediaEvent media_event = 3;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2004108018%2FFunctions%2F-1482813911" anchor-label="getOneofFieldDescriptor" id="2004108018%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#2004108018%2FFunctions%2F-1482813911"><span>get</span><wbr></wbr><span>Oneof</span><wbr></wbr><span>Field</span><wbr></wbr><span><span>Descriptor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2004108018%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#2004108018%2FFunctions%2F-1482813911"><span class="token function">getOneofFieldDescriptor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oneof<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.OneofDescriptor///PointingToDeclaration/">Descriptors.OneofDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2016887597%2FFunctions%2F-1482813911" anchor-label="getRepeatedField" id="2016887597%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#2016887597%2FFunctions%2F-1482813911"><span>get</span><wbr></wbr><span>Repeated</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2016887597%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#2016887597%2FFunctions%2F-1482813911"><span class="token function">getRepeatedField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1203056712%2FFunctions%2F-1482813911" anchor-label="getRepeatedFieldBuilder" id="-1203056712%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1203056712%2FFunctions%2F-1482813911"><span>get</span><wbr></wbr><span>Repeated</span><wbr></wbr><span>Field</span><wbr></wbr><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1203056712%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1203056712%2FFunctions%2F-1482813911"><span class="token function">getRepeatedFieldBuilder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="202789656%2FFunctions%2F-1482813911" anchor-label="getRepeatedFieldCount" id="202789656%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#202789656%2FFunctions%2F-1482813911"><span>get</span><wbr></wbr><span>Repeated</span><wbr></wbr><span>Field</span><wbr></wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="202789656%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#202789656%2FFunctions%2F-1482813911"><span class="token function">getRepeatedFieldCount</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="330976354%2FFunctions%2F-1482813911" anchor-label="getUnknownFields" id="330976354%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#330976354%2FFunctions%2F-1482813911"><span>get</span><wbr></wbr><span>Unknown</span><wbr></wbr><span><span>Fields</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="330976354%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#330976354%2FFunctions%2F-1482813911"><span class="token function">getUnknownFields</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/UnknownFieldSet///PointingToDeclaration/">UnknownFieldSet</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1973795374%2FFunctions%2F-1482813911" anchor-label="hasAuthenticated" id="-1973795374%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-authenticated.html"><span>has</span><wbr></wbr><span><span>Authenticated</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1973795374%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="has-authenticated.html"><span class="token function">hasAuthenticated</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.Authenticated authenticated = 1;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-654983622%2FFunctions%2F-1482813911" anchor-label="hasAuthRequest" id="-654983622%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-auth-request.html"><span>has</span><wbr></wbr><span>Auth</span><wbr></wbr><span><span>Request</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-654983622%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="has-auth-request.html"><span class="token function">hasAuthRequest</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.AuthRequest auth_request = 2;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-556990929%2FFunctions%2F-1482813911" anchor-label="hasField" id="-556990929%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-556990929%2FFunctions%2F-1482813911"><span>has</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-556990929%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-556990929%2FFunctions%2F-1482813911"><span class="token function">hasField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1337740931%2FFunctions%2F-1482813911" anchor-label="hasMediaEvent" id="1337740931%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-media-event.html"><span>has</span><wbr></wbr><span>Media</span><wbr></wbr><span><span>Event</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1337740931%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="has-media-event.html"><span class="token function">hasMediaEvent</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.MediaEvent media_event = 3;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1964607601%2FFunctions%2F-1482813911" anchor-label="hasOneof" id="-1964607601%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1964607601%2FFunctions%2F-1482813911"><span>has</span><wbr></wbr><span><span>Oneof</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1964607601%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1964607601%2FFunctions%2F-1482813911"><span class="token function">hasOneof</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oneof<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.OneofDescriptor///PointingToDeclaration/">Descriptors.OneofDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1252102199%2FFunctions%2F-1482813911" anchor-label="isInitialized" id="-1252102199%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-initialized.html"><span>is</span><wbr></wbr><span><span>Initialized</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1252102199%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-initialized.html"><span class="token function">isInitialized</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="273454116%2FFunctions%2F-1482813911" anchor-label="mergeAuthenticated" id="273454116%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="merge-authenticated.html"><span>merge</span><wbr></wbr><span><span>Authenticated</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="273454116%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="merge-authenticated.html"><span class="token function">mergeAuthenticated</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../-authenticated/index.html">PeerNotifications.PeerMessage.Authenticated</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.Authenticated authenticated = 1;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1724285732%2FFunctions%2F-1482813911" anchor-label="mergeAuthRequest" id="1724285732%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="merge-auth-request.html"><span>merge</span><wbr></wbr><span>Auth</span><wbr></wbr><span><span>Request</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1724285732%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="merge-auth-request.html"><span class="token function">mergeAuthRequest</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../-auth-request/index.html">PeerNotifications.PeerMessage.AuthRequest</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.AuthRequest auth_request = 2;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1860253503%2FFunctions%2F-1482813911" anchor-label="mergeDelimitedFrom" id="-1860253503%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1860253503%2FFunctions%2F-1482813911"><span>merge</span><wbr></wbr><span>Delimited</span><wbr></wbr><span><span>From</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1860253503%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1860253503%2FFunctions%2F-1482813911"><span class="token function">mergeDelimitedFrom</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">input<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/io/InputStream.html">InputStream</a><span class="token punctuation">, </span></span><span class="parameter ">extensionRegistry<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/ExtensionRegistryLite///PointingToDeclaration/">ExtensionRegistryLite</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-258364466%2FFunctions%2F-1482813911" anchor-label="mergeFrom" id="-258364466%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-2053524476%2FFunctions%2F-1482813911"><span>merge</span><wbr></wbr><span><span>From</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-258364466%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-2053524476%2FFunctions%2F-1482813911"><span class="token function">mergeFrom</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message///PointingToDeclaration/">Message</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="merge-from.html"><span class="token function">mergeFrom</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message///PointingToDeclaration/">Message</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="merge-from.html"><span class="token function">mergeFrom</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="../index.html">PeerNotifications.PeerMessage</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="merge-from.html"><span class="token function">mergeFrom</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">input<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/CodedInputStream///PointingToDeclaration/">CodedInputStream</span><span class="token punctuation">, </span></span><span class="parameter ">extensionRegistry<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/ExtensionRegistryLite///PointingToDeclaration/">ExtensionRegistryLite</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1151018354%2FFunctions%2F-1482813911" anchor-label="mergeMediaEvent" id="-1151018354%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="merge-media-event.html"><span>merge</span><wbr></wbr><span>Media</span><wbr></wbr><span><span>Event</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1151018354%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="merge-media-event.html"><span class="token function">mergeMediaEvent</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../-media-event/index.html">PeerNotifications.PeerMessage.MediaEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.MediaEvent media_event = 3;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1397523973%2FFunctions%2F-1482813911" anchor-label="mergeUnknownFields" id="1397523973%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1252082094%2FFunctions%2F-1482813911"><span>merge</span><wbr></wbr><span>Unknown</span><wbr></wbr><span><span>Fields</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1397523973%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1252082094%2FFunctions%2F-1482813911"><span class="token function">mergeUnknownFields</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">unknownFields<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/UnknownFieldSet///PointingToDeclaration/">UnknownFieldSet</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/AbstractMessage.Builder///PointingToGenericParameters(0)/">BuilderType</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-557248121%2FFunctions%2F-1482813911"><span class="token function">mergeUnknownFields</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">unknownFields<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/UnknownFieldSet///PointingToDeclaration/">UnknownFieldSet</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/GeneratedMessage.Builder///PointingToGenericParameters(0)/">BuilderT</span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-702483056%2FFunctions%2F-1482813911"><span class="token function">mergeUnknownFields</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">unknownFields<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/UnknownFieldSet///PointingToDeclaration/">UnknownFieldSet</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1227622693%2FFunctions%2F-1482813911" anchor-label="newBuilderForField" id="-1227622693%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1227622693%2FFunctions%2F-1482813911"><span>new</span><wbr></wbr><span>Builder</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1227622693%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1227622693%2FFunctions%2F-1482813911"><span class="token function">newBuilderForField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1775846203%2FFunctions%2F-1482813911" anchor-label="setAuthenticated" id="1775846203%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-authenticated.html"><span>set</span><wbr></wbr><span><span>Authenticated</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1775846203%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-authenticated.html"><span class="token function">setAuthenticated</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../-authenticated/index.html">PeerNotifications.PeerMessage.Authenticated</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-authenticated.html"><span class="token function">setAuthenticated</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">builderForValue<span class="token operator">: </span><a href="../-authenticated/-builder/index.html">PeerNotifications.PeerMessage.Authenticated.Builder</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.Authenticated authenticated = 1;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="629800891%2FFunctions%2F-1482813911" anchor-label="setAuthRequest" id="629800891%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-auth-request.html"><span>set</span><wbr></wbr><span>Auth</span><wbr></wbr><span><span>Request</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="629800891%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-auth-request.html"><span class="token function">setAuthRequest</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../-auth-request/index.html">PeerNotifications.PeerMessage.AuthRequest</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-auth-request.html"><span class="token function">setAuthRequest</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">builderForValue<span class="token operator">: </span><a href="../-auth-request/-builder/index.html">PeerNotifications.PeerMessage.AuthRequest.Builder</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.AuthRequest auth_request = 2;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-116442941%2FFunctions%2F-1482813911" anchor-label="setField" id="-116442941%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#143011077%2FFunctions%2F-1482813911"><span>set</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-116442941%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#143011077%2FFunctions%2F-1482813911"><span class="token function">setField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/GeneratedMessage.Builder///PointingToGenericParameters(0)/">BuilderT</span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-747875748%2FFunctions%2F-1482813911"><span class="token function">setField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1459465137%2FFunctions%2F-1482813911" anchor-label="setMediaEvent" id="-1459465137%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-media-event.html"><span>set</span><wbr></wbr><span>Media</span><wbr></wbr><span><span>Event</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1459465137%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-media-event.html"><span class="token function">setMediaEvent</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../-media-event/index.html">PeerNotifications.PeerMessage.MediaEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-media-event.html"><span class="token function">setMediaEvent</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">builderForValue<span class="token operator">: </span><a href="../-media-event/-builder/index.html">PeerNotifications.PeerMessage.MediaEvent.Builder</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">PeerNotifications.PeerMessage.Builder</a></div><div class="brief "><code class="lang-kotlin">.fishjam.PeerMessage.MediaEvent media_event = 3;</code></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="217993731%2FFunctions%2F-1482813911" anchor-label="setRepeatedField" id="217993731%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-829364725%2FFunctions%2F-1482813911"><span>set</span><wbr></wbr><span>Repeated</span><wbr></wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="217993731%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-829364725%2FFunctions%2F-1482813911"><span class="token function">setRepeatedField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/GeneratedMessage.Builder///PointingToGenericParameters(0)/">BuilderT</span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#1861140706%2FFunctions%2F-1482813911"><span class="token function">setRepeatedField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">field<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Descriptors.FieldDescriptor///PointingToDeclaration/">Descriptors.FieldDescriptor</span><span class="token punctuation">, </span></span><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1429594441%2FFunctions%2F-1482813911" anchor-label="setUnknownFields" id="-1429594441%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1464314851%2FFunctions%2F-1482813911"><span>set</span><wbr></wbr><span>Unknown</span><wbr></wbr><span><span>Fields</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1429594441%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1464314851%2FFunctions%2F-1482813911"><span class="token function">setUnknownFields</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">unknownFields<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/UnknownFieldSet///PointingToDeclaration/">UnknownFieldSet</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/GeneratedMessage.Builder///PointingToGenericParameters(0)/">BuilderT</span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-878991770%2FFunctions%2F-1482813911"><span class="token function">setUnknownFields</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">unknownFields<span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/UnknownFieldSet///PointingToDeclaration/">UnknownFieldSet</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.protobuf/Message.Builder///PointingToDeclaration/">Message.Builder</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-356846056%2FFunctions%2F-1482813911" anchor-label="toString" id="-356846056%2FFunctions%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-356846056%2FFunctions%2F-1482813911"><span>to</span><wbr></wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-356846056%2FFunctions%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-356846056%2FFunctions%2F-1482813911"><span class="token function">toString</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="EXTENSION_PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-214747123%2FProperties%2F-1482813911" anchor-label="authenticatedOrNull" id="-214747123%2FProperties%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../authenticated-or-null.html"><span>authenticated</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-214747123%2FProperties%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../../-peer-message-or-builder/index.html">PeerNotifications.PeerMessageOrBuilder</a><span class="token punctuation">.</span><a href="../../../authenticated-or-null.html">authenticatedOrNull</a><span class="token operator">: </span><a href="../-authenticated/index.html">PeerNotifications.PeerMessage.Authenticated</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-23751947%2FProperties%2F-1482813911" anchor-label="authRequestOrNull" id="-23751947%2FProperties%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../auth-request-or-null.html"><span>auth</span><wbr></wbr><span>Request</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-23751947%2FProperties%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../../-peer-message-or-builder/index.html">PeerNotifications.PeerMessageOrBuilder</a><span class="token punctuation">.</span><a href="../../../auth-request-or-null.html">authRequestOrNull</a><span class="token operator">: </span><a href="../-auth-request/index.html">PeerNotifications.PeerMessage.AuthRequest</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="368661514%2FProperties%2F-1482813911" anchor-label="mediaEventOrNull" id="368661514%2FProperties%2F-1482813911" data-filterable-set=":FishjamClient:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":FishjamClient:dokkaHtml/release" data-filterable-set=":FishjamClient:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../media-event-or-null.html"><span>media</span><wbr></wbr><span>Event</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="368661514%2FProperties%2F-1482813911"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":FishjamClient:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../../-peer-message-or-builder/index.html">PeerNotifications.PeerMessageOrBuilder</a><span class="token punctuation">.</span><a href="../../../media-event-or-null.html">mediaEventOrNull</a><span class="token operator">: </span><a href="../-media-event/index.html">PeerNotifications.PeerMessage.MediaEvent</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>Copyright 2023, Software Mansion.</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
