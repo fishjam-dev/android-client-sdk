@@ -7,13 +7,13 @@ import com.fishjamdev.client.Config
 import com.fishjamdev.client.FishjamClient
 import com.fishjamdev.client.FishjamClientListener
 import com.fishjamdev.client.Peer
-import com.fishjamdev.client.TrackContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import org.membraneframework.rtc.SimulcastConfig
 import org.membraneframework.rtc.media.LocalVideoTrack
 import org.membraneframework.rtc.media.RemoteVideoTrack
 import org.membraneframework.rtc.media.VideoParameters
+import org.membraneframework.rtc.models.TrackContext
 
 class RoomViewModel(application: Application) :
     AndroidViewModel(application),
@@ -97,7 +97,7 @@ class RoomViewModel(application: Application) :
 
     override fun onTrackReady(ctx: TrackContext) {
         viewModelScope.launch {
-            val participant = mutableParticipants[ctx.peer.id] ?: return@launch
+            val participant = mutableParticipants[ctx.endpoint.id] ?: return@launch
 
             val (id, newParticipant) =
                 when (ctx.track) {
@@ -105,7 +105,7 @@ class RoomViewModel(application: Application) :
                         globalToLocalTrackId[ctx.trackId] = (ctx.track as RemoteVideoTrack).id()
 
                         val p = participant.copy(videoTrack = ctx.track as RemoteVideoTrack)
-                        Pair(ctx.peer.id, p)
+                        Pair(ctx.endpoint.id, p)
                     }
 
                     else ->
@@ -120,7 +120,7 @@ class RoomViewModel(application: Application) :
 
     override fun onTrackRemoved(ctx: TrackContext) {
         viewModelScope.launch {
-            val participant = mutableParticipants[ctx.peer.id] ?: return@launch
+            val participant = mutableParticipants[ctx.endpoint.id] ?: return@launch
 
             val localTrackId = globalToLocalTrackId[ctx.trackId]
             val videoTrackId = participant.videoTrack?.id()
@@ -134,7 +134,7 @@ class RoomViewModel(application: Application) :
 
             globalToLocalTrackId.remove(ctx.trackId)
 
-            mutableParticipants[ctx.peer.id] = newParticipant
+            mutableParticipants[ctx.endpoint.id] = newParticipant
 
             emitParticipants()
         }
