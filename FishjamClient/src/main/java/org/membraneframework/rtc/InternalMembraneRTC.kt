@@ -75,7 +75,7 @@ internal class InternalMembraneRTC(
                 localTracks.forEach { it.stop() }
             }
             peerConnectionManager.close()
-            canUpdateMetadata=false
+            canUpdateMetadata = false
         }
     }
 
@@ -212,7 +212,7 @@ internal class InternalMembraneRTC(
     }
 
     fun updateEndpointMetadata(endpointMetadata: Metadata) {
-        if(!canUpdateMetadata)return
+        if (!canUpdateMetadata)return
         coroutineScope.launch {
             rtcEngineCommunication.updateEndpointMetadata(endpointMetadata)
             localEndpoint = localEndpoint.copy(metadata = endpointMetadata)
@@ -223,7 +223,7 @@ internal class InternalMembraneRTC(
         trackId: String,
         trackMetadata: Metadata
     ) {
-        if(!canUpdateMetadata)return
+        if (!canUpdateMetadata)return
         coroutineScope.launch {
             rtcEngineCommunication.updateTrackMetadata(trackId, trackMetadata)
             localEndpoint = localEndpoint.withTrack(trackId, trackMetadata)
