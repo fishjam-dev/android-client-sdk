@@ -49,6 +49,7 @@ internal class InternalMembraneRTC(
 
     private val localTracks = mutableListOf<LocalTrack>()
     private val localTracksMutex = Mutex()
+    private var canUpdateMetadata = false
 
     private val coroutineScope: CoroutineScope =
         ClosableCoroutineScope(SupervisorJob() + defaultDispatcher)
@@ -74,6 +75,7 @@ internal class InternalMembraneRTC(
                 localTracks.forEach { it.stop() }
             }
             peerConnectionManager.close()
+            canUpdateMetadata=false
         }
     }
 
@@ -210,6 +212,7 @@ internal class InternalMembraneRTC(
     }
 
     fun updateEndpointMetadata(endpointMetadata: Metadata) {
+        if(!canUpdateMetadata)return
         coroutineScope.launch {
             rtcEngineCommunication.updateEndpointMetadata(endpointMetadata)
             localEndpoint = localEndpoint.copy(metadata = endpointMetadata)
@@ -220,6 +223,7 @@ internal class InternalMembraneRTC(
         trackId: String,
         trackMetadata: Metadata
     ) {
+        if(!canUpdateMetadata)return
         coroutineScope.launch {
             rtcEngineCommunication.updateTrackMetadata(trackId, trackMetadata)
             localEndpoint = localEndpoint.withTrack(trackId, trackMetadata)
@@ -347,6 +351,7 @@ internal class InternalMembraneRTC(
                         }
                     }
                 }
+                canUpdateMetadata = true
             }
         }
     }
