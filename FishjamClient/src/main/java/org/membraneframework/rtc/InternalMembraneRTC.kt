@@ -2,6 +2,7 @@ package org.membraneframework.rtc
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import com.fishjamdev.client.BuildConfig
 import kotlinx.coroutines.*
 import kotlinx.coroutines.sync.Mutex
@@ -25,7 +26,7 @@ import org.webrtc.MediaStreamTrack
 import org.webrtc.VideoTrack
 import timber.log.Timber
 import java.util.*
-
+const val T = "IMRTC"
 internal class InternalMembraneRTC(
     createOptions: CreateOptions,
     private val listener: MembraneRTCListener,
@@ -49,10 +50,10 @@ internal class InternalMembraneRTC(
 
     private val localTracks = mutableListOf<LocalTrack>()
     private val localTracksMutex = Mutex()
-    private val localVideoMutex = Mutex()
-    private val localMicrophoneMutex = Mutex()
-    private val localScreencastMutex = Mutex()
-    private var canUpdateMetadata = false
+//    private val localVideoMutex = Mutex()
+//    private val localMicrophoneMutex = Mutex()
+//    private val localScreencastMutex = Mutex()
+//    private var canUpdateMetadata = false
 
     private val coroutineScope: CoroutineScope =
         ClosableCoroutineScope(SupervisorJob() + defaultDispatcher)
@@ -71,19 +72,20 @@ internal class InternalMembraneRTC(
         ): InternalMembraneRTC
     }
 
-    private fun getMutexForTrack(trackId: String) : Mutex? {
-        var mutex: Mutex? = null
-        localTracks.find { it.id() == trackId }?.let {
-            mutex = when (it) {
-                is LocalAudioTrack -> localMicrophoneMutex
-                is LocalVideoTrack -> localVideoMutex
-                else -> localScreencastMutex
-            }
-        }
-        return mutex
-    }
+//    private fun getMutexForTrack(trackId: String) : Mutex? {
+//        var mutex: Mutex? = null
+//        localTracks.find { it.id() == trackId }?.let {
+//            mutex = when (it) {
+//                is LocalAudioTrack -> localMicrophoneMutex
+//                is LocalVideoTrack -> localVideoMutex
+//                else -> localScreencastMutex
+//            }
+//        }
+//        return mutex
+//    }
 
     fun disconnect() {
+        Log.i(T, "disconnect")
         coroutineScope.launch {
             rtcEngineCommunication.disconnect()
             localTracksMutex.withLock {
@@ -94,14 +96,17 @@ internal class InternalMembraneRTC(
     }
 
     fun receiveMediaEvent(event: SerializedMediaEvent) {
+        Log.i(T, "receiveMediaEvent")
         rtcEngineCommunication.onEvent(event)
     }
 
     fun connect(endpointMetadata: Metadata? = mapOf()) {
+        Log.i(T, "connect")
+
         coroutineScope.launch {
-            localMicrophoneMutex.lock()
-            localVideoMutex.lock()
-            localScreencastMutex.lock()
+//            localMicrophoneMutex.lock()
+//            localVideoMutex.lock()
+//            localScreencastMutex.lock()
             localEndpoint = localEndpoint.copy(metadata = endpointMetadata)
             rtcEngineCommunication.connect(endpointMetadata ?: mapOf())
         }
@@ -112,6 +117,8 @@ internal class InternalMembraneRTC(
         metadata: Metadata = mapOf(),
         captureDeviceName: String? = null
     ): LocalVideoTrack {
+        Log.i(T, "createLocalVideoTrack")
+
         val videoTrack =
             LocalVideoTrack.create(
                 context,
@@ -127,7 +134,7 @@ internal class InternalMembraneRTC(
         localEndpoint = localEndpoint.withTrack(videoTrack.id(), metadata)
 
         coroutineScope.launch {
-            localVideoMutex.lock()
+//            localVideoMutex.lock()
             peerConnectionManager.addTrack(videoTrack)
             rtcEngineCommunication.renegotiateTracks()
         }
@@ -136,6 +143,8 @@ internal class InternalMembraneRTC(
     }
 
     fun createLocalAudioTrack(metadata: Metadata = mapOf()): LocalAudioTrack {
+        Log.i(T, "createLocalAudioTrack")
+
         val audioTrack =
             LocalAudioTrack.create(
                 context,
@@ -148,7 +157,7 @@ internal class InternalMembraneRTC(
         localEndpoint = localEndpoint.withTrack(audioTrack.id(), metadata)
 
         coroutineScope.launch {
-            localMicrophoneMutex.lock()
+//            localMicrophoneMutex.lock()
             peerConnectionManager.addTrack(audioTrack)
             rtcEngineCommunication.renegotiateTracks()
         }
@@ -160,6 +169,8 @@ internal class InternalMembraneRTC(
         trackId: String,
         bandwidthLimit: TrackBandwidthLimit.BandwidthLimit
     ) {
+        Log.i(T, "setTrackBandwidth")
+
         coroutineScope.launch {
             peerConnectionManager.setTrackBandwidth(trackId, bandwidthLimit)
         }
@@ -170,6 +181,8 @@ internal class InternalMembraneRTC(
         encoding: String,
         bandwidthLimit: TrackBandwidthLimit.BandwidthLimit
     ) {
+        Log.i(T, "setEncodingBandwidth")
+
         coroutineScope.launch {
             peerConnectionManager.setEncodingBandwidth(trackId, encoding, bandwidthLimit)
         }
@@ -181,6 +194,8 @@ internal class InternalMembraneRTC(
         metadata: Metadata = mapOf(),
         onEnd: (() -> Unit)?
     ): LocalScreencastTrack {
+        Log.i(T, "createScreencastTrack")
+
         val screencastTrack =
             LocalScreencastTrack.create(
                 context,
@@ -203,7 +218,7 @@ internal class InternalMembraneRTC(
         }
 
         coroutineScope.launch {
-            localScreencastMutex.lock()
+//            localScreencastMutex.lock()
             peerConnectionManager.addTrack(screencastTrack)
             rtcEngineCommunication.renegotiateTracks()
         }
@@ -212,6 +227,8 @@ internal class InternalMembraneRTC(
     }
 
     fun removeTrack(trackId: String): Boolean {
+        Log.i(T, "removeTrack")
+
         return runBlocking(Dispatchers.Default) {
             localTracksMutex.withLock {
                 val track =
@@ -232,6 +249,8 @@ internal class InternalMembraneRTC(
     }
 
     fun updateEndpointMetadata(endpointMetadata: Metadata) {
+        Log.i(T, "updateEndpointMetadata")
+
         coroutineScope.launch {
             rtcEngineCommunication.updateEndpointMetadata(endpointMetadata)
             localEndpoint = localEndpoint.copy(metadata = endpointMetadata)
@@ -242,13 +261,12 @@ internal class InternalMembraneRTC(
         trackId: String,
         trackMetadata: Metadata
     ) {
-        val mutex = getMutexForTrack(trackId)
+        Log.i(T, "updateTrackMetadata")
 
-        mutex?.run{
-            coroutineScope.launch {
-                rtcEngineCommunication.updateTrackMetadata(trackId, trackMetadata)
-                localEndpoint = localEndpoint.withTrack(trackId, trackMetadata)
-            }
+//        val mutex = getMutexForTrack(trackId)
+        coroutineScope.launch {
+            rtcEngineCommunication.updateTrackMetadata(trackId, trackMetadata)
+            localEndpoint = localEndpoint.withTrack(trackId, trackMetadata)
         }
     }
 
@@ -258,6 +276,8 @@ internal class InternalMembraneRTC(
         endpointID: String,
         otherEndpoints: List<Endpoint>
     ) {
+        Log.i(T, "onConnected")
+
         this.localEndpoint = localEndpoint.copy(id = endpointID)
         listener.onConnected(endpointID, otherEndpoints)
 
@@ -282,10 +302,14 @@ internal class InternalMembraneRTC(
     }
 
     override fun onSendMediaEvent(event: SerializedMediaEvent) {
+        Log.i(T, "onSendMediaEvent")
+
         listener.onSendMediaEvent(event)
     }
 
     override fun onEndpointAdded(endpoint: Endpoint) {
+        Log.i(T, "onEndpointAdded")
+
         if (endpoint.id == this.localEndpoint.id) {
             return
         }
@@ -296,6 +320,8 @@ internal class InternalMembraneRTC(
     }
 
     override fun onEndpointRemoved(endpointId: String) {
+        Log.i(T, "onEndpointRemoved")
+
         if (endpointId == localEndpoint.id) {
             listener.onDisconnected()
             return
@@ -321,6 +347,8 @@ internal class InternalMembraneRTC(
         endpointId: String,
         endpointMetadata: Metadata?
     ) {
+        Log.i(T, "onEndpointUpdated")
+
         val endpoint =
             remoteEndpoints.remove(endpointId) ?: run {
                 Timber.e("Failed to process EndpointUpdated event: Endpoint not found: $endpointId")
@@ -334,6 +362,8 @@ internal class InternalMembraneRTC(
         integratedTurnServers: List<OfferData.TurnServer>,
         tracksTypes: Map<String, Int>
     ) {
+        Log.i(T, "onOfferData")
+
         coroutineScope.launch {
             try {
                 val offer =
@@ -356,6 +386,8 @@ internal class InternalMembraneRTC(
         sdp: String,
         midToTrackId: Map<String, String>
     ) {
+        Log.i(T, "onSdpAnswer")
+
         coroutineScope.launch {
             peerConnectionManager.onSdpAnswer(sdp, midToTrackId)
 
@@ -375,9 +407,9 @@ internal class InternalMembraneRTC(
                         }
                     }
                 }
-                localVideoMutex.unlock()
-                localMicrophoneMutex.unlock()
-                localScreencastMutex.unlock()
+//                localVideoMutex.unlock()
+//                localMicrophoneMutex.unlock()
+//                localScreencastMutex.unlock()
             }
         }
     }
@@ -387,6 +419,8 @@ internal class InternalMembraneRTC(
         sdpMLineIndex: Int,
         sdpMid: String?
     ) {
+        Log.i(T, "onRemoteCandidate")
+
         coroutineScope.launch {
             val iceCandidate =
                 IceCandidate(
@@ -403,6 +437,8 @@ internal class InternalMembraneRTC(
         endpointId: String,
         tracks: Map<String, TrackData>
     ) {
+        Log.i(T, "onTracksAdded")
+
         if (localEndpoint.id == endpointId) return
 
         val endpoint =
@@ -435,6 +471,8 @@ internal class InternalMembraneRTC(
         endpointId: String,
         trackIds: List<String>
     ) {
+        Log.i(T, "onTracksRemoved")
+
         val endpoint =
             remoteEndpoints[endpointId] ?: run {
                 Timber.e("Failed to process TracksRemoved event: Endpoint not found: $endpointId")
@@ -460,6 +498,8 @@ internal class InternalMembraneRTC(
         trackId: String,
         metadata: Metadata?
     ) {
+        Log.i(T, "onTrackUpdated")
+
         val endpoint =
             remoteEndpoints[endpointId] ?: run {
                 Timber.e("Failed to process TrackUpdated event: Endpoint not found: $endpointId")
@@ -490,6 +530,8 @@ internal class InternalMembraneRTC(
         encoding: String,
         encodingReason: String
     ) {
+        Log.i(T, "onTrackEncodingChanged")
+
         val encodingReasonEnum = EncodingReason.fromString(encodingReason)
         if (encodingReasonEnum == null) {
             Timber.e("Invalid encoding reason: $encodingReason")
@@ -512,6 +554,8 @@ internal class InternalMembraneRTC(
         trackId: String,
         status: String
     ) {
+        Log.i(T, "onVadNotification")
+
         val trackContext = trackContexts[trackId]
         if (trackContext == null) {
             Timber.e("Invalid track id = $trackId")
@@ -526,6 +570,8 @@ internal class InternalMembraneRTC(
     }
 
     override fun onBandwidthEstimation(estimation: Long) {
+        Log.i(T, "onBandwidthEstimation")
+
         listener.onBandwidthEstimationChanged(estimation)
     }
 
@@ -533,6 +579,8 @@ internal class InternalMembraneRTC(
         trackId: String,
         encoding: TrackEncoding
     ) {
+        Log.i(T, "setTargetTrackEncoding")
+
         coroutineScope.launch {
             rtcEngineCommunication.setTargetTrackEncoding(trackId, encoding)
         }
@@ -542,6 +590,8 @@ internal class InternalMembraneRTC(
         trackId: String,
         encoding: TrackEncoding
     ) {
+        Log.i(T, "enableTrackEncoding")
+
         coroutineScope.launch {
             peerConnectionManager.setTrackEncoding(trackId, encoding, true)
         }
@@ -551,12 +601,16 @@ internal class InternalMembraneRTC(
         trackId: String,
         encoding: TrackEncoding
     ) {
+        Log.i(T, "disableTrackEncoding")
+
         coroutineScope.launch {
             peerConnectionManager.setTrackEncoding(trackId, encoding, false)
         }
     }
 
     override fun onLocalIceCandidate(candidate: IceCandidate) {
+        Log.i(T, "onLocalIceCandidate")
+
         coroutineScope.launch {
             rtcEngineCommunication.localCandidate(candidate.sdp, candidate.sdpMLineIndex)
         }
@@ -566,6 +620,8 @@ internal class InternalMembraneRTC(
         trackId: String,
         track: MediaStreamTrack
     ) {
+        Log.i(T, "onAddTrack")
+
         val trackContext =
             trackContexts[trackId] ?: run {
                 Timber.e("onAddTrack: Track context with trackId=$trackId not found")
@@ -587,6 +643,8 @@ internal class InternalMembraneRTC(
     }
 
     fun getStats(): Map<String, RTCStats> {
+        Log.i(T, "getStats")
+
         return peerConnectionManager.getStats()
     }
 }
