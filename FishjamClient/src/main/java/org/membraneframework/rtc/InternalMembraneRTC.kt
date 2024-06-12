@@ -478,6 +478,7 @@ internal class InternalMembraneRTC(
     ) {
         Log.i(T, "onTracksAdded")
         Log.i(T,"")
+        Log.i(T, "Is local endpoint: ${localEndpoint.id == endpointId}")
 
         if (localEndpoint.id == endpointId) return
 
