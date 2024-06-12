@@ -284,7 +284,7 @@ internal class InternalMembraneRTC(
         Log.i(T, "updateTrackMetadata")
         Log.i(T, trackMetadata.toString())
         Log.i(T,"")
-        if(localTracksReady[trackId] ?: false) return
+        if(localTracksReady[trackId] != true) return
 
 //        val mutex = getMutexForTrack(trackId)
         coroutineScope.launch {
@@ -422,13 +422,14 @@ internal class InternalMembraneRTC(
 
 
         coroutineScope.launch {
-            midToTrackId.forEach{
-                localTracksReady[it.value] = true
-            }
+
 
             peerConnectionManager.onSdpAnswer(sdp, midToTrackId)
 
             localTracksMutex.withLock {
+                midToTrackId.forEach{
+                    localTracksReady[it.value] = true
+                }
                 // temporary workaround, the backend doesn't add ~ in sdp answer
                 localTracks.forEach { localTrack ->
                     if (localTrack.rtcTrack().kind() != "video") return@forEach
