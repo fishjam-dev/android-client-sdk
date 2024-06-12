@@ -135,8 +135,7 @@ internal class InternalMembraneRTC(
             }
 
         localTracks.add(videoTrack)
-        Log.i(T, "Local tracks")
-        Log.i(T, localTracks.toString())
+        Log.i(T, "Local videoTrackID: ${videoTrack.id()}")
         Log.i(T,"")
 
         localEndpoint = localEndpoint.withTrack(videoTrack.id(), metadata)
@@ -152,7 +151,6 @@ internal class InternalMembraneRTC(
 
     fun createLocalAudioTrack(metadata: Metadata = mapOf()): LocalAudioTrack {
         Log.i(T, "createLocalAudioTrack")
-        Log.i(T,"")
 
         val audioTrack =
             LocalAudioTrack.create(
@@ -163,8 +161,7 @@ internal class InternalMembraneRTC(
             }
 
         localTracks.add(audioTrack)
-        Log.i(T, "local tracks")
-        Log.i(T, localTracks.toString())
+        Log.i(T, "Local audioTrackID: ${audioTrack.id()}")
         Log.i(T,"")
 
         localEndpoint = localEndpoint.withTrack(audioTrack.id(), metadata)
@@ -212,7 +209,7 @@ internal class InternalMembraneRTC(
         onEnd: (() -> Unit)?
     ): LocalScreencastTrack {
         Log.i(T, "createScreencastTrack")
-        Log.i(T,"")
+
 
         val screencastTrack =
             LocalScreencastTrack.create(
@@ -226,11 +223,10 @@ internal class InternalMembraneRTC(
                     onEnd()
                 }
             }
+        Log.i(T, "Local screenTrackID: ${screencastTrack.id()}")
+        Log.i(T,"")
 
         localTracks.add(screencastTrack)
-        Log.i(T, "local tracks")
-        Log.i(T, localTracks.toString())
-        Log.i(T,"")
         localEndpoint = localEndpoint.withTrack(screencastTrack.id(), metadata)
 
         coroutineScope.launch {
@@ -262,9 +258,6 @@ internal class InternalMembraneRTC(
                 peerConnectionManager.removeTrack(track.id())
 
                 localTracks.remove(track)
-                Log.i(T, "local tracks")
-                Log.i(T, localTracks.toString())
-                Log.i(T,"")
                 localEndpoint = localEndpoint.withoutTrack(trackId)
                 track.stop()
             }
@@ -423,6 +416,7 @@ internal class InternalMembraneRTC(
     ) {
         Log.i(T, "onSdpAnswer")
         Log.i(T, type + " " + sdp)
+        Log.i(T, "midToTrackId: ${midToTrackId}")
         Log.i(T,"")
 
 
@@ -457,9 +451,6 @@ internal class InternalMembraneRTC(
         sdpMLineIndex: Int,
         sdpMid: String?
     ) {
-        Log.i(T, "onRemoteCandidate")
-        Log.i(T,"")
-
         coroutineScope.launch {
             val iceCandidate =
                 IceCandidate(
@@ -657,9 +648,6 @@ internal class InternalMembraneRTC(
     }
 
     override fun onLocalIceCandidate(candidate: IceCandidate) {
-        Log.i(T, "onLocalIceCandidate")
-        Log.i(T,"")
-
         coroutineScope.launch {
             rtcEngineCommunication.localCandidate(candidate.sdp, candidate.sdpMLineIndex)
         }
