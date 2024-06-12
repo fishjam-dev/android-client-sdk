@@ -50,10 +50,8 @@ internal class InternalMembraneRTC(
 
     private val localTracks = mutableListOf<LocalTrack>()
     private val localTracksMutex = Mutex()
-//    private val localVideoMutex = Mutex()
-//    private val localMicrophoneMutex = Mutex()
-//    private val localScreencastMutex = Mutex()
-//    private var canUpdateMetadata = false
+
+    private val localTracksReady = mutableMapOf<String, Boolean>()
 
     private val coroutineScope: CoroutineScope =
         ClosableCoroutineScope(SupervisorJob() + defaultDispatcher)
@@ -87,6 +85,8 @@ internal class InternalMembraneRTC(
     fun disconnect() {
         Log.i(T, "disconnect")
         Log.i(T,"")
+        localTracksReady.clear()
+
         coroutineScope.launch {
             rtcEngineCommunication.disconnect()
             localTracksMutex.withLock {
@@ -108,9 +108,6 @@ internal class InternalMembraneRTC(
         Log.i(T,"")
 
         coroutineScope.launch {
-//            localMicrophoneMutex.lock()
-//            localVideoMutex.lock()
-//            localScreencastMutex.lock()
             localEndpoint = localEndpoint.copy(metadata = endpointMetadata)
             rtcEngineCommunication.connect(endpointMetadata ?: mapOf())
         }
@@ -141,7 +138,7 @@ internal class InternalMembraneRTC(
         localEndpoint = localEndpoint.withTrack(videoTrack.id(), metadata)
 
         coroutineScope.launch {
-//            localVideoMutex.lock()
+            localTracksReady[videoTrack.id()] = false
             peerConnectionManager.addTrack(videoTrack)
             rtcEngineCommunication.renegotiateTracks()
         }
@@ -168,6 +165,8 @@ internal class InternalMembraneRTC(
 
         coroutineScope.launch {
 //            localMicrophoneMutex.lock()
+            localTracksReady[audioTrack.id()] = false
+
             peerConnectionManager.addTrack(audioTrack)
             rtcEngineCommunication.renegotiateTracks()
         }
@@ -235,7 +234,7 @@ internal class InternalMembraneRTC(
         }
 
         coroutineScope.launch {
-//            localScreencastMutex.lock()
+            localTracksReady[screencastTrack.id()] = false
             peerConnectionManager.addTrack(screencastTrack)
             rtcEngineCommunication.renegotiateTracks()
         }
@@ -248,6 +247,7 @@ internal class InternalMembraneRTC(
         Log.i(T,"")
 
         return runBlocking(Dispatchers.Default) {
+            localTracksReady.remove(trackId)
             localTracksMutex.withLock {
                 val track =
                     localTracks.find { it.id() == trackId } ?: run {
@@ -284,6 +284,7 @@ internal class InternalMembraneRTC(
         Log.i(T, "updateTrackMetadata")
         Log.i(T, trackMetadata.toString())
         Log.i(T,"")
+        if(localTracksReady[trackId] ?: false) return
 
 //        val mutex = getMutexForTrack(trackId)
         coroutineScope.launch {
@@ -421,6 +422,10 @@ internal class InternalMembraneRTC(
 
 
         coroutineScope.launch {
+            midToTrackId.forEach{
+                localTracksReady[it.value] = true
+            }
+
             peerConnectionManager.onSdpAnswer(sdp, midToTrackId)
 
             localTracksMutex.withLock {
@@ -439,9 +444,6 @@ internal class InternalMembraneRTC(
                         }
                     }
                 }
-//                localVideoMutex.unlock()
-//                localMicrophoneMutex.unlock()
-//                localScreencastMutex.unlock()
             }
         }
     }
