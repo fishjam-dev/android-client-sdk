@@ -1,6 +1,5 @@
 package org.membraneframework.rtc
 
-import android.util.Log
 import com.google.gson.reflect.TypeToken
 import org.membraneframework.rtc.events.*
 import org.membraneframework.rtc.models.Endpoint
@@ -8,7 +7,7 @@ import org.membraneframework.rtc.utils.Metadata
 import org.membraneframework.rtc.utils.SerializedMediaEvent
 import timber.log.Timber
 import kotlin.math.roundToLong
-const val TA = "RTCEC"
+
 internal class RTCEngineCommunication(
     private val engineListener: RTCEngineListener
 ) {
@@ -17,16 +16,10 @@ internal class RTCEngineCommunication(
     }
 
     fun connect(endpointMetadata: Metadata) {
-        Log.i(TA, "connect")
-        Log.i(TA, endpointMetadata.toString())
-        Log.i(TA,"")
         sendEvent(Connect(endpointMetadata))
     }
 
     fun updateEndpointMetadata(endpointMetadata: Metadata) {
-        Log.i(TA, "updateEndpointMetadata")
-        Log.i(TA, endpointMetadata.toString())
-        Log.i(TA,"")
         sendEvent(UpdateEndpointMetadata(endpointMetadata))
     }
 
@@ -34,9 +27,6 @@ internal class RTCEngineCommunication(
         trackId: String,
         trackMetadata: Metadata
     ) {
-        Log.i(TA, "updateTrackMetadata")
-        Log.i(TA, trackId + " "+ trackMetadata.toString())
-        Log.i(TA,"")
         sendEvent(UpdateTrackMetadata(trackId, trackMetadata))
     }
 
@@ -44,9 +34,6 @@ internal class RTCEngineCommunication(
         trackId: String,
         encoding: TrackEncoding
     ) {
-        Log.i(TA, "setTargetTrackEncoding")
-        Log.i(TA, trackId + " " + encoding.toString())
-        Log.i(TA,"")
         sendEvent(
             SelectEncoding(
                 trackId,
@@ -56,8 +43,6 @@ internal class RTCEngineCommunication(
     }
 
     fun renegotiateTracks() {
-        Log.i(TA, "renegotiateTracks")
-        Log.i(TA,"")
         sendEvent(RenegotiateTracks())
     }
 
@@ -65,9 +50,6 @@ internal class RTCEngineCommunication(
         sdp: String,
         sdpMLineIndex: Int
     ) {
-        Log.i(TA, "localCandidate")
-        Log.i(TA, sdp + " " + sdpMLineIndex)
-        Log.i(TA,"")
         sendEvent(
             LocalCandidate(
                 sdp,
@@ -81,11 +63,6 @@ internal class RTCEngineCommunication(
         trackIdToTrackMetadata: Map<String, Metadata?>,
         midToTrackId: Map<String, String>
     ) {
-        Log.i(TA, "sdpOffer")
-        Log.i(TA, sdp)
-        Log.i(TA, trackIdToTrackMetadata.toString())
-        Log.i(TA, midToTrackId.toString())
-        Log.i(TA,"")
         sendEvent(
             SdpOffer(
                 sdp,
@@ -96,29 +73,20 @@ internal class RTCEngineCommunication(
     }
 
     fun disconnect() {
-        Log.i(TA, "disconnect")
-        Log.i(TA,"")
         sendEvent(Disconnect())
     }
 
     private fun sendEvent(event: SendableEvent) {
-        Log.i(TA, "sendEvent")
-        Log.i(TA, event.toString())
-        Log.i(TA,"")
         val serializedMediaEvent = gson.toJson(event.serializeToMap())
         engineListener.onSendMediaEvent(serializedMediaEvent)
     }
 
     private fun decodeEvent(event: SerializedMediaEvent): ReceivableEvent? {
-
         val type = object : TypeToken<Map<String, Any?>>() {}.type
 
         val rawMessage: Map<String, Any?> = gson.fromJson(event, type)
 
         ReceivableEvent.decode(rawMessage)?.let {
-            Log.i(TA, "decodeEvent")
-            Log.i(TA, it.toString())
-            Log.i(TA,"")
             return it
         } ?: run {
             Timber.d("Failed to decode event $rawMessage")
