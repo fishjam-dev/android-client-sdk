@@ -6,6 +6,7 @@ import com.fishjamdev.client.BuildConfig
 import kotlinx.coroutines.*
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import org.membraneframework.rtc.error.MembraneError
 import org.membraneframework.rtc.events.OfferData
 import org.membraneframework.rtc.media.*
 import org.membraneframework.rtc.models.EncodingReason
@@ -229,13 +230,14 @@ internal class InternalMembraneRTC(
     fun updateTrackMetadata(
         trackId: String,
         trackMetadata: Metadata
-    ) {
-        if (localTracksReady[trackId] != true) return
+    ): Result<Unit> {
+        if (localTracksReady[trackId] != true) return Result.failure(Exception(MembraneError.TRACK_NOT_READY.message))
 
         coroutineScope.launch {
             rtcEngineCommunication.updateTrackMetadata(trackId, trackMetadata)
             localEndpoint = localEndpoint.withTrack(trackId, trackMetadata)
         }
+        return Result.success(Unit)
     }
 
     override fun onConnected(
