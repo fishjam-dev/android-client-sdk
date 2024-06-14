@@ -39,18 +39,15 @@ class CameraService : Service() {
                 val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
                 notificationManager.createNotificationChannel(mChannel)
             }
-            val notification = NotificationCompat.Builder(this, channelID)
-                // Create the notification to display while the service is running
-                .setContentTitle("Fishjam is running")
-                .build()
+            val notification =
+                NotificationCompat.Builder(this, channelID)
+                    // Create the notification to display while the service is running
+                    .setContentTitle("Fishjam is running")
+                    .build()
             ServiceCompat.startForeground(
-                /* service = */
                 this,
-                /* id = */
-                100, // Cannot be 0
-                /* notification = */
+                100,
                 notification,
-                /* foregroundServiceType = */
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                     ServiceInfo.FOREGROUND_SERVICE_TYPE_CAMERA
                 } else {
@@ -68,10 +65,15 @@ class CameraService : Service() {
         }
     }
 
-    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+    override fun onStartCommand(
+        intent: Intent?,
+        flags: Int,
+        startId: Int
+    ): Int {
         startForeground()
         return START_STICKY
     }
+
     override fun onBind(intent: Intent): IBinder? {
         return null
     }
