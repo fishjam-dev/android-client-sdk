@@ -44,19 +44,22 @@ class CameraService : Service() {
                 .setContentTitle("Fishjam is running")
                 .build()
             ServiceCompat.startForeground(
-                /* service = */ this,
-                /* id = */ 100, // Cannot be 0
-                /* notification = */ notification,
+                /* service = */
+                this,
+                /* id = */
+                100, // Cannot be 0
+                /* notification = */
+                notification,
                 /* foregroundServiceType = */
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                     ServiceInfo.FOREGROUND_SERVICE_TYPE_CAMERA
                 } else {
                     0
-                },
+                }
             )
         } catch (e: Exception) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
-                && e is ForegroundServiceStartNotAllowedException
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
+                e is ForegroundServiceStartNotAllowedException
             ) {
                 // App not in a valid state to start foreground service
                 // (e.g. started from bg)
