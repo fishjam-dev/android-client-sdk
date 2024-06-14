@@ -194,8 +194,8 @@ class MembraneRTC
         fun updateTrackMetadata(
             trackId: String,
             trackMetadata: Metadata
-        ) {
-            client.updateTrackMetadata(trackId, trackMetadata)
+        ) : Result<Unit> {
+            return client.updateTrackMetadata(trackId, trackMetadata)
         }
 
         /**
