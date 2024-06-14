@@ -102,7 +102,8 @@ class MainActivity : ComponentActivity() {
             rememberMultiplePermissionsState(
                 listOf(
                     Manifest.permission.RECORD_AUDIO,
-                    Manifest.permission.CAMERA
+                    Manifest.permission.CAMERA,
+                    Manifest.permission.POST_NOTIFICATIONS
                 )
             )
 
