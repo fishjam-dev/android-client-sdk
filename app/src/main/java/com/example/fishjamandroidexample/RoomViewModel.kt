@@ -1,6 +1,8 @@
 package com.example.fishjamandroidexample
 
 import android.app.Application
+import android.content.Intent
+import android.os.Build
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.fishjamdev.client.Config
@@ -40,6 +42,15 @@ class RoomViewModel(application: Application) :
         setupTracks()
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val intent =
+                Intent(getApplication<Application>().applicationContext, CameraService::class.java)
+            getApplication<Application>().applicationContext.stopService(intent)
+        }
+    }
+
     fun disconnect() {
         localVideoTrack?.stop()
         localVideoTrack = null
@@ -75,6 +86,10 @@ class RoomViewModel(application: Application) :
                 )
         }
         emitParticipants()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val intent = Intent(getApplication<Application>().applicationContext, CameraService::class.java)
+            getApplication<Application>().applicationContext.startForegroundService(intent)
+        }
     }
 
     override fun onJoinError(metadata: Any) {
