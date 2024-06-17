@@ -26,6 +26,7 @@ internal class FishjamClientInternal(
     MembraneRTCListener {
     private var webSocket: WebSocket? = null
     val webrtcClient = MembraneRTC.create(appContext, this)
+    private var isAuthenticated = false
 
     init {
         if (BuildConfig.DEBUG) {
@@ -54,6 +55,7 @@ internal class FishjamClientInternal(
                         try {
                             val peerMessage = PeerMessage.parseFrom(bytes.toByteArray())
                             if (peerMessage.hasAuthenticated()) {
+                                isAuthenticated = true
                                 listener.onAuthSuccess()
                             } else if (peerMessage.hasMediaEvent()) {
                                 receiveEvent(peerMessage.mediaEvent.data)
@@ -93,10 +95,12 @@ internal class FishjamClientInternal(
 
     fun leave() {
         webrtcClient.disconnect()
+        isAuthenticated = false
     }
 
     fun cleanUp() {
         webrtcClient.disconnect()
+        isAuthenticated = false
         webSocket?.close(1000, null)
         webSocket = null
         listener.onDisconnected()
@@ -123,6 +127,10 @@ internal class FishjamClientInternal(
     }
 
     override fun onSendMediaEvent(event: SerializedMediaEvent) {
+        if (!isAuthenticated) {
+            Timber.e("Tried to send media event: $event before authentication")
+            return
+        }
         val mediaEvent =
             PeerMessage
                 .newBuilder()
