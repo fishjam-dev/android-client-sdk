@@ -1,6 +1,5 @@
 package com.example.fishjamandroidexample
 
-import android.app.ForegroundServiceStartNotAllowedException
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.Service
@@ -12,17 +11,13 @@ import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
 import androidx.core.content.ContextCompat
+import timber.log.Timber
 
 class CameraService : Service() {
     private fun startForeground() {
-        // Before starting the service as foreground check that the app has the
-        // appropriate runtime permissions. In this case, verify that the user has
-        // granted the CAMERA permission.
         val cameraPermission =
             ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA)
         if (cameraPermission == PackageManager.PERMISSION_DENIED) {
-            // Without camera permissions the service cannot run in the foreground
-            // Consider informing user or updating your app UI if visible.
             stopSelf()
             return
         }
@@ -30,18 +25,14 @@ class CameraService : Service() {
         try {
             val channelID = "FISHJAM_NOTIFICATION_CHANNEL"
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                // Create the NotificationChannel.
                 val name = "Fishjam notification channel"
                 val importance = NotificationManager.IMPORTANCE_DEFAULT
                 val mChannel = NotificationChannel(channelID, name, importance)
-                // Register the channel with the system. You can't change the importance
-                // or other notification behaviors after this.
                 val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
                 notificationManager.createNotificationChannel(mChannel)
             }
             val notification =
                 NotificationCompat.Builder(this, channelID)
-                    // Create the notification to display while the service is running
                     .setContentTitle("Fishjam is running")
                     .build()
             ServiceCompat.startForeground(
@@ -55,13 +46,7 @@ class CameraService : Service() {
                 }
             )
         } catch (e: Exception) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
-                e is ForegroundServiceStartNotAllowedException
-            ) {
-                // App not in a valid state to start foreground service
-                // (e.g. started from bg)
-            }
-            // ...
+            Timber.w("Failed to start foreground service")
         }
     }
 
